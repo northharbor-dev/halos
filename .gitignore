@@ -1,0 +1,9 @@
+# Editor
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Local
+.env
+.env.local
