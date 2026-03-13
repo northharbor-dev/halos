@@ -1,0 +1,34 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="256" y1="20" x2="256" y2="492" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#061228"/>
+      <stop offset="1" stop-color="#020713"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="132" y1="132" x2="380" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D8FBFF"/>
+      <stop offset="0.45" stop-color="#72D5FF"/>
+      <stop offset="1" stop-color="#4468E5"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4.5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+
+  <circle cx="256" cy="256" r="16" fill="#ECFDFE" filter="url(#glow)"/>
+  <circle cx="256" cy="256" r="94" stroke="url(#ring)" stroke-width="14" stroke-dasharray="168 22 64 20"/>
+  <circle cx="256" cy="256" r="148" stroke="url(#ring)" stroke-opacity="0.68" stroke-width="10" stroke-dasharray="210 28 74 26"/>
+
+  <g fill="#E4FBFF" filter="url(#glow)">
+    <circle cx="256" cy="108" r="6"/>
+    <circle cx="368" cy="184" r="5.5"/>
+    <circle cx="344" cy="356" r="5.5"/>
+    <circle cx="168" cy="354" r="5.5"/>
+    <circle cx="144" cy="180" r="5.5"/>
+  </g>
+</svg>

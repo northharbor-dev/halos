@@ -48,7 +48,8 @@ halos/
 │   ├── vision.md             # Philosophy and motivation
 │   ├── principles.md         # Foundational ideas
 │   ├── governance.md         # How HALOS evolves
-│   └── origin.md             # About the author and project origin
+│   ├── origin.md             # About the author and project origin
+│   └── identity.md           # Public identity and design rationale
 └── proposals/
     ├── README.md             # Proposal process (RFC-style)
     └── TEMPLATE.md           # Template for new proposals
@@ -60,6 +61,7 @@ halos/
 - **[Principles](docs/principles.md)** — Foundational ideas that anchor the framework
 - **[Governance](docs/governance.md)** — How proposals are made, reviewed, and adopted
 - **[About the Author](docs/origin.md)** — Origin, authorship, and drafting context
+- **[Identity](docs/identity.md)** — Public identity, symbolism, and design rationale
 - **[Proposals](proposals/README.md)** — Process for contributing and evolving HALOS
 
 ## Status

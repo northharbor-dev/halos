@@ -1,0 +1,47 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="256" y1="24" x2="256" y2="488" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#061228"/>
+      <stop offset="1" stop-color="#020814"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="112" y1="132" x2="388" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D6FAFF"/>
+      <stop offset="0.4" stop-color="#78D3FF"/>
+      <stop offset="1" stop-color="#3F63E6"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4.5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+
+  <circle cx="256" cy="256" r="12" fill="#EDFDFE" filter="url(#glow)"/>
+  <circle cx="256" cy="256" r="38" stroke="#A5E5FF" stroke-opacity="0.55" stroke-width="2"/>
+
+  <circle cx="256" cy="256" r="88" stroke="url(#ring)" stroke-width="10" stroke-dasharray="148 20 42 20"/>
+  <circle cx="256" cy="256" r="130" stroke="url(#ring)" stroke-opacity="0.82" stroke-width="8" stroke-dasharray="190 24 58 22"/>
+  <circle cx="256" cy="256" r="170" stroke="#5ACBFF" stroke-opacity="0.22" stroke-width="2.5" stroke-dasharray="10 14"/>
+
+  <g fill="#E2FBFF" filter="url(#glow)">
+    <circle cx="256" cy="168" r="4.5"/>
+    <circle cx="320" cy="198" r="4"/>
+    <circle cx="198" cy="314" r="4"/>
+    <circle cx="300" cy="328" r="4.5"/>
+    <circle cx="256" cy="126" r="4.5"/>
+    <circle cx="352" cy="168" r="4"/>
+    <circle cx="388" cy="256" r="4.5"/>
+    <circle cx="340" cy="352" r="4"/>
+    <circle cx="256" cy="386" r="4.5"/>
+    <circle cx="164" cy="348" r="4"/>
+    <circle cx="126" cy="256" r="4.5"/>
+    <circle cx="170" cy="162" r="4"/>
+    <circle cx="410" cy="214" r="3.5"/>
+    <circle cx="398" cy="330" r="3.5"/>
+    <circle cx="118" cy="196" r="3.5"/>
+  </g>
+</svg>
