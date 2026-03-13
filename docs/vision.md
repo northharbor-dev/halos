@@ -16,6 +16,8 @@ HALOS aims to establish a *contract*—not in the legal sense alone, but in the 
 
 The goal is not to constrain what people build. It is to provide a stable reference that implementations can align with, diverge from knowingly, or extend. A system that follows HALOS principles makes its choices explicit. One that does not can still exist—but the difference is visible and discussable.
 
+HALOS is intended to serve as a public framework that can inform many kinds of implementations and institutions. Open-source projects, research efforts, community initiatives, and commercial organizations may all draw from its principles. No single implementation defines HALOS, and commercial use of its ideas does not by itself determine the framework's direction.
+
 ## Core Beliefs
 
 **Ideas have value.** Ideas and creative works are assets. They deserve ownership, provenance, and recognition. Treating them as disposable or anonymous undermines both individual creators and the ecosystems that depend on attribution.
@@ -42,6 +44,7 @@ None of these are guaranteed. The immediate focus is the framework itself: clear
 ## What HALOS Is Not
 
 - **Not a product.** No company owns it. No single implementation defines it.
+- **Not a company program.** It is stewarded publicly and may inform both community and commercial work without being reduced to either.
 - **Not a substitute for law.** It may inform policy but does not replace regulation.
 - **Not anti-innovation.** It balances experimentation with clarity and accountability.
 - **Not fixed.** It is a living document, improved through contribution and review.

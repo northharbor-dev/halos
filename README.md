@@ -2,15 +2,17 @@
 
 **Human Agent Living Operating System**
 
-A conceptual framework that defines a contract for interactions between humans and intelligent agents.
+A framework for principled collaboration between humans and intelligent agents.
 
 ---
 
 ## Overview
 
-HALOS establishes principles, governance structures, and standards for trustworthy collaboration between humans and AI systems. It treats ideas and creative works as first-class assets with ownership, provenance, and evolving lineage. The framework defines how standards evolve over time while remaining grounded in stable principles.
+HALOS is an open framework for principled collaboration between humans and intelligent agents.
 
-This repository is **not** a software implementation. It is a conceptual framework and evolving specification that may guide many future systems.
+It is developed in public through this repository and stewarded by NorthHarbor Development. HALOS was originated by Bob Hong and is currently founder-led, with proposals and contributions welcomed from the broader community.
+
+This repository is **not** a software implementation. It is a conceptual framework and evolving specification that may inform many future systems, including commercial, open-source, and research efforts.
 
 ## Why HALOS
 
@@ -45,7 +47,8 @@ halos/
 ├── docs/
 │   ├── vision.md             # Philosophy and motivation
 │   ├── principles.md         # Foundational ideas
-│   └── governance.md         # How HALOS evolves
+│   ├── governance.md         # How HALOS evolves
+│   └── origin.md             # About the author and project origin
 └── proposals/
     ├── README.md             # Proposal process (RFC-style)
     └── TEMPLATE.md           # Template for new proposals
@@ -56,6 +59,7 @@ halos/
 - **[Vision](docs/vision.md)** — Philosophy, motivation, and long-term direction
 - **[Principles](docs/principles.md)** — Foundational ideas that anchor the framework
 - **[Governance](docs/governance.md)** — How proposals are made, reviewed, and adopted
+- **[About the Author](docs/origin.md)** — Origin, authorship, and drafting context
 - **[Proposals](proposals/README.md)** — Process for contributing and evolving HALOS
 
 ## Status
@@ -68,4 +72,10 @@ This work is licensed under [CC-BY-4.0](LICENSE). You may share and adapt with a
 
 ## About
 
-HALOS is maintained by [NorthHarbor Development](https://github.com/northharbor-dev).
+HALOS is stewarded in public by [NorthHarbor Development](https://github.com/northharbor-dev).
+
+NorthHarbor AI is a separate commercial organization that may build on or be informed by HALOS, but HALOS itself is maintained here as an open framework.
+
+## About the Author
+
+HALOS was originated by Bob Hong, founder of NorthHarbor. It emerged through an iterative process combining human insight, practical experience building complex systems, and AI-assisted exploration. NorthHarbor develops HALOS in the open as a living framework for transparent, principled human-AI collaboration.
