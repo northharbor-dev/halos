@@ -4,7 +4,7 @@
   <img src="docs/identity-assets/selected/halos-halo-ring-institutional-randomized.svg" alt="HALOS identity mark" width="160" />
 </p>
 
-**Human Agent Living Operating System**
+**Human-Agent Living Operating System**
 
 A framework for principled collaboration between humans and intelligent agents.
 
@@ -53,7 +53,8 @@ halos/
 │   ├── principles.md         # Foundational ideas
 │   ├── governance.md         # How HALOS evolves
 │   ├── origin.md             # About the author and project origin
-│   └── identity.md           # Public identity and design rationale
+│   ├── identity.md           # Public identity and design rationale
+│   └── everyday-humans.md    # Plain-language explanation for general readers
 └── proposals/
     ├── README.md             # Proposal process (RFC-style)
     └── TEMPLATE.md           # Template for new proposals
@@ -66,6 +67,7 @@ halos/
 - **[Governance](docs/governance.md)** — How proposals are made, reviewed, and adopted
 - **[About the Author](docs/origin.md)** — Origin, authorship, and drafting context
 - **[Identity](docs/identity.md)** — Public identity, symbolism, and design rationale
+- **[HALOS for Everyday Humans](docs/everyday-humans.md)** — Plain-language framing for people outside the tech world
 - **[Proposals](proposals/README.md)** — Process for contributing and evolving HALOS
 
 ## Status
