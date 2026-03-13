@@ -1,3 +1,8 @@
+---
+title: Principles
+deck: Foundational ideas that anchor the framework and should change rarely.
+---
+
 # HALOS Principles
 
 *Foundational Ideas*

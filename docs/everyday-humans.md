@@ -1,3 +1,8 @@
+---
+title: HALOS for Everyday Humans
+deck: A plain-language explanation of why HALOS exists and why public participation matters.
+---
+
 # HALOS for Everyday Humans
 
 *A plain-language explanation of why this matters*

@@ -1,3 +1,8 @@
 title: HALOS
 description: Human-Agent Living Operating System
 theme: minima
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

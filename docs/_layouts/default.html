@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem("halos-text-size");
+          if (saved) document.documentElement.setAttribute("data-text-size", saved);
+        } catch (_) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  </head>
+  <body>
+    <header class="site-shell">
+      <div class="site-nav">
+        <a class="site-brand" href="{{ '/' | relative_url }}">
+          <img src="{{ '/identity-assets/selected/halos-halo-ring-institutional-randomized.svg' | relative_url }}" alt="HALOS mark">
+          <span>HALOS</span>
+        </a>
+        <nav class="site-links" aria-label="Primary">
+          <a href="{{ '/vision.html' | relative_url }}">Vision</a>
+          <a href="{{ '/principles.html' | relative_url }}">Principles</a>
+          <a href="{{ '/governance.html' | relative_url }}">Governance</a>
+          <a href="{{ '/everyday-humans.html' | relative_url }}">Everyday Humans</a>
+          <a href="https://github.com/northharbor-dev/halos">GitHub</a>
+        </nav>
+        <div class="text-size-control" aria-label="Text size selector">
+          <span class="text-size-control__label">Text</span>
+          <button type="button" class="text-size-control__button" data-size="compact" aria-label="Compact text size">A</button>
+          <button type="button" class="text-size-control__button" data-size="comfortable" aria-label="Comfortable text size">A</button>
+          <button type="button" class="text-size-control__button" data-size="large" aria-label="Large text size">A</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      {% unless page.url == "/" %}
+      <section class="doc-hero">
+        <p class="doc-hero__eyebrow">HALOS Document</p>
+        <h1>{{ page.title }}</h1>
+        {% if page.deck %}
+        <p class="doc-hero__deck">{{ page.deck }}</p>
+        {% endif %}
+      </section>
+      {% endunless %}
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>HALOS is developed in public through NorthHarbor Development.</p>
+      </div>
+    </footer>
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const buttons = document.querySelectorAll(".text-size-control__button");
+        const applySize = (size) => {
+          root.setAttribute("data-text-size", size);
+          buttons.forEach((button) => {
+            button.classList.toggle("is-active", button.dataset.size === size);
+          });
+          try {
+            localStorage.setItem("halos-text-size", size);
+          } catch (_) {}
+        };
+
+        const current = root.getAttribute("data-text-size") || "comfortable";
+        applySize(current);
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => applySize(button.dataset.size));
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,3 +1,8 @@
+---
+title: Identity
+deck: Why HALOS publishes its visual identity and design rationale in the open.
+---
+
 # HALOS Identity
 
 *Public identity, symbolism, and rationale*

@@ -1,3 +1,8 @@
+---
+title: Vision
+deck: Philosophy, motivation, and long-term direction for HALOS.
+---
+
 # HALOS Vision
 
 *Philosophy and Motivation*

@@ -84,6 +84,8 @@ HALOS is stewarded in public by [NorthHarbor Development](https://github.com/nor
 
 NorthHarbor AI is a separate commercial organization that may build on or be informed by HALOS, but HALOS itself is maintained here as an open framework.
 
+Questions, concerns, or thoughtful feedback are welcome at [halos@northharbor.dev](mailto:halos@northharbor.dev).
+
 ## About the Author
 
 HALOS was originated by Bob Hong, founder of NorthHarbor. It emerged through an iterative process combining human insight, practical experience building complex systems, and AI-assisted exploration. NorthHarbor develops HALOS in the open as a living framework for transparent, principled human-AI collaboration.

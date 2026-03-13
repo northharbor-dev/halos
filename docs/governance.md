@@ -1,3 +1,8 @@
+---
+title: Governance
+deck: How HALOS evolves through public stewardship, proposals, and review.
+---
+
 # HALOS Governance
 
 *How the Framework Evolves*
