@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://halos.northharbor.dev/spec/schema/changelog.schema.json",
+  "title": "HALOS Changelog",
+  "description": "Machine-readable changelog",
+  "type": "object",
+  "required": ["versions"],
+  "properties": {
+    "versions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["version", "date", "changes"],
+        "properties": {
+          "version": { "type": "string" },
+          "date": { "type": "string" },
+          "changes": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "proposals": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

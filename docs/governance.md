@@ -38,10 +38,11 @@ HALOS uses an RFC-style proposal process. The flow:
 1. **Draft** — Author creates a proposal using the [template](../proposals/TEMPLATE.md), adds it to `proposals/`, and opens discussion (e.g., via GitHub issue or discussion)
 2. **Review** — Community reviews for alignment with [principles](principles.md), clarity, and feasibility
 3. **Revision** — Author incorporates feedback; proposal may go through multiple rounds
-4. **Decision** — A maintainer or designated decider accepts, defers, or rejects
-5. **Integration** — Accepted proposals are reflected in the docs (new or updated specification, principle clarification, etc.)
+4. **Validation** — For spec changes: CI runs schema validation, spec generation, and conformance checks. **CI must pass** before any merge.
+5. **Decision** — A maintainer accepts, defers, or rejects (only when CI passes, for spec-related PRs)
+6. **Integration** — Accepted proposals are reflected in `spec/` or docs; see [spec/PUBLISHING.md](../spec/PUBLISHING.md)
 
-Proposals are numbered (e.g., `0001-`, `0002-`) and tracked in the `proposals/` directory. Status is indicated in the proposal header.
+Proposals are numbered (e.g., `0001-`, `0002-`) and tracked in the `proposals/` directory. Status is indicated in the proposal header and frontmatter.
 
 ## Scope of Proposals
 
@@ -87,7 +88,8 @@ Transparency is preferred. Rationale for decisions should be documented in the p
 ## Repository Maintenance
 
 - `main` is the canonical branch
-- Docs are in `docs/`; proposals in `proposals/`
+- Docs are in `docs/`; proposals in `proposals/`; machine-readable spec in `spec/`
+- **Validation gate:** PRs that touch `spec/` or `proposals/` must pass [CI](../.github/workflows/spec-validate.yml) before merge
 - Significant changes go through the proposal process; typos and minor fixes may be direct PRs
 
 ## Evolution of Governance

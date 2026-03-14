@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://halos.northharbor.dev/spec/schema/core.schema.json",
+  "title": "HALOS Core",
+  "description": "Core requirements for HALOS alignment",
+  "type": "object",
+  "required": ["version", "requirements"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+",
+      "description": "Version of the core spec"
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "description"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^HALOS-CORE-\\d+$"
+          },
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "source": {
+            "type": "string",
+            "description": "Link to principles or source doc"
+          }
+        }
+      }
+    }
+  }
+}

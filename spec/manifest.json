@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "specUrl": "https://halos.northharbor.dev/spec/manifest.json",
+  "core": {
+    "requirements": [
+      "HALOS-CORE-1",
+      "HALOS-CORE-2",
+      "HALOS-CORE-3",
+      "HALOS-CORE-4",
+      "HALOS-CORE-5",
+      "HALOS-CORE-6",
+      "HALOS-CORE-7",
+      "HALOS-CORE-8"
+    ]
+  },
+  "extensions": [],
+  "changelogUrl": "https://halos.northharbor.dev/spec/changelog.json",
+  "proposals": []
+}

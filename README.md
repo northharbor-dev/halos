@@ -48,6 +48,11 @@ halos/
 ├── README.md                 # This file
 ├── LICENSE                   # CC-BY-4.0
 ├── CONTRIBUTING.md           # How to contribute
+├── spec/                     # Machine-readable specification
+│   ├── manifest.json         # Discovery entry point for agents
+│   ├── core.json             # Core requirements (source of truth)
+│   ├── schema/               # JSON Schema definitions
+│   └── spec.md               # Human-readable spec (generated)
 ├── docs/
 │   ├── vision.md             # Philosophy and motivation
 │   ├── principles.md         # Foundational ideas
@@ -59,6 +64,11 @@ halos/
     ├── README.md             # Proposal process (RFC-style)
     └── TEMPLATE.md           # Template for new proposals
 ```
+
+## Specification
+
+- **[Manifest](spec/manifest.json)** — Machine-readable entry point; agents discover version, core, extensions
+- **[Spec (human-readable)](spec/spec.md)** — Core and optional extensions
 
 ## Documentation
 

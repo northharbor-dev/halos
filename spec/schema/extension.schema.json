@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://halos.northharbor.dev/spec/schema/extension.schema.json",
+  "title": "HALOS Extension",
+  "description": "Optional extension specification",
+  "type": "object",
+  "required": ["id", "version", "title", "description"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^HALOS-EXT-[a-z0-9-]+$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+"
+    },
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "description"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    }
+  }
+}

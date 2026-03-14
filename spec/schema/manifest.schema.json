@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://halos.northharbor.dev/spec/schema/manifest.schema.json",
+  "title": "HALOS Manifest",
+  "description": "Canonical discovery entry point for HALOS specification",
+  "type": "object",
+  "required": ["version", "specUrl", "core", "extensions", "changelogUrl"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(-[a-zA-Z0-9.-]+)?(\\+[a-zA-Z0-9.-]+)?$",
+      "description": "Semantic version of the spec"
+    },
+    "specUrl": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Canonical URL for this manifest"
+    },
+    "core": {
+      "type": "object",
+      "required": ["requirements"],
+      "properties": {
+        "requirements": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "IDs of core requirements (e.g. HALOS-CORE-1)"
+        }
+      }
+    },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "required"],
+        "properties": {
+          "id": { "type": "string" },
+          "required": { "type": "boolean", "const": false }
+        }
+      }
+    },
+    "changelogUrl": {
+      "type": "string",
+      "minLength": 1,
+      "description": "URL to changelog.json"
+    },
+    "proposals": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Proposal IDs that produced this version"
+    }
+  }
+}

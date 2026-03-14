@@ -1,0 +1,43 @@
+name: Spec Validate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'spec/**'
+      - 'proposals/**'
+      - 'scripts/generate-spec.js'
+  pull_request:
+    paths:
+      - 'spec/**'
+      - 'proposals/**'
+      - 'scripts/generate-spec.js'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate JSON Schema
+        run: |
+          npx --yes ajv-cli validate --spec=draft2020 \
+            -s spec/schema/manifest.schema.json -d spec/manifest.json
+          npx --yes ajv-cli validate --spec=draft2020 \
+            -s spec/schema/core.schema.json -d spec/core.json
+          npx --yes ajv-cli validate --spec=draft2020 \
+            -s spec/schema/changelog.schema.json -d spec/changelog.json
+
+      - name: Generate spec
+        run: node scripts/generate-spec.js
+
+      - name: Verify generated files
+        run: |
+          test -s spec/spec.md || (echo "spec/spec.md missing or empty" && exit 1)
+          test -s spec/CHANGELOG.md || (echo "spec/CHANGELOG.md missing or empty" && exit 1)
+          echo "Generated files OK"

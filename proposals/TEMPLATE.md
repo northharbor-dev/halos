@@ -1,3 +1,12 @@
+---
+id: "NNNN"
+status: draft
+type: specification
+date: "YYYY-MM-DD"
+author: "handle"
+affects: core
+---
+
 # NNNN — Title
 
 **Status:** draft | proposed | under-review | accepted | deferred | rejected  

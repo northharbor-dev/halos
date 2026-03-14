@@ -52,12 +52,30 @@ This process is inspired by [Internet RFCs](https://www.rfc-editor.org/), [Kuber
 Proposals are numbered sequentially: `0001`, `0002`, `0003`, …  
 The number is assigned when the proposal is first submitted. Gaps are allowed if a proposal is withdrawn.
 
+## Proposal Frontmatter
+
+Proposals should include YAML frontmatter for machine readability:
+
+```yaml
+---
+id: "0001"
+status: draft | proposed | under-review | accepted | deferred | rejected
+type: specification | clarification | process | principle
+date: "2025-03-15"
+author: "handle"
+affects: core | extensions | governance
+---
+```
+
+The [index](index.json) lists all proposals with id, status, type, date.
+
 ## After Acceptance
 
-- Specifications are integrated into `docs/` or a new `specs/` directory
+- Specifications are integrated into `spec/` (see [spec/PUBLISHING.md](../spec/PUBLISHING.md))
 - Clarifications update the relevant docs
 - Process changes update [governance.md](../docs/governance.md) or this README
 - The proposal file is updated with status `accepted` and a Decision section
+- **CI must pass** before merge — see [.github/workflows/spec-validate.yml](../.github/workflows/spec-validate.yml)
 
 ## Index
 
