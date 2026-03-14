@@ -25,6 +25,12 @@
           <img src="{{ '/identity-assets/selected/halos-halo-ring-institutional-randomized.svg' | relative_url }}" alt="HALOS mark">
           <span>HALOS</span>
         </a>
+        <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+        <div id="nav-menu" class="nav-collapse">
         <nav class="site-links" aria-label="Primary">
           <a href="{{ '/spec/spec.html' | relative_url }}" {% if page.url contains '/spec/' %}class="is-current"{% endif %}>Spec</a>
           <a href="{{ '/vision.html' | relative_url }}" {% if page.url == "/vision.html" %}class="is-current"{% endif %}>Vision</a>
@@ -37,18 +43,25 @@
           <a href="{{ '/blog.html' | relative_url }}" {% if page.url == "/blog.html" or page.date %}class="is-current"{% endif %}>Blog</a>
           <a href="https://github.com/northharbor-dev/halos">GitHub</a>
         </nav>
-        <div class="reading-controls">
-          <div class="text-size-control" aria-label="Text size selector">
-            <span class="text-size-control__label">Text</span>
-            <button type="button" class="text-size-control__button" data-size="compact" aria-label="Compact text size">A</button>
-            <button type="button" class="text-size-control__button" data-size="comfortable" aria-label="Comfortable text size">A</button>
-            <button type="button" class="text-size-control__button" data-size="large" aria-label="Large text size">A</button>
+        <div class="reading-controls-wrap">
+          <button type="button" class="reading-controls-toggle" aria-label="Expand reading options" aria-expanded="false" aria-controls="reading-panel">
+            <span class="reading-controls-toggle__label">Reading options</span>
+            <span class="reading-controls-toggle__chevron" aria-hidden="true">▼</span>
+          </button>
+          <div id="reading-panel" class="reading-controls">
+            <div class="text-size-control" aria-label="Text size selector">
+              <span class="text-size-control__label">Text</span>
+              <button type="button" class="text-size-control__button" data-size="compact" aria-label="Compact text size">A</button>
+              <button type="button" class="text-size-control__button" data-size="comfortable" aria-label="Comfortable text size">A</button>
+              <button type="button" class="text-size-control__button" data-size="large" aria-label="Large text size">A</button>
+            </div>
+            <div class="page-width-control" aria-label="Page width selector">
+              <span class="page-width-control__label">Width</span>
+              <button type="button" class="page-width-control__button" data-width="current" aria-label="Current width">Current</button>
+              <button type="button" class="page-width-control__button" data-width="wide" aria-label="Wide width">Wide</button>
+            </div>
           </div>
-          <div class="page-width-control" aria-label="Page width selector">
-            <span class="page-width-control__label">Width</span>
-            <button type="button" class="page-width-control__button" data-width="current" aria-label="Current width">Current</button>
-            <button type="button" class="page-width-control__button" data-width="wide" aria-label="Wide width">Wide</button>
-          </div>
+        </div>
         </div>
       </div>
     </header>
@@ -111,6 +124,35 @@
         };
         applyWidth(root.getAttribute("data-page-width") || "current");
         widthButtons.forEach((btn) => btn.addEventListener("click", () => applyWidth(btn.dataset.width)));
+
+        const navToggle = document.querySelector(".nav-toggle");
+        const navMenu = document.getElementById("nav-menu");
+        const siteShell = document.querySelector(".site-shell");
+        if (navToggle && navMenu && siteShell) {
+          navToggle.addEventListener("click", () => {
+            const open = siteShell.classList.toggle("nav-open");
+            navToggle.setAttribute("aria-expanded", open);
+            navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+          });
+          navMenu.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+              siteShell.classList.remove("nav-open");
+              navToggle.setAttribute("aria-expanded", "false");
+              navToggle.setAttribute("aria-label", "Open menu");
+            });
+          });
+        }
+
+        const readingToggle = document.querySelector(".reading-controls-toggle");
+        const readingPanel = document.getElementById("reading-panel");
+        const readingWrap = document.querySelector(".reading-controls-wrap");
+        if (readingToggle && readingPanel && readingWrap) {
+          readingToggle.addEventListener("click", () => {
+            const open = readingWrap.classList.toggle("reading-open");
+            readingToggle.setAttribute("aria-expanded", open);
+            readingToggle.setAttribute("aria-label", open ? "Collapse reading options" : "Expand reading options");
+          });
+        }
       })();
     </script>
   </body>

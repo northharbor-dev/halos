@@ -134,12 +134,61 @@ strong {
   font-weight: 600;
 }
 
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.nav-toggle:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: transform 140ms ease, opacity 140ms ease;
+}
+
+.site-shell.nav-open .nav-toggle__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.site-shell.nav-open .nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.site-shell.nav-open .nav-toggle__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.reading-controls-wrap {
+  margin-left: auto;
+}
+
+.reading-controls-toggle {
+  display: none;
+}
+
 .reading-controls {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 0.5rem;
-  margin-left: auto;
 }
 
 .text-size-control {
@@ -564,17 +613,84 @@ strong {
 
   .site-nav {
     align-items: flex-start;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .site-brand {
+    flex: 1;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-collapse {
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+    flex-basis: 100%;
+    transition: max-height 0.25s ease;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .site-shell.nav-open .nav-collapse {
+    max-height: 80vh;
   }
 
   .site-links {
     justify-content: flex-start;
     gap: 0.5rem;
+    padding-top: 0.75rem;
+  }
+
+  .reading-controls-wrap {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .reading-controls-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    margin-top: 0.5rem;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    background: transparent;
+    color: var(--text-soft);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 140ms ease, background 140ms ease;
+  }
+
+  .reading-controls-toggle:hover {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .reading-controls-toggle__chevron {
+    font-size: 0.7rem;
+    transition: transform 0.2s ease;
+  }
+
+  .reading-controls-wrap.reading-open .reading-controls-toggle__chevron {
+    transform: rotate(180deg);
   }
 
   .reading-controls {
     margin-left: 0;
     align-items: flex-start;
+    padding-top: 0.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+
+  .reading-controls-wrap.reading-open .reading-controls {
+    max-height: 12rem;
   }
 
   .hero {
