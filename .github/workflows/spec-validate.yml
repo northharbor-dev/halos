@@ -14,6 +14,7 @@ on:
       - 'proposals/**'
       - 'scripts/generate-spec.js'
       - 'scripts/validate-spec-immutability.js'
+  workflow_dispatch:
 
 jobs:
   validate:
