@@ -1,6 +1,6 @@
 ---
 id: "0003"
-status: proposed
+status: accepted
 type: specification
 date: "2026-03-15"
 author: "halos"
@@ -9,7 +9,7 @@ affects: core
 
 # 0003 — HALOS Signatory Registry
 
-**Status:** proposed  
+**Status:** accepted  
 **Type:** specification  
 **Date:** 2026-03-15  
 **Author:** halos
@@ -144,12 +144,16 @@ A page at `halos.northharbor.dev/supporters` (or `/signatories`) displays signat
 
 Badges are suitable for GitHub profiles, personal websites, research papers, and conference materials. Each tier has its own asset; provisioning (design, formats) is in scope for this proposal.
 
-### Potential Extensions (Out of Scope for This Proposal)
+### Deferred Scope (Follow-Up Proposal)
 
-- **Organizational signatories** — Companies or institutions signing as entities; would need a separate schema or list.
+The following items were explicitly deferred from this proposal. A follow-up proposal should address:
+
+- **Phase 2: Web signatory form** — When a backend exists; form inputs, validation, sync to JSON or DB.
+- **Phase 2+: Server-side pagination and search** — For registries beyond 100 signatories.
+- **Organizational signatories** — Companies or institutions signing as entities; separate schema or list.
 - **Project badges** — *"This project supports HALOS principles"* for repos and software.
-- **HALOS Trust Graph** — Future governance roles, working groups, or attribution systems built on signatory identity.
-- **Cryptographically verifiable signatures** — PGP, commit-signed entries, or similar proof-of-identity. Aligns with provenance; deferred to a future proposal.
+- **HALOS Trust Graph** — Governance roles, working groups, attribution systems built on signatory identity.
+- **Cryptographically verifiable signatures** — PGP, commit-signed entries, or similar proof-of-identity.
 
 ## Alignment with Principles
 
@@ -184,6 +188,6 @@ Badges are suitable for GitHub profiles, personal websites, research papers, and
 
 ## Decision
 
-**Outcome:** *(pending)*  
-**Date:** —  
-**Notes:** —
+**Outcome:** accepted  
+**Date:** 2026-03-15  
+**Notes:** Phase 1 implemented (signatories.json, CONTRIBUTING.md, validation, Supporters page with table layout and pagination, badges, founding signatories). Deferred scope—web form, server-side pagination/search, organizational signatories, project badges, Trust Graph, cryptographic verification—to be addressed in a follow-up proposal.
