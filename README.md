@@ -48,8 +48,10 @@ HALOS addresses these questions by providing:
 ```
 halos/
 ├── README.md                 # This file
+├── AGENTS.md                 # HALOS agent (spec-implementing)
 ├── LICENSE                   # CC-BY-4.0
 ├── CONTRIBUTING.md           # How to contribute
+├── .cursor/                  # HALOS contract (always), agent rules, spec conformance
 ├── spec/                     # Machine-readable specification
 │   ├── manifest.json         # Discovery entry point for agents
 │   ├── core.json             # Core requirements (source of truth)
@@ -66,6 +68,10 @@ halos/
     ├── README.md             # Proposal process (RFC-style)
     └── TEMPLATE.md           # Template for new proposals
 ```
+
+## Agents
+
+- **[AGENTS.md](AGENTS.md)** — HALOS agent that fully implements the spec when co-creating the framework
 
 ## Specification
 

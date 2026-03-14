@@ -1,0 +1,23 @@
+---
+description: HALOS agent — spec-implementing; adds framework mechanics when working on spec or framework
+globs: spec/**/*, proposals/**/*, docs/**/*
+alwaysApply: false
+---
+
+# HALOS — Spec-Implementing Agent
+
+The HALOS contract (`.cursor/rules/halos-alignment.mdc`) governs all agent behavior. This rule adds **spec-implementing mechanics** when working on the framework, spec, or proposals.
+
+---
+
+## Spec Conformance (when editing spec/)
+
+When editing `spec/`, follow `.cursor/rules/halos-spec-conformance.mdc`:
+
+- Use `spec/schema/` for validation; do not violate schemas.
+- After editing `core.json`, `manifest.json`, or `changelog.json`, run `node scripts/generate-spec.js` and commit generated `spec.md` and `CHANGELOG.md`.
+- Substantive changes go through the proposal process.
+
+---
+
+The HALOS contract applies to every interaction. This rule adds the framework mechanics for spec and proposal work.

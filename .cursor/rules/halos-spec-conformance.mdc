@@ -1,12 +1,12 @@
 ---
 description: When co-creating the HALOS spec, agents must conform to the established spec structure and process
-globs: halos/spec/**/*
+globs: spec/**/*
 alwaysApply: false
 ---
 
 # HALOS Spec Conformance
 
-When editing files under `halos/spec/`, you are co-creating the HALOS specification. Follow the pre-established spec so that agents and tooling can rely on a consistent structure.
+When editing files under `spec/`, you are co-creating the HALOS specification. Follow the pre-established spec so that agents and tooling can rely on a consistent structure.
 
 ## Canonical Structure
 
@@ -27,7 +27,7 @@ When editing files under `halos/spec/`, you are co-creating the HALOS specificat
 Run the generate script so human-readable outputs stay in sync:
 
 ```bash
-cd halos && node scripts/generate-spec.js
+node scripts/generate-spec.js
 ```
 
 This produces `spec/spec.md` and `spec/CHANGELOG.md`. Commit these with your JSON changes.
