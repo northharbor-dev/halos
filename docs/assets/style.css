@@ -636,6 +636,12 @@ strong {
 
   .site-shell.nav-open .nav-collapse {
     max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  /* Extra room when reading options are open (e.g. Cursor browser's short panel) */
+  .site-shell.nav-open .nav-collapse:has(.reading-controls-wrap.reading-open) {
+    max-height: min(90vh, 500px);
   }
 
   .site-links {
