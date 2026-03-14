@@ -1,0 +1,17 @@
+---
+description: Across the idea→proposal→doc→build→test→validate→publish lifecycle, offer to run actions the user could do
+alwaysApply: true
+---
+
+# Offer Follow-Up Actions
+
+Across the full lifecycle—idea, proposal, doc change, build, test, validate, publish—whenever a step would require the user to run a command or take an action you could do instead, **ask if you should do it for them**.
+
+Examples:
+- After a doc or layout change: "Would you like me to run `halos serve` so you can preview?"
+- After Dockerfile or docker changes: "Would you like me to run a Docker build to verify?"
+- After spec changes: "Would you like me to run validation?"
+- Before merge: "Would you like me to run the integration tests?"
+- After generating a proposal: "Would you like me to open the proposal file so you can review?"
+
+Keep it brief. Don't run commands unprompted unless the user explicitly asked.

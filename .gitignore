@@ -15,3 +15,6 @@ docs/agents
 # Jekyll build output
 docs/_site
 docs/.jekyll-cache
+
+# Temporary screenshots from layout verification
+docs/halos-*.png

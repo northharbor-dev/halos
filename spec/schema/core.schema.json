@@ -8,8 +8,8 @@
   "properties": {
     "version": {
       "type": "string",
-      "pattern": "^\\d+\\.\\d+\\.\\d+",
-      "description": "Version of the core spec"
+      "pattern": "^\\d+\\.\\d+\\.\\d+(-[a-zA-Z0-9.-]+)?(\\+[a-zA-Z0-9.-]+)?$",
+      "description": "Semantic version of the core spec"
     },
     "requirements": {
       "type": "array",

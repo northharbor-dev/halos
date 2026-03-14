@@ -30,8 +30,14 @@ docker run --rm -v "$(pwd):/workspace" halos validate
 npx --yes ajv-cli validate --spec=draft2020 -s spec/schema/manifest.schema.json -d spec/manifest.json
 npx --yes ajv-cli validate --spec=draft2020 -s spec/schema/core.schema.json -d spec/core.json
 npx --yes ajv-cli validate --spec=draft2020 -s spec/schema/changelog.schema.json -d spec/changelog.json
+node scripts/validate-spec-immutability.js origin/main
 node scripts/generate-spec.js
 test -s spec/spec.md && test -s spec/CHANGELOG.md
+```
+
+**Pre-push immutability check:**
+```bash
+node scripts/validate-spec-immutability.js origin/main
 ```
 
 ### Common Errors
@@ -73,6 +79,14 @@ Requires: Jekyll, Python 3. Copies spec and agents into docs, runs `jekyll build
 - **[spec-validate.yml](.github/workflows/spec-validate.yml)** — Schema validation, generate-spec, verify outputs
 - **[deploy-pages.yml](.github/workflows/deploy-pages.yml)** — Build site, deploy to GitHub Pages
 - **[docker-build.yml](.github/workflows/docker-build.yml)** — Build and push Docker image
+
+## Integration tests
+
+```bash
+./scripts/integration-test.sh
+```
+
+Spins up the site in Docker, checks all paths (200s, expected content), verifies 404 for unknown paths. Run before committing or deploying. CI runs this as a pre-deploy gate.
 
 ## Before Committing
 

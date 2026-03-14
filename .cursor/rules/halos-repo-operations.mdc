@@ -25,6 +25,7 @@ Before committing or publishing, verify that operations work as intended.
 
 - Ensure pages are generated and meet expectations before committing and publishing.
 - Run build locally or via Docker: `halos build` or `halos serve`; verify key pages (e.g. `spec/spec.html`, index, for-agents) exist and render.
+- Run integration tests before committing: `./scripts/integration-test.sh` (spins up Docker serve, tests all paths).
 
 ### Supply chain and security best practices
 

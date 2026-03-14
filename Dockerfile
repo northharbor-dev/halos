@@ -42,8 +42,8 @@ COPY FOR_AGENTS.md AGENTS.md .cursorrules /halos/
 COPY .cursor /halos/.cursor
 
 # Copy scripts
-COPY docker/validate.sh docker/build.sh docker/serve.sh docker/entrypoint.sh docker/resolve.sh docker/info.sh /
-RUN chmod +x /validate.sh /build.sh /serve.sh /entrypoint.sh /resolve.sh /info.sh
+COPY docker/validate.sh docker/build.sh docker/serve.sh docker/serve-watch.sh docker/entrypoint.sh docker/resolve.sh docker/info.sh /
+RUN chmod +x /validate.sh /build.sh /serve.sh /serve-watch.sh /entrypoint.sh /resolve.sh /info.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["validate"]

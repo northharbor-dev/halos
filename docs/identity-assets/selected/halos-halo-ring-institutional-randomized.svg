@@ -1,4 +1,4 @@
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1024" height="1024" viewBox="80 80 352 352" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="256" y1="24" x2="256" y2="488" gradientUnits="userSpaceOnUse">
       <stop stop-color="#061228"/>
@@ -18,7 +18,7 @@
     </filter>
   </defs>
 
-  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <rect x="80" y="80" width="352" height="352" rx="40" fill="url(#bg)"/>
 
   <circle cx="256" cy="256" r="12" fill="#EDFDFE" filter="url(#glow)"/>
   <circle cx="256" cy="256" r="38" stroke="#A5E5FF" stroke-opacity="0.55" stroke-width="2"/>

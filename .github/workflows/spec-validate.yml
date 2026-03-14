@@ -7,17 +7,21 @@ on:
       - 'spec/**'
       - 'proposals/**'
       - 'scripts/generate-spec.js'
+      - 'scripts/validate-spec-immutability.js'
   pull_request:
     paths:
       - 'spec/**'
       - 'proposals/**'
       - 'scripts/generate-spec.js'
+      - 'scripts/validate-spec-immutability.js'
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -32,6 +36,16 @@ jobs:
             -s spec/schema/core.schema.json -d spec/core.json
           npx --yes ajv-cli validate --spec=draft2020 \
             -s spec/schema/changelog.schema.json -d spec/changelog.json
+
+      - name: Validate spec immutability
+        run: |
+          BASE_REF=$(if [ -n "${{ github.base_ref }}" ]; then
+            git merge-base origin/${{ github.base_ref }} HEAD
+          else
+            echo "HEAD~1"
+          fi)
+          export BASE_REF
+          node scripts/validate-spec-immutability.js
 
       - name: Generate spec
         run: node scripts/generate-spec.js

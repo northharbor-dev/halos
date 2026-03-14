@@ -12,11 +12,33 @@ When publishing a new spec version after a proposal is accepted:
 
 4. **Generate** — Run `node scripts/generate-spec.js` from `halos/` to produce `spec/spec.md` and `spec/CHANGELOG.md`.
 
-5. **CI** — Push PR. CI must pass (schema validation, generate, conformance).
+5. **CI** — Push PR. CI must pass (schema validation, immutability, generate, conformance).
 
 6. **Merge** — Maintainer reviews; if satisfied and CI passes, accepts and merges.
 
 7. **Post-merge** — Tag release (e.g. `git tag v1.0.0`) and update proposal file: set `status: accepted`, add Decision outcome and date.
+
+---
+
+## Spec Immutability
+
+**Published versions cannot be changed.** Once a version appears in `changelog.json`, its spec content (manifest, core, changelog entries) is immutable. Changes require a new SemVer bump.
+
+**Local pre-push check:**
+
+```bash
+node scripts/validate-spec-immutability.js origin/main
+```
+
+Run before pushing to catch issues early. CI runs this automatically.
+
+---
+
+## SemVer
+
+- **Major** — Breaking changes (e.g. remove/rename requirements)
+- **Minor** — Additive changes (new requirements, extensions)
+- **Patch** — Fixes, clarifications, non-breaking edits
 
 ---
 

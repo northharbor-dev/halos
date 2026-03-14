@@ -6,6 +6,10 @@ sass:
   quiet_deps: true
   silence_deprecations:
     - import
+collections:
+  journal:
+    output: false
+
 defaults:
   - scope:
       path: ""

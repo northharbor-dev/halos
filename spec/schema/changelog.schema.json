@@ -12,7 +12,11 @@
         "type": "object",
         "required": ["version", "date", "changes"],
         "properties": {
-          "version": { "type": "string" },
+          "version": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+\\.\\d+(-[a-zA-Z0-9.-]+)?(\\+[a-zA-Z0-9.-]+)?$",
+            "description": "Semantic version"
+          },
           "date": { "type": "string" },
           "changes": {
             "type": "array",

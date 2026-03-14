@@ -16,7 +16,22 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build HALOS image
+        run: docker build -t halos .
+
+      - name: Run integration tests
+        run: |
+          chmod +x scripts/integration-test.sh
+          TEST_PORT=3999 ./scripts/integration-test.sh
+
   build:
+    needs: integrate
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

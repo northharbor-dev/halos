@@ -10,7 +10,7 @@
       (() => {
         try {
           const saved = localStorage.getItem("halos-text-size");
-          if (saved) document.documentElement.setAttribute("data-text-size", saved);
+          document.documentElement.setAttribute("data-text-size", saved || "large");
         } catch (_) {}
       })();
     </script>
@@ -24,13 +24,15 @@
           <span>HALOS</span>
         </a>
         <nav class="site-links" aria-label="Primary">
-          <a href="{{ '/spec/spec.html' | relative_url }}">Spec</a>
-          <a href="{{ '/vision.html' | relative_url }}">Vision</a>
-          <a href="{{ '/principles.html' | relative_url }}">Principles</a>
-          <a href="{{ '/governance.html' | relative_url }}">Governance</a>
-          <a href="{{ '/everyday-humans.html' | relative_url }}">Everyday Humans</a>
-          <a href="{{ '/for-agents.html' | relative_url }}">For Agents</a>
-          <a href="{{ '/help.html' | relative_url }}">Help</a>
+          <a href="{{ '/spec/spec.html' | relative_url }}" {% if page.url contains '/spec/' %}class="is-current"{% endif %}>Spec</a>
+          <a href="{{ '/vision.html' | relative_url }}" {% if page.url == "/vision.html" %}class="is-current"{% endif %}>Vision</a>
+          <a href="{{ '/principles.html' | relative_url }}" {% if page.url == "/principles.html" %}class="is-current"{% endif %}>Principles</a>
+          <a href="{{ '/governance.html' | relative_url }}" {% if page.url == "/governance.html" %}class="is-current"{% endif %}>Governance</a>
+          <a href="{{ '/everyday-humans.html' | relative_url }}" {% if page.url == "/everyday-humans.html" %}class="is-current"{% endif %}>Everyday Humans</a>
+          <a href="{{ '/for-agents.html' | relative_url }}" {% if page.url == "/for-agents.html" %}class="is-current"{% endif %}>For Agents</a>
+          <a href="{{ '/help.html' | relative_url }}" {% if page.url == "/help.html" %}class="is-current"{% endif %}>Help</a>
+          <a href="{{ '/journal.html' | relative_url }}" {% if page.url == "/journal.html" %}class="is-current"{% endif %}>Journal</a>
+          <a href="{{ '/blog.html' | relative_url }}" {% if page.url == "/blog.html" or page.date %}class="is-current"{% endif %}>Blog</a>
           <a href="https://github.com/northharbor-dev/halos">GitHub</a>
         </nav>
         <div class="text-size-control" aria-label="Text size selector">
@@ -43,16 +45,35 @@
     </header>
 
     <main class="page-shell">
+      {% if page.url == "/" %}
+      <div class="home-prose">
+        {{ content }}
+      </div>
+      {% endif %}
       {% unless page.url == "/" %}
-      <section class="doc-hero">
-        <p class="doc-hero__eyebrow">HALOS Document</p>
-        <h1>{{ page.title }}</h1>
-        {% if page.deck %}
-        <p class="doc-hero__deck">{{ page.deck }}</p>
-        {% endif %}
-      </section>
+      <div class="page-prose">
+        <section class="doc-hero">
+          {% if page.date %}
+          <div class="post-byline">
+            <div class="post-byline__avatar-wrap">
+              <img class="post-byline__avatar" src="{{ '/identity-assets/selected/halos-halo-ring-institutional-randomized.svg' | relative_url }}" alt="HALOS">
+            </div>
+            <div class="post-byline__meta">
+              <h1>{{ page.title }}</h1>
+              <time datetime="{{ page.date | date_to_xmlschema }}">Posted {{ page.date | date: "%B %d, %Y" }}</time>
+            </div>
+          </div>
+          {% else %}
+          <p class="doc-hero__eyebrow">HALOS Document</p>
+          <h1>{{ page.title }}</h1>
+          {% if page.deck %}
+          <p class="doc-hero__deck">{{ page.deck }}</p>
+          {% endif %}
+          {% endif %}
+        </section>
+        {{ content }}
+      </div>
       {% endunless %}
-      {{ content }}
     </main>
 
     <footer class="site-footer">
@@ -74,7 +95,7 @@
           } catch (_) {}
         };
 
-        const current = root.getAttribute("data-text-size") || "comfortable";
+        const current = root.getAttribute("data-text-size") || "large";
         applySize(current);
 
         buttons.forEach((button) => {

@@ -15,6 +15,7 @@ Ask the HALOS agent for help. In chat, try:
 |------------|-----|
 | Validate spec | `docker run --rm halos validate` or [docker/README.md](docker/README.md) |
 | Build and serve site | `./scripts/serve.sh` or `docker run -p 3000:3000 halos serve` |
+| Run integration tests | `./scripts/integration-test.sh` |
 | Draft a proposal | [proposals/TEMPLATE.md](proposals/TEMPLATE.md), [proposals/README.md](proposals/README.md) |
 | Make a small edit | [CONTRIBUTING.md](CONTRIBUTING.md) |
 | Understand principles | [docs/principles.md](docs/principles.md), [docs/everyday-humans.md](docs/everyday-humans.md) |

@@ -11,6 +11,7 @@ The image includes a **bundled copy** of the spec and docs. You can run it witho
 | `validate` | Validate spec (schema + generate + verify) — default |
 | `build`    | Build the GitHub Pages site (spec + agents + Jekyll) |
 | `serve`    | Build site and serve at http://localhost:3000 |
+| `watch`    | Serve with Jekyll live reload — browser auto-refreshes on file changes |
 | `info`     | Print spec version and source (bundled vs mounted) |
 
 ## Distribution (no mount)
@@ -33,6 +34,10 @@ From the halos repository root, mount the workspace to validate or serve your lo
 docker run --rm -v "$(pwd):/workspace" ghcr.io/northharbor-dev/halos-validate
 docker run --rm -v "$(pwd):/workspace" ghcr.io/northharbor-dev/halos-validate build
 docker run --rm -v "$(pwd):/workspace" -p 3000:3000 ghcr.io/northharbor-dev/halos-validate serve
+
+# With live reload (edit docs/ or spec/ — browser refreshes automatically)
+# Expose both 3000 and 35729 for the page and LiveReload websocket
+docker run --rm -v "$(pwd):/workspace" -p 3000:3000 -p 35729:35729 ghcr.io/northharbor-dev/halos-validate watch
 ```
 
 When `/workspace` contains `spec/manifest.json`, the image uses your mounted repo; otherwise it uses the bundled spec.
@@ -52,6 +57,16 @@ The image is built and pushed to `ghcr.io/northharbor-dev/halos-validate` on pus
 ```bash
 docker buildx build --platform linux/amd64,linux/arm64 -t halos .
 ```
+
+## Integration tests
+
+Run the integration test suite (starts server, checks all paths, stops):
+
+```bash
+./scripts/integration-test.sh
+```
+
+Uses Docker by default. Set `BASE_URL` to test an already-running server.
 
 ## Use Cases
 

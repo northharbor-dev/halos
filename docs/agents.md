@@ -28,7 +28,11 @@ Agent discovery files, rules, and skills are copied from the repository during s
 
 | Skill | Link |
 |------|------|
-| agent-convention-sync | [SKILL.md](/agents/skills/agent-convention-sync/SKILL.md) |
+| halos-help | [SKILL.html](/agents/skills/halos-help/SKILL.html) |
+| proposal-assist | [SKILL.html](/agents/skills/proposal-assist/SKILL.html) |
+| validation-and-build | [SKILL.html](/agents/skills/validation-and-build/SKILL.html) |
+| spec-explainer | [SKILL.html](/agents/skills/spec-explainer/SKILL.html) |
+| agent-convention-sync | [SKILL.html](/agents/skills/agent-convention-sync/SKILL.html) |
 
 ## Agents manifest
 

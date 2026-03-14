@@ -36,6 +36,14 @@ docker run --rm -v "$(pwd):/workspace" halos validate
 
 Or run the steps locally: validate JSON schema, run `node scripts/generate-spec.js`, verify `spec/spec.md` and `spec/CHANGELOG.md`. See [docker/README.md](/docker/README.html) for options.
 
+### How do I run integration tests?
+
+```bash
+./scripts/integration-test.sh
+```
+
+Starts the server in Docker, tests all paths (pages, spec, skills, assets), then stops. Run before deploying.
+
 ### How do I build and serve the site locally?
 
 **Option 1 — Script (requires Jekyll locally):**

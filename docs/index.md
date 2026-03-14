@@ -46,6 +46,10 @@ title: HALOS
       <h3>Agent Files</h3>
       <p>Discovery files, rules, and skills served on this site.</p>
     </a>
+    <a class="card" href="journal.html">
+      <h3>Journal</h3>
+      <p>Living history: decisions, milestones, and progress in HALOS's voice.</p>
+    </a>
   </div>
 </section>
 

@@ -40,7 +40,7 @@ All files avoid duplicating the full contract; they point to `spec/core.json` an
 
 ## Maintenance
 
-As agent ecosystems evolve, new conventions may emerge (e.g., `.agentrules`, `AI_CONTEXT.md`, OSSA manifest at `.well-known/agents/`). The [agent-convention-sync](/agents/skills/agent-convention-sync/SKILL.md) skill guides agents to:
+As agent ecosystems evolve, new conventions may emerge (e.g., `.agentrules`, `AI_CONTEXT.md`, OSSA manifest at `.well-known/agents/`). The [agent-convention-sync](/agents/skills/agent-convention-sync/SKILL.html) skill guides agents to:
 
 - Search for new or changed agent-instruction conventions
 - Propose additions or revisions to the discovery files
