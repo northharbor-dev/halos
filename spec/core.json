@@ -5,49 +5,49 @@
       "id": "HALOS-CORE-1",
       "title": "Human Primacy",
       "description": "Humans are originators of meaningful creative direction. Agents assist and amplify; human judgment overrides agent output when in tension.",
-      "source": "docs/principles.md#1-human-primacy"
+      "source": "/principles.html#1-human-primacy"
     },
     {
       "id": "HALOS-CORE-2",
       "title": "Ideas as Assets",
       "description": "Ideas and creative works have intrinsic value. Originators can claim authorship; lineage can be traced; value flows to contributors.",
-      "source": "docs/principles.md#2-ideas-as-assets"
+      "source": "/principles.html#2-ideas-as-assets"
     },
     {
       "id": "HALOS-CORE-3",
       "title": "Attribution and Provenance",
       "description": "Contribution must be traceable. Human contributions identifiable; agent involvement disclosed; provenance representable.",
-      "source": "docs/principles.md#3-attribution-and-provenance"
+      "source": "/principles.html#3-attribution-and-provenance"
     },
     {
       "id": "HALOS-CORE-4",
       "title": "Transparency of AI Involvement",
       "description": "When AI participates in creation, that participation must be visible. No hidden or undisclosed agent contribution when it matters.",
-      "source": "docs/principles.md#4-transparency-of-ai-involvement"
+      "source": "/principles.html#4-transparency-of-ai-involvement"
     },
     {
       "id": "HALOS-CORE-5",
       "title": "Ethical Guardrails",
       "description": "Human–agent collaboration operates within ethical boundaries. Harmful uses out of scope; no deception about AI involvement; human agency preserved.",
-      "source": "docs/principles.md#5-ethical-guardrails"
+      "source": "/principles.html#5-ethical-guardrails"
     },
     {
       "id": "HALOS-CORE-6",
       "title": "Evolving Standards, Stable Principles",
       "description": "Standards and specifications may change; principles should not. Principles are the anchor.",
-      "source": "docs/principles.md#6-evolving-standards-stable-principles"
+      "source": "/principles.html#6-evolving-standards-stable-principles"
     },
     {
       "id": "HALOS-CORE-7",
       "title": "Governance Through Proposal",
       "description": "The framework evolves through open proposal and review. Changes follow a documented process.",
-      "source": "docs/principles.md#7-governance-through-proposal"
+      "source": "/principles.html#7-governance-through-proposal"
     },
     {
       "id": "HALOS-CORE-8",
       "title": "Innovation with Accountability",
       "description": "Experimentation is encouraged; innovators must articulate how their work aligns with or departs from the principles.",
-      "source": "docs/principles.md#8-innovation-with-accountability"
+      "source": "/principles.html#8-innovation-with-accountability"
     }
   ]
 }

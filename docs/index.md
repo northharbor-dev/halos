@@ -18,6 +18,10 @@ title: HALOS
 <section class="section-card">
   <h2>Start Here</h2>
   <div class="card-grid">
+    <a class="card" href="spec/spec.html">
+      <h3>Specification</h3>
+      <p>Machine-readable spec: Core and Extensions for HALOS alignment.</p>
+    </a>
     <a class="card" href="vision.html">
       <h3>Vision</h3>
       <p>Philosophy, motivation, and long-term direction.</p>

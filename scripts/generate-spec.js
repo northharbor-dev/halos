@@ -18,7 +18,13 @@ function writeFile(name, content) {
 }
 
 function generateSpecMd(manifest, core, extensions) {
-  let md = `# HALOS Specification v${manifest.version}\n\n`;
+  let md = `---
+layout: default
+title: Specification
+deck: Machine-readable Core and Extensions for HALOS alignment
+---
+
+# HALOS Specification v${manifest.version}\n\n`;
   md += `*Machine-readable source: [manifest.json](manifest.json), [core.json](core.json)*\n\n`;
   md += `---\n\n`;
 

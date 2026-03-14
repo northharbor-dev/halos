@@ -7,3 +7,6 @@
 # Local
 .env
 .env.local
+
+# Build artifact: spec copied into docs for Jekyll
+docs/spec
