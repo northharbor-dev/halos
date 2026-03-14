@@ -9,8 +9,10 @@
     <script>
       (() => {
         try {
-          const saved = localStorage.getItem("halos-text-size");
-          document.documentElement.setAttribute("data-text-size", saved || "large");
+          const savedSize = localStorage.getItem("halos-text-size");
+          document.documentElement.setAttribute("data-text-size", savedSize || "large");
+          const savedWidth = localStorage.getItem("halos-page-width");
+          document.documentElement.setAttribute("data-page-width", savedWidth || "current");
         } catch (_) {}
       })();
     </script>
@@ -35,11 +37,18 @@
           <a href="{{ '/blog.html' | relative_url }}" {% if page.url == "/blog.html" or page.date %}class="is-current"{% endif %}>Blog</a>
           <a href="https://github.com/northharbor-dev/halos">GitHub</a>
         </nav>
-        <div class="text-size-control" aria-label="Text size selector">
-          <span class="text-size-control__label">Text</span>
-          <button type="button" class="text-size-control__button" data-size="compact" aria-label="Compact text size">A</button>
-          <button type="button" class="text-size-control__button" data-size="comfortable" aria-label="Comfortable text size">A</button>
-          <button type="button" class="text-size-control__button" data-size="large" aria-label="Large text size">A</button>
+        <div class="reading-controls">
+          <div class="text-size-control" aria-label="Text size selector">
+            <span class="text-size-control__label">Text</span>
+            <button type="button" class="text-size-control__button" data-size="compact" aria-label="Compact text size">A</button>
+            <button type="button" class="text-size-control__button" data-size="comfortable" aria-label="Comfortable text size">A</button>
+            <button type="button" class="text-size-control__button" data-size="large" aria-label="Large text size">A</button>
+          </div>
+          <div class="page-width-control" aria-label="Page width selector">
+            <span class="page-width-control__label">Width</span>
+            <button type="button" class="page-width-control__button" data-width="current" aria-label="Current width">Current</button>
+            <button type="button" class="page-width-control__button" data-width="wide" aria-label="Wide width">Wide</button>
+          </div>
         </div>
       </div>
     </header>
@@ -84,23 +93,24 @@
     <script>
       (() => {
         const root = document.documentElement;
-        const buttons = document.querySelectorAll(".text-size-control__button");
+
+        const sizeButtons = document.querySelectorAll(".text-size-control__button");
         const applySize = (size) => {
           root.setAttribute("data-text-size", size);
-          buttons.forEach((button) => {
-            button.classList.toggle("is-active", button.dataset.size === size);
-          });
-          try {
-            localStorage.setItem("halos-text-size", size);
-          } catch (_) {}
+          sizeButtons.forEach((btn) => btn.classList.toggle("is-active", btn.dataset.size === size));
+          try { localStorage.setItem("halos-text-size", size); } catch (_) {}
         };
+        applySize(root.getAttribute("data-text-size") || "large");
+        sizeButtons.forEach((btn) => btn.addEventListener("click", () => applySize(btn.dataset.size)));
 
-        const current = root.getAttribute("data-text-size") || "large";
-        applySize(current);
-
-        buttons.forEach((button) => {
-          button.addEventListener("click", () => applySize(button.dataset.size));
-        });
+        const widthButtons = document.querySelectorAll(".page-width-control__button");
+        const applyWidth = (width) => {
+          root.setAttribute("data-page-width", width);
+          widthButtons.forEach((btn) => btn.classList.toggle("is-active", btn.dataset.width === width));
+          try { localStorage.setItem("halos-page-width", width); } catch (_) {}
+        };
+        applyWidth(root.getAttribute("data-page-width") || "current");
+        widthButtons.forEach((btn) => btn.addEventListener("click", () => applyWidth(btn.dataset.width)));
       })();
     </script>
   </body>

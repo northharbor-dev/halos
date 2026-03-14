@@ -15,6 +15,11 @@
   --body-leading: 1.78;
   --deck-size: 1.2rem;
   --card-size: 1.06rem;
+  --prose-width: 72ch;
+}
+
+html[data-page-width="wide"] {
+  --prose-width: 108ch;
 }
 
 * {
@@ -26,24 +31,24 @@ html {
 }
 
 html[data-text-size="compact"] {
-  --body-size: 1rem;
-  --body-leading: 1.7;
-  --deck-size: 1.06rem;
-  --card-size: 0.95rem;
+  --body-size: 0.9rem;
+  --body-leading: 1.65;
+  --deck-size: 0.95rem;
+  --card-size: 0.85rem;
 }
 
 html[data-text-size="comfortable"] {
   --body-size: 1.12rem;
   --body-leading: 1.78;
-  --deck-size: 1.16rem;
+  --deck-size: 1.18rem;
   --card-size: 1rem;
 }
 
 html[data-text-size="large"] {
-  --body-size: 1.34rem;
-  --body-leading: 1.86;
-  --deck-size: 1.32rem;
-  --card-size: 1.14rem;
+  --body-size: 1.5rem;
+  --body-leading: 1.9;
+  --deck-size: 1.45rem;
+  --card-size: 1.25rem;
 }
 
 body {
@@ -129,11 +134,18 @@ strong {
   font-weight: 600;
 }
 
+.reading-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
 .text-size-control {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  margin-left: auto;
   padding: 0.28rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 999px;
@@ -185,13 +197,56 @@ strong {
   box-shadow: inset 0 0 0 1px rgba(107, 208, 255, 0.2);
 }
 
+.page-width-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.page-width-control__label {
+  padding: 0 0.35rem 0 0.5rem;
+  color: var(--text-soft);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.page-width-control__button {
+  padding: 0.25rem 0.6rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-soft);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.page-width-control__button:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.page-width-control__button.is-active {
+  color: var(--halo);
+  background: rgba(107, 208, 255, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(107, 208, 255, 0.2);
+}
+
 .page-shell {
   padding: 3rem 0 5rem;
 }
 
 /* Single prose column: doc-hero and body share same left edge */
 .page-prose {
-  max-width: 66ch;
+  max-width: var(--prose-width);
   margin-left: auto;
   margin-right: auto;
 }
@@ -244,14 +299,14 @@ strong {
 .page-shell p,
 .page-shell li,
 .page-shell ul {
-  max-width: 66ch;
+  max-width: var(--prose-width);
   margin-left: auto;
   margin-right: auto;
 }
 
 /* Homepage: single centered column for consistent alignment */
 .home-prose {
-  max-width: 66ch;
+  max-width: var(--prose-width);
   margin-left: auto;
   margin-right: auto;
 }
@@ -310,13 +365,13 @@ strong {
 .hero p {
   width: 100%;
   margin-bottom: 0.7rem;
-  text-align: left;
+  text-align: center;
 }
 
 .hero h1 {
   width: 100%;
   margin-bottom: 0.55rem;
-  text-align: left;
+  text-align: center;
 }
 
 .hero p strong {
@@ -425,7 +480,7 @@ strong {
 .journal-entry__body {
   color: var(--text-soft);
   font-size: var(--body-size);
-  max-width: 66ch;
+  max-width: var(--prose-width);
   margin-left: auto;
   margin-right: auto;
 }
@@ -441,7 +496,7 @@ strong {
   max-width: 100%;
 }
 
-/* Blog post byline with avatar — avatar ~2× size, centered between title and date */
+/* Blog post byline with avatar — modest size, aligned with title/date */
 .post-byline {
   display: flex;
   align-items: flex-start;
@@ -450,12 +505,12 @@ strong {
 
 .post-byline__avatar-wrap {
   flex-shrink: 0;
-  padding-top: 2.5rem; /* Shift avatar down so bottom aligns with line below date stamp */
+  padding-top: 0.35rem; /* Align avatar top with title line */
 }
 
 .post-byline__avatar {
-  width: clamp(4.8rem, 7vw, 8.4rem);
-  height: clamp(4.8rem, 7vw, 8.4rem);
+  width: clamp(2.5rem, 4vw, 3.25rem);
+  height: clamp(2.5rem, 4vw, 3.25rem);
   display: block;
   border-radius: 50%;
   object-fit: contain;
@@ -517,8 +572,9 @@ strong {
     gap: 0.5rem;
   }
 
-  .text-size-control {
+  .reading-controls {
     margin-left: 0;
+    align-items: flex-start;
   }
 
   .hero {
@@ -536,6 +592,19 @@ strong {
 }
 
 @media (max-width: 480px) {
+  /* Body text only: slightly larger on phones for readability; headers unchanged */
+  .page-prose p,
+  .page-prose li,
+  .page-shell p,
+  .page-shell li,
+  .journal-entry__body,
+  .journal-entry__body p,
+  .card p,
+  .section-card p,
+  .hero p {
+    font-size: max(var(--body-size), 1.15rem);
+  }
+
   .site-nav,
   .page-shell {
     width: min(calc(100% - 1.25rem), var(--max));
@@ -545,18 +614,13 @@ strong {
     padding: 2rem 0 4rem;
   }
 
-  .page-shell p,
-  .page-shell li {
-    font-size: clamp(1.05rem, 2.5vw, var(--body-size));
-  }
-
   .post-byline__avatar-wrap {
-    padding-top: 1rem;
+    padding-top: 0.25rem;
   }
 
   .post-byline__avatar {
-    width: clamp(4.4rem, 10vw, 6rem);
-    height: clamp(4.4rem, 10vw, 6rem);
+    width: clamp(2.25rem, 8vw, 2.75rem);
+    height: clamp(2.25rem, 8vw, 2.75rem);
   }
 }
 
@@ -570,6 +634,10 @@ strong {
 
   .text-size-control__button {
     min-width: 44px;
+    min-height: 44px;
+  }
+
+  .page-width-control__button {
     min-height: 44px;
   }
 }
