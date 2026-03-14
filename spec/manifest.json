@@ -1,6 +1,15 @@
 {
   "version": "1.0.0",
   "specUrl": "https://halos.northharbor.dev/spec/manifest.json",
+  "relatedSpecs": [
+    { "id": "agent-skills", "source": "Anthropic / agentskills.io", "url": "https://agentskills.io/specification", "relationship": "capabilities" },
+    { "id": "ossa", "source": "Open Standard for Software Agents", "url": "https://openstandardagents.org/specification/", "relationship": "structural" },
+    { "id": "agent-protocol", "source": "agentprotocol.ai", "url": "https://agentprotocol.ai/specification", "relationship": "execution" },
+    { "id": "a2a", "source": "Google", "url": "https://a2a-protocol.org", "relationship": "communication" },
+    { "id": "adp", "source": "Metisos", "url": "https://agentdiscovery.io/docs", "relationship": "discovery" },
+    { "id": "the-agent-oath", "source": "theagentoath.com", "url": "https://theagentoath.com", "relationship": "principles" },
+    { "id": "apaaiprotocol", "source": "apaaiprotocol.org", "url": "https://apaaiprotocol.org", "relationship": "accountability" }
+  ],
   "core": {
     "requirements": [
       "HALOS-CORE-1",

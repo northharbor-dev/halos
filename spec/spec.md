@@ -62,3 +62,6 @@ Experimentation is encouraged; innovators must articulate how their work aligns 
 
 *Source: [/principles.html#8-innovation-with-accountability](/principles.html#8-innovation-with-accountability)*
 
+---
+
+*For ecosystem context and future mappings, see [Related Specs](RELATED_SPECS.md).*

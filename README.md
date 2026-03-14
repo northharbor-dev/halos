@@ -18,6 +18,8 @@ It is developed in public through this repository and stewarded by NorthHarbor D
 
 This repository is **not** a software implementation. It is a conceptual framework and evolving specification that may inform many future systems, including commercial, open-source, and research efforts.
 
+HALOS internally uses the [Agent Protocol](https://agentprotocol.ai/specification) to govern its own agent behavior, but does not require adopters to do the same. Implementation of the spec is up to the maintainers of each agent ecosystem. See [Related Specs → Implementation Choices](spec/RELATED_SPECS.md#implementation-choices).
+
 ## Why HALOS
 
 As AI systems become more capable collaborators, a gap has emerged: we lack shared norms for how humans and agents should work together. Who owns the output of a human–agent collaboration? How do we trace the origin of an idea when both contributed? How do we evolve standards without fragmenting the space?
@@ -69,6 +71,7 @@ halos/
 
 - **[Manifest](spec/manifest.json)** — Machine-readable entry point; agents discover version, core, extensions
 - **[Spec (human-readable)](spec/spec.md)** — Core and optional extensions
+- **[Related Specs](spec/RELATED_SPECS.md)** — How HALOS fits in the agent-spec ecosystem and future mapping options
 
 ## Documentation
 

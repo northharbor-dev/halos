@@ -1,0 +1,43 @@
+---
+description: When co-creating the HALOS spec, agents must conform to the established spec structure and process
+globs: halos/spec/**/*
+alwaysApply: false
+---
+
+# HALOS Spec Conformance
+
+When editing files under `halos/spec/`, you are co-creating the HALOS specification. Follow the pre-established spec so that agents and tooling can rely on a consistent structure.
+
+## Canonical Structure
+
+- **manifest.json** — Entry point. Version, specUrl, core.requirements, extensions, changelogUrl. Optional: relatedSpecs, proposals.
+- **core.json** — Core requirements. Each has id (HALOS-CORE-N), title, description, optional source.
+- **extensions/** — Optional extensions. Each extension is a JSON file conforming to extension.schema.json.
+- **schema/** — JSON Schema for manifest, core, extension, changelog. Do not violate these schemas.
+- **changelog.json** — Version history. Append entries when publishing new versions.
+
+## Before Making Spec Edits
+
+1. Read the relevant schema(s) in `spec/schema/` so changes validate.
+2. For substantive changes to requirements or structure, use the proposal process (`proposals/`).
+3. Core requirement IDs must follow `HALOS-CORE-N`; extension IDs `HALOS-EXT-<slug>`.
+
+## After Editing core.json, manifest.json, or changelog.json
+
+Run the generate script so human-readable outputs stay in sync:
+
+```bash
+cd halos && node scripts/generate-spec.js
+```
+
+This produces `spec/spec.md` and `spec/CHANGELOG.md`. Commit these with your JSON changes.
+
+## Publication and Validation
+
+- See `spec/PUBLISHING.md` for the publication checklist.
+- CI validates schemas and runs conformance checks. Spec changes must pass CI before merge.
+- Do not merge spec edits that break schema validation or leave generated files out of sync.
+
+## Related Specs
+
+See `spec/RELATED_SPECS.md` for how HALOS fits in the agent-spec ecosystem and future mapping possibilities.

@@ -51,6 +51,8 @@ deck: Machine-readable Core and Extensions for HALOS alignment
     }
   }
 
+  md += `---\n\n*For ecosystem context and future mappings, see [Related Specs](RELATED_SPECS.md).*\n`;
+
   return md;
 }
 

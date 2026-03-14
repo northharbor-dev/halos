@@ -47,6 +47,20 @@
       "type": "array",
       "items": { "type": "string" },
       "description": "Proposal IDs that produced this version"
+    },
+    "relatedSpecs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "url", "relationship"],
+        "properties": {
+          "id": { "type": "string", "description": "Short identifier (e.g. ossa, agent-skills)" },
+          "source": { "type": "string", "description": "Organization or project that maintains the spec (e.g. Anthropic, Google, OSSA)" },
+          "url": { "type": "string", "description": "Canonical URL for the spec" },
+          "relationship": { "type": "string", "description": "How HALOS relates: structural, capabilities, execution, communication, discovery, principles, accountability" }
+        }
+      },
+      "description": "Related specs in the ecosystem; informational, not a formal dependency"
     }
   }
 }
