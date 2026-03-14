@@ -31,15 +31,22 @@ layout: default
     </label>
   </div>
 
-  <div id="supporters-featured" class="supporters-featured" hidden>
-    <h3>First 100</h3>
-    <p class="supporters-sub">Quick scan of the earliest signatories.</p>
-    <div id="supporters-featured-list" class="supporters-featured-list"></div>
-  </div>
-
   <div id="supporters-list-wrap" class="supporters-list-wrap">
-    <h3>All signatories</h3>
-    <div id="supporters-list" class="supporters-list" role="list"></div>
+    <div class="supporters-table-wrap" role="region" aria-label="Signatories table">
+      <table class="supporters-table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Badge</th>
+            <th scope="col">Role</th>
+            <th scope="col">Organization</th>
+            <th scope="col">Country</th>
+            <th scope="col">Link</th>
+          </tr>
+        </thead>
+        <tbody id="supporters-list"></tbody>
+      </table>
+    </div>
     <nav class="supporters-pagination" aria-label="Pagination">
       <button type="button" id="supporters-prev" class="supporters-pagination__btn" disabled aria-label="Previous page">Previous</button>
       <span id="supporters-page-info" class="supporters-pagination__info" aria-live="polite">Page 1 of 1</span>

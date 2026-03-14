@@ -1167,90 +1167,64 @@ strong {
   margin-right: 0.35rem;
 }
 
-.supporters-featured {
-  margin-top: 2rem;
-}
-
-.supporters-featured h3,
-.supporters-list-wrap h3 {
-  font-size: 1.1rem;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-.supporters-sub {
-  color: var(--text-soft);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.supporters-featured-list,
-.supporters-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
+.supporters-list-wrap {
   margin-top: 1rem;
 }
 
-.supporters-card {
-  padding: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 14px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+.supporters-table-wrap {
+  overflow-x: auto;
 }
 
-.supporters-card__header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
+.supporters-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
 }
 
-.supporters-card__name {
-  font-size: 1.05rem;
+.supporters-table th,
+.supporters-table td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.supporters-table th {
+  color: var(--text-soft);
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.supporters-table td {
   color: var(--text);
 }
 
-.supporters-card__badge {
+.supporters-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.supporters-badge {
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 0.2rem 0.5rem;
   border-radius: 6px;
+  white-space: nowrap;
 }
 
-.supporters-card__badge--founding {
+.supporters-badge--founding {
   background: rgba(107, 208, 255, 0.2);
   color: var(--halo);
 }
 
-.supporters-card__badge--early {
+.supporters-badge--early {
   background: rgba(255, 255, 255, 0.08);
   color: var(--text-soft);
 }
 
-.supporters-card__role,
-.supporters-card__org,
-.supporters-card__country {
-  margin: 0.2rem 0;
-  font-size: 0.9rem;
-  color: var(--text-soft);
-}
-
-.supporters-card__statement {
-  margin: 0.6rem 0 0.5rem;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--text-soft);
-}
-
-.supporters-card__links {
-  font-size: 0.85rem;
-}
-
-.supporters-card__links a {
+.supporters-table td a {
   margin-right: 0.75rem;
 }
 

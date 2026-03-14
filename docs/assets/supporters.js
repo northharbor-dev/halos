@@ -1,12 +1,12 @@
 /**
- * HALOS Supporters — pageable signatory registry
- * Loads signatories.json, renders paginated list (25 per page), filters.
+ * HALOS Supporters — grid with pagination
+ * Loads first 100 from signatories.json, renders in a simple grid (25 per page).
  */
 (function () {
   "use strict";
 
   const PAGE_SIZE = 25;
-  const DEFAULT_STATEMENT = "I support the HALOS principles for transparent and ethical human-AI collaboration.";
+  const MAX_SIGNATORIES = 100;
   const FOUNDING_COUNT = 25;
   const EARLY_COUNT = 100;
 
@@ -23,26 +23,22 @@
 
   function renderSignatory(s, index) {
     const tier = getBadgeTier(index);
-    const statement = s.statement || DEFAULT_STATEMENT;
-    const tierLabel = tier === "founding" ? "Founding Supporter" : tier === "early" ? "Early Supporter" : null;
+    const tierLabel = tier === "founding" ? "Founding Supporter" : tier === "early" ? "Early Supporter" : "";
 
-    let html = '<article class="supporters-card" role="listitem">';
-    html += '<div class="supporters-card__header">';
-    html += `<strong class="supporters-card__name">${escapeHtml(s.name)}</strong>`;
-    if (tierLabel) {
-      html += `<span class="supporters-card__badge supporters-card__badge--${tier}">${escapeHtml(tierLabel)}</span>`;
-    }
-    html += "</div>";
-    if (s.role) html += `<p class="supporters-card__role">${escapeHtml(s.role)}</p>`;
-    if (s.organization) html += `<p class="supporters-card__org">${escapeHtml(s.organization)}</p>`;
-    if (s.country) html += `<p class="supporters-card__country">${escapeHtml(s.country)}</p>`;
-    html += `<p class="supporters-card__statement">${escapeHtml(statement)}</p>`;
-    html += '<div class="supporters-card__links">';
-    if (s.github) html += `<a href="https://github.com/${escapeHtml(s.github)}" rel="noopener noreferrer">GitHub</a>`;
-    if (s.website) html += ` <a href="${escapeHtml(s.website)}" rel="noopener noreferrer">Website</a>`;
-    html += "</div>";
-    html += "</article>";
+    let links = [];
+    if (s.github) links.push(`<a href="https://github.com/${escapeHtml(s.github)}" rel="noopener noreferrer">GitHub</a>`);
+    if (s.website) links.push(`<a href="${escapeHtml(s.website)}" rel="noopener noreferrer">Website</a>`);
 
+    let html = "<tr>";
+    html += `<td>${escapeHtml(s.name)}</td>`;
+    html += tierLabel
+      ? `<td><span class="supporters-badge supporters-badge--${tier}">${escapeHtml(tierLabel)}</span></td>`
+      : "<td></td>";
+    html += `<td>${escapeHtml(s.role || "")}</td>`;
+    html += `<td>${escapeHtml(s.organization || "")}</td>`;
+    html += `<td>${escapeHtml(s.country || "")}</td>`;
+    html += `<td>${links.join(" ")}</td>`;
+    html += "</tr>";
     return html;
   }
 
@@ -77,8 +73,6 @@
     const prevBtn = document.getElementById("supporters-prev");
     const nextBtn = document.getElementById("supporters-next");
     const pageInfo = document.getElementById("supporters-page-info");
-    const featuredWrap = document.getElementById("supporters-featured");
-    const featuredList = document.getElementById("supporters-featured-list");
     const listWrap = document.getElementById("supporters-list-wrap");
     const emptyEl = document.getElementById("supporters-empty");
 
@@ -102,15 +96,6 @@
     prevBtn.disabled = currentPage <= 1;
     nextBtn.disabled = currentPage >= totalPages;
     pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
-
-    if (featuredWrap && featuredList) {
-      const showFeatured = !document.getElementById("supporters-filter-founding")?.checked && allSignatories.length > 0;
-      featuredWrap.hidden = !showFeatured || allSignatories.length === 0;
-      if (showFeatured && allSignatories.length > 0) {
-        const featured = allSignatories.slice(0, Math.min(100, allSignatories.length));
-        featuredList.innerHTML = featured.map((s, i) => renderSignatory(s, i + 1)).join("");
-      }
-    }
   }
 
   function populateFilterOptions() {
@@ -146,7 +131,8 @@
     fetch("/signatories/signatories.json")
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error("Failed to load signatories"))))
       .then((data) => {
-        allSignatories = (data.signatories || []).filter((s) => s.visibility !== "hidden");
+        const raw = (data.signatories || []).filter((s) => s.visibility !== "hidden");
+        allSignatories = raw.slice(0, MAX_SIGNATORIES);
         filtered = [...allSignatories];
         populateFilterOptions();
         applyFilters();
