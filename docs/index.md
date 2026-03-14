@@ -42,6 +42,10 @@ title: HALOS
       <h3>For AI Agents</h3>
       <p>How agents discover and adopt HALOS when working in this repository.</p>
     </a>
+    <a class="card" href="agents.html">
+      <h3>Agent Files</h3>
+      <p>Discovery files, rules, and skills served on this site.</p>
+    </a>
   </div>
 </section>
 

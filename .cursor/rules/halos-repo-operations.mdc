@@ -1,0 +1,50 @@
+---
+description: Operating instructions for how work is done in this repo — tests, validation, publishing, supply chain, and documentation
+globs: spec/**/*, scripts/**/*, docker/**/*, docs/**/*, .github/**/*
+alwaysApply: false
+---
+
+# HALOS Repo Operations
+
+These are **operating instructions** for how work is done in this repository. They are not new HALOS specs—they govern agent behavior when changing validation, publishing, utilities, or infrastructure.
+
+---
+
+## Always Have Tests to Verify Operations
+
+Before committing or publishing, verify that operations work as intended.
+
+### Validation process
+
+- Ensure the validation process works as expected. Run:
+  - `docker run --rm -v "$(pwd):/workspace" halos validate` (or `halos` with no args), or
+  - The steps in [.github/workflows/spec-validate.yml](../.github/workflows/spec-validate.yml)
+- Spec JSON must pass schema checks; `node scripts/generate-spec.js` must produce non-empty `spec/spec.md` and `spec/CHANGELOG.md`.
+
+### Page generation and expectations
+
+- Ensure pages are generated and meet expectations before committing and publishing.
+- Run build locally or via Docker: `halos build` or `halos serve`; verify key pages (e.g. `spec/spec.html`, index, for-agents) exist and render.
+
+### Supply chain and security best practices
+
+- Ensure deliverables follow best practices for software supply chain and security:
+  - No secrets in committed files; use env vars, `.env` (not committed), or `TF_VAR_*`.
+  - Pinned or locked dependencies where applicable (e.g. `ajv-cli@5`, Gemfile.lock).
+  - Avoid unsafe patterns: no arbitrary code execution, no secrets in logs or committed files, no destructive operations without confirmation.
+
+### Utilities and processes
+
+- Ensure utilities and processes are well documented, purposeful, and well suited for the task.
+- Provide README or inline docs for scripts and Docker; avoid unnecessary complexity.
+- Add or update [docker/README.md](../docker/README.md) when changing Docker behavior.
+
+---
+
+## Key References
+
+| Area | Files |
+|------|-------|
+| Spec validation | [.github/workflows/spec-validate.yml](../.github/workflows/spec-validate.yml), [docker/validate.sh](../docker/validate.sh) |
+| Page build | [.github/workflows/deploy-pages.yml](../.github/workflows/deploy-pages.yml), [docker/build.sh](../docker/build.sh) |
+| Docker | [Dockerfile](../Dockerfile), [docker/](../docker/) |

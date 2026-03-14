@@ -10,3 +10,8 @@
 
 # Build artifact: spec copied into docs for Jekyll
 docs/spec
+# Build artifact: agent discovery and .cursor copied into docs for Jekyll
+docs/agents
+# Jekyll build output
+docs/_site
+docs/.jekyll-cache

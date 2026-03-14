@@ -10,6 +10,12 @@ The HALOS contract (`.cursor/rules/halos-alignment.mdc`) governs all agent behav
 
 ---
 
+## Repo Operations (when changing scripts, Docker, CI, or publishing)
+
+When changing scripts, Docker, CI, or publishing flow, follow `.cursor/rules/halos-repo-operations.mdc` for operating instructions.
+
+---
+
 ## Spec Conformance (when editing spec/)
 
 When editing `spec/`, follow `.cursor/rules/halos-spec-conformance.mdc`:

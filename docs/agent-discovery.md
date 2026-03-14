@@ -1,6 +1,5 @@
 ---
-
-## layout: default
+layout: default
 title: Agent Discovery Conventions
 deck: Why and how HALOS exposes agent instructions through multiple entry points
 
@@ -41,7 +40,7 @@ All files avoid duplicating the full contract; they point to `spec/core.json` an
 
 ## Maintenance
 
-As agent ecosystems evolve, new conventions may emerge (e.g., `.agentrules`, `AI_CONTEXT.md`, OSSA manifest at `.well-known/agents/`). The [agent-convention-sync](../.cursor/skills/agent-convention-sync/SKILL.md) skill guides agents to:
+As agent ecosystems evolve, new conventions may emerge (e.g., `.agentrules`, `AI_CONTEXT.md`, OSSA manifest at `.well-known/agents/`). The [agent-convention-sync](/agents/skills/agent-convention-sync/SKILL.md) skill guides agents to:
 
 - Search for new or changed agent-instruction conventions
 - Propose additions or revisions to the discovery files
@@ -58,6 +57,6 @@ The discovery table in `docs/for-agents.md` should be updated when:
 
 ## Related
 
-- [Agent Discovery Protocol (ADP)](../spec/RELATED_SPECS.md) — Industry spec for agent discovery via `.well-known/agents/`
-- [HALOS spec](../spec/spec.md) — The principles these files expose
+- [Agent Discovery Protocol (ADP)](/spec/RELATED_SPECS.html) — Industry spec for agent discovery via `.well-known/agents/`
+- [HALOS spec](/spec/spec.html) — The principles these files expose
 

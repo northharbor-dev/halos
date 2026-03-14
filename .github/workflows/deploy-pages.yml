@@ -25,6 +25,15 @@ jobs:
       - name: Copy spec into docs
         run: cp -r spec docs/
 
+      - name: Copy agent discovery and .cursor into docs
+        run: |
+          mkdir -p docs/agents docs/agents/rules docs/agents/agents docs/agents/skills
+          cp FOR_AGENTS.md AGENTS.md docs/agents/
+          cp .cursorrules docs/agents/cursorrules
+          cp -r .cursor/rules/* docs/agents/rules/
+          cp -r .cursor/agents/* docs/agents/agents/
+          cp -r .cursor/skills/* docs/agents/skills/
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

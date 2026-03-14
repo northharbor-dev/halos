@@ -7,6 +7,10 @@ deck: Why HALOS publishes its visual identity and design rationale in the open.
 
 *Public identity, symbolism, and rationale*
 
+<p align="center">
+  <img src="identity-assets/selected/halos-halo-ring-institutional-randomized.svg" alt="HALOS identity mark" width="200" />
+</p>
+
 ---
 
 ## Purpose

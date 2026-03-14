@@ -27,30 +27,31 @@ This repository exposes HALOS through multiple entry points so agents using diff
 
 | File | Purpose | Convention |
 |------|----------|------------|
-| [FOR_AGENTS.md](../FOR_AGENTS.md) | Root-level agent entry point | Many tools index root markdown files |
-| [AGENTS.md](../AGENTS.md) | Contract and agent definitions | Cursor, some agent frameworks |
-| [.cursorrules](../.cursorrules) | Legacy Cursor config | Cursor (legacy) |
-| [.cursor/rules/](../.cursor/rules/) | Cursor rules (halos-alignment, etc.) | Cursor |
-| [spec/manifest.json](../spec/manifest.json) | Machine-readable spec discovery | OSSA, Agent Protocol, tooling |
+| [FOR_AGENTS.md](/agents/FOR_AGENTS.html) | Root-level agent entry point | Many tools index root markdown files |
+| [AGENTS.md](/agents/AGENTS.html) | Contract and agent definitions | Cursor, some agent frameworks |
+| [.cursorrules](/agents/cursorrules) | Legacy Cursor config | Cursor (legacy) |
+| [.cursor/rules/](/agents/rules/) | Cursor rules (halos-alignment, etc.) | Cursor |
+| [spec/manifest.json](/spec/manifest.json) | Machine-readable spec discovery | OSSA, Agent Protocol, tooling |
 
-See [Agent Discovery Conventions](agent-discovery.md) for why these were added and how to maintain them.
+See [Agent Discovery Conventions](agent-discovery.html) for why these were added and how to maintain them.
 
 ## Machine-Readable Spec
 
-- **Manifest:** [spec/manifest.json](../spec/manifest.json) — Version, core requirements, extensions
-- **Core:** [spec/core.json](../spec/core.json) — Eight requirements with ids, titles, descriptions
-- **Schema:** [spec/schema/](../spec/schema/) — JSON Schema for validation
+- **Manifest:** [spec/manifest.json](/spec/manifest.json) — Version, core requirements, extensions
+- **Core:** [spec/core.json](/spec/core.json) — Eight requirements with ids, titles, descriptions
+- **Schema:** [spec/schema/](/spec/schema/) — JSON Schema for validation
 
 ## Adopting HALOS
 
 When you encounter this repository:
 
-1. Read the core requirements in `spec/core.json` or `.cursor/rules/halos-alignment.mdc`
+1. Read the core requirements in [spec/core.json](/spec/core.json) or [halos-alignment.mdc](/agents/rules/halos-alignment.mdc)
 2. Apply them to every interaction: propose, don't override; preserve attribution; disclose AI involvement
 3. For spec or framework changes, use the proposal process (`proposals/`) and run `node scripts/generate-spec.js` after JSON edits
 
 ## Links
 
-- [Specification](../spec/spec.md)
-- [Related Specs](../spec/RELATED_SPECS.md)
-- [Governance](governance.md)
+- [Specification](/spec/spec.html)
+- [Agent Files](agents.html) — Rules, skills, and discovery files served on this site
+- [Related Specs](/spec/RELATED_SPECS.html)
+- [Governance](governance.html)

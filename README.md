@@ -52,6 +52,8 @@ HALOS addresses these questions by providing:
 ```
 halos/
 ├── README.md                 # This file
+├── HELP.md                   # Quick help and chat prompts
+├── LEARN_HALOS.md            # Paste-into-AI prompt to learn HALOS
 ├── FOR_AGENTS.md             # Agent entry point (root-level discovery)
 ├── AGENTS.md                 # HALOS contract and spec-implementing agent
 ├── .cursorrules              # Legacy Cursor config (points to HALOS)
@@ -84,6 +86,16 @@ halos/
 - **[docs/for-agents.md](docs/for-agents.md)** — Full agent guidelines and discovery table
 - **[docs/agent-discovery.md](docs/agent-discovery.md)** — Why and how discovery files were added
 
+## Validation
+
+Validate the spec without local tools using Docker:
+
+```bash
+docker run --rm -v "$(pwd):/workspace" ghcr.io/northharbor-dev/halos-validate
+```
+
+See [docker/README.md](docker/README.md) for build and multi-platform options.
+
 ## Specification
 
 - **[Manifest](spec/manifest.json)** — Machine-readable entry point; agents discover version, core, extensions
@@ -101,6 +113,18 @@ halos/
 - **[For AI Agents](docs/for-agents.md)** — Agent guidelines and discovery
 - **[Agent Discovery Conventions](docs/agent-discovery.md)** — Why and how discovery files were added
 - **[Proposals](proposals/README.md)** — Process for contributing and evolving HALOS
+- **[Help](docs/help.md)** — FAQ, chat prompts, and skill index
+
+## Learn HALOS in any AI
+
+**Paste HALOS into your favorite AI** — Copy the prompt in [LEARN_HALOS.md](LEARN_HALOS.md) into ChatGPT, Claude, Gemini, or any AI chat. The AI will have the full HALOS framework and can help you apply it. Sample prompts to try after pasting: "Explain HALOS in one paragraph", "How do I adopt HALOS?", "Help me write a proposal that aligns with HALOS." Results will vary by AI, current events, and technology—that's part of the value.
+
+## Getting Help
+
+Ask the HALOS agent in chat: "help", "how do I validate?", "help me draft a proposal", "what is HALOS-CORE-1?"
+
+- **[HELP.md](HELP.md)** — Quick reference and chat prompts
+- **[docs/help.md](docs/help.md)** — Full help page, FAQ, skills
 
 ## Status
 

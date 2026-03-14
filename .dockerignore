@@ -1,0 +1,17 @@
+# Exclude from Docker build context
+.git
+.github
+docs/_site
+docs/spec
+docs/agents
+docs/.jekyll-cache
+node_modules
+*.md
+!spec/*.md
+!spec/**/*.md
+!FOR_AGENTS.md
+!AGENTS.md
+!HELP.md
+!LEARN_HALOS.md
+!docs/*.md
+!docs/**/*.md
