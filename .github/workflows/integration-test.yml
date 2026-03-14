@@ -14,6 +14,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Run unit tests
+        run: node test/explore-guardrails.test.js
+
+      - name: Validate signatories
+        run: node scripts/validate-signatories.js
+
       - name: Build HALOS image
         run: docker build -t halos .
 

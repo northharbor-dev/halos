@@ -1,0 +1,4 @@
+{
+  "_instructions": "Add your entry to the signatories array. Required: name, date_signed (YYYY-MM-DD). Optional: github (for verification), role, organization (freeform), country, website, statement. Statement is optional; if omitted, the default 'I support the HALOS principles for transparent and ethical human-AI collaboration.' is used. You may customize the statement to reflect your support in your own words. See signatories/CONTRIBUTING.md for full instructions.",
+  "signatories": []
+}

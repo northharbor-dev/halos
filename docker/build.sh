@@ -9,6 +9,9 @@ cd "$ROOT"
 echo "Copying spec into docs..."
 cp -r spec docs/
 
+echo "Copying signatories into docs..."
+cp -r signatories docs/
+
 echo "Copying agent discovery and .cursor into docs..."
 mkdir -p docs/agents docs/agents/rules docs/agents/agents docs/agents/skills
 cp FOR_AGENTS.md AGENTS.md docs/agents/

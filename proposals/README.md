@@ -81,6 +81,8 @@ The [index](index.json) lists all proposals with id, status, type, date.
 
 | # | Title | Status |
 |---|-------|--------|
-| — | *No proposals yet* | — |
+| 0001 | [Strengthen Explore Tool Input Sanitization](0001-explore-input-sanitization.md) | proposed |
+| 0002 | [HALOS Index: Persist Anonymized Roles and Concerns](0002-halos-index-persistence.md) | proposed |
+| 0003 | [HALOS Signatory Registry](0003-signatory-registry.md) | proposed |
 
 *(This index will be updated as proposals are submitted.)*

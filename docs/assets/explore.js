@@ -7,79 +7,100 @@
 
   const ROLES = [
     {
-      id: "creator-marketplace",
-      label: "Creator marketplace (SHRTTY-style)",
+      id: "lifelong-learners",
+      label: "Lifelong Learners",
       context:
-        "A creator-driven platform where human ideas come first and AI assists (e.g., print-on-demand, remix economy, community curation). Human creativity is the scarce resource; AI amplifies creators but never replaces them.",
+        "People who continuously learn and adapt, using AI to explore, deepen understanding, and stay curious. Human curiosity and discernment guide what and how they learn.",
     },
     {
-      id: "developer",
-      label: "Developer / Engineer",
-      context: "Software development where AI assists with coding, review, and tooling. Human design and architectural decisions remain central.",
+      id: "everyday-professionals",
+      label: "Everyday Professionals",
+      context:
+        "People working in varied roles—administrative, healthcare, legal, finance—where AI may assist with tasks, drafting, or analysis. Human judgment and responsibility remain central.",
     },
     {
-      id: "educator",
-      label: "Educator",
-      context: "Teaching or training where AI may assist with content, feedback, or exploration. Student authorship and learning outcomes are paramount.",
+      id: "creators-innovators",
+      label: "Creators & Innovators",
+      context:
+        "Artists, writers, inventors, and entrepreneurs who use AI to extend creativity and execution. Original ideas and human vision stay at the center.",
     },
     {
-      id: "content-creator",
-      label: "Content creator",
-      context: "Creating written, visual, or multimedia content with AI assistance. Original ideas and voice stay central.",
+      id: "leaders-decision-makers",
+      label: "Leaders & Decision-Makers",
+      context:
+        "Executives, managers, and policymakers who rely on AI for insights and support. Human accountability for decisions stays paramount.",
     },
     {
-      id: "startup-founder",
-      label: "Startup founder",
-      context: "Building a product or company where AI augments execution. Vision and strategic direction originate from humans.",
+      id: "community-anchors",
+      label: "Community Anchors",
+      context:
+        "Educators, organizers, caregivers, and volunteers who build and hold communities together. AI may assist; human presence and trust remain irreplaceable.",
     },
     {
-      id: "researcher",
-      label: "Researcher",
-      context: "Research where AI assists with literature, analysis, or synthesis. Attribution and provenance of ideas matter.",
+      id: "tech-builders",
+      label: "Tech Builders",
+      context:
+        "Developers, engineers, and technologists building systems where AI assists with code, design, or operations. Human design and architectural intent stay central.",
     },
     {
-      id: "designer",
-      label: "Designer",
-      context: "Design work where AI aids ideation or production. Human intent and authorship remain visible.",
+      id: "retirees",
+      label: "Retirees",
+      context:
+        "People in or nearing retirement who engage with AI for learning, creativity, connection, or support. Human choice and agency over how AI enters their lives remain key.",
     },
   ];
 
   const QUESTIONS = [
     {
-      id: "humans-central",
-      label: "How do I keep humans central?",
-      question: "How do I ensure human creativity and judgment stay at the center?",
+      id: "ethical-ai-use",
+      label: "Ethical AI Use",
+      question: "How do I ensure ethical AI use in my context?",
     },
     {
-      id: "disclose",
-      label: "What should I disclose when AI helps me create?",
-      question: "What should I disclose when AI helps me create something?",
+      id: "transparency-trust",
+      label: "Transparency & Trust",
+      question: "How do I build transparency and trust when AI is involved?",
     },
     {
-      id: "attribution",
-      label: "How do I handle attribution and provenance?",
-      question: "How do I handle attribution and provenance for human–AI collaboration?",
+      id: "human-oversight",
+      label: "Human Oversight & Control",
+      question: "How do I maintain human oversight and control over AI-assisted outcomes?",
     },
     {
-      id: "adopt",
-      label: "How can I adopt HALOS in my project?",
-      question: "How can I adopt HALOS in my project?",
+      id: "impact-jobs-creativity",
+      label: "Impact on Jobs & Creativity",
+      question: "What impact does AI have on jobs and human creativity, and how do I navigate it?",
     },
     {
-      id: "ethical",
-      label: "What ethical guardrails should I consider?",
-      question: "What ethical guardrails should I consider?",
+      id: "fairness-inclusion",
+      label: "Fairness & Inclusion",
+      question: "How do I promote fairness and inclusion when using AI?",
     },
     {
-      id: "innovation",
-      label: "How do I balance innovation with accountability?",
-      question: "How do I balance innovation with accountability?",
+      id: "power-dynamics",
+      label: "Power Dynamics",
+      question: "How do power dynamics change with AI, and how do I address them?",
     },
   ];
 
   const HALOS_BRIEF = `HALOS is an open framework for principled human–AI collaboration. Core ideas: Human primacy (humans are originators; agents assist). Ideas as assets (authorship and lineage matter). Attribution and provenance (contributions traceable; disclose agent involvement). Transparency (AI participation visible). Ethical guardrails (no harmful or deceptive uses; preserve human agency). Evolving standards, stable principles. Governance through proposal. Innovation with accountability. Key behaviors: Propose and suggest; yield when human's direction conflicts. Preserve attribution. Cite sources. Disclose when you contributed. When uncertain, favor human intent and accountability.`;
 
   const CHAR_LIMIT = 8000;
+  const G = typeof window !== "undefined" && window.HALOS_EXPLORE_GUARDRAILS;
+  const {
+    sanitize: _sanitize,
+    isBlocked: _isBlocked,
+    isLowQuality: _isLowQuality,
+    CUSTOM_ROLE_MAX: _CR_MAX,
+    CUSTOM_CONCERNS_MAX: _CC_MAX,
+    CUSTOM_ROLE_MIN: _CR_MIN,
+  } = G || {};
+  const sanitize = _sanitize || ((t) => (t && typeof t === "string" ? t.trim().replace(/\n{3,}/g, "\n\n").replace(/[ \t]+/g, " ") : ""));
+  const isBlocked = _isBlocked || (() => false);
+  const isLowQuality = _isLowQuality || ((t, m) => !t || t.length < m);
+  const CUSTOM_ROLE_MAX = _CR_MAX ?? 500;
+  const CUSTOM_CONCERNS_MAX = _CC_MAX ?? 300;
+  const CUSTOM_ROLE_MIN = _CR_MIN ?? 15;
 
   const DEEP_LINKS = {
     claude: "https://claude.ai/new?q=",
@@ -88,6 +109,32 @@
 
   function $(sel, el) {
     return (el || document).querySelector(sel);
+  }
+
+  function showValidationError(msg, target) {
+    const existing = $("#explore-validation-error");
+    if (existing) existing.remove();
+    const err = document.createElement("p");
+    err.id = "explore-validation-error";
+    err.className = "explore-guardrail-error";
+    err.textContent = msg;
+    err.setAttribute("role", "alert");
+    const form = $("#explore-form");
+    if (form) {
+      form.insertBefore(err, form.firstChild);
+      if (target) {
+        target.focus();
+        target.setAttribute("aria-invalid", "true");
+      }
+    }
+    return err;
+  }
+
+  function clearValidationError() {
+    const err = $("#explore-validation-error");
+    if (err) err.remove();
+    $("#explore-role-custom")?.removeAttribute("aria-invalid");
+    $("#explore-concerns-custom")?.removeAttribute("aria-invalid");
   }
 
   function buildPrompt(context, concerns) {
@@ -117,11 +164,10 @@ Help them think through how HALOS principles apply. Ask clarifying questions. Su
 
   function getContext() {
     const roleSelect = $("#explore-role");
-    const customWrap = $("#explore-role-custom-wrap");
     const customText = $("#explore-role-custom");
 
     if (roleSelect.value === "custom") {
-      return customText.value.trim();
+      return sanitize(customText?.value || "").slice(0, CUSTOM_ROLE_MAX);
     }
     const role = ROLES.find((r) => r.id === roleSelect.value);
     return role ? role.context : "";
@@ -129,7 +175,8 @@ Help them think through how HALOS principles apply. Ask clarifying questions. Su
 
   function getConcerns() {
     const checks = document.querySelectorAll("#explore-concerns input:checked");
-    const custom = $("#explore-concerns-custom").value.trim();
+    const rawCustom = $("#explore-concerns-custom")?.value || "";
+    const custom = sanitize(rawCustom).slice(0, CUSTOM_CONCERNS_MAX);
     const fromChecks = Array.from(checks)
       .map((c) => {
         const q = QUESTIONS.find((x) => x.id === c.value);
@@ -168,16 +215,108 @@ Help them think through how HALOS principles apply. Ask clarifying questions. Su
 
     function toggle() {
       customWrap.hidden = roleSelect.value !== "custom";
+      updateCharCount("#explore-role-custom", "#explore-role-count");
     }
     roleSelect.addEventListener("change", toggle);
     toggle();
   }
 
+  function updateCharCount(textareaSel, countSel) {
+    const ta = $(textareaSel);
+    const el = $(countSel);
+    if (!ta || !el || !ta.dataset.max) return;
+    const len = ta.value.length;
+    const max = parseInt(ta.dataset.max, 10);
+    if (len > 0) {
+      el.textContent = len + " / " + max;
+      el.hidden = false;
+    } else {
+      el.textContent = "";
+      el.hidden = true;
+    }
+  }
+
+  function setupCharCounts() {
+    const roleCustom = $("#explore-role-custom");
+    const concernsCustom = $("#explore-concerns-custom");
+    ["input", "change"].forEach((ev) => {
+      roleCustom?.addEventListener(ev, () => updateCharCount("#explore-role-custom", "#explore-role-count"));
+      concernsCustom?.addEventListener(ev, () => updateCharCount("#explore-concerns-custom", "#explore-concerns-count"));
+    });
+  }
+
+  function setupInputListeners() {
+    [$("#explore-role-custom"), $("#explore-concerns-custom")].forEach((el) => {
+      el?.addEventListener("input", () => {
+        el.removeAttribute("aria-invalid");
+        clearValidationError();
+      });
+    });
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
+    clearValidationError();
+
+    const honeypot = $("#explore-website");
+    if (honeypot && honeypot.value) return;
+
+    const roleSelect = $("#explore-role");
+    const customRoleText = $("#explore-role-custom");
+    const rawContext =
+      roleSelect.value === "custom"
+        ? (customRoleText?.value || "").trim()
+        : "";
+
+    if (roleSelect.value === "custom") {
+      if (rawContext.length < CUSTOM_ROLE_MIN) {
+        showValidationError(
+          `Please describe your role in at least ${CUSTOM_ROLE_MIN} characters.`,
+          customRoleText
+        );
+        return;
+      }
+      if (rawContext.length > CUSTOM_ROLE_MAX) {
+        showValidationError(
+          `Role description must be ${CUSTOM_ROLE_MAX} characters or fewer.`,
+          customRoleText
+        );
+        return;
+      }
+      if (isBlocked(rawContext)) {
+        showValidationError(
+          "Your input contains text that can't be used in this tool. Please describe your role and context in your own words.",
+          customRoleText
+        );
+        return;
+      }
+      if (isLowQuality(rawContext, CUSTOM_ROLE_MIN)) {
+        showValidationError(
+          "Please provide a brief, meaningful description of your role or context.",
+          customRoleText
+        );
+        return;
+      }
+    }
+
+    const rawConcerns = ($("#explore-concerns-custom")?.value || "").trim();
+    if (rawConcerns.length > CUSTOM_CONCERNS_MAX) {
+      showValidationError(
+        `Additional concerns must be ${CUSTOM_CONCERNS_MAX} characters or fewer.`,
+        $("#explore-concerns-custom")
+      );
+      return;
+    }
+    if (rawConcerns && isBlocked(rawConcerns)) {
+      showValidationError(
+        "Your input contains text that can't be used in this tool. Please phrase your concerns in your own words.",
+        $("#explore-concerns-custom")
+      );
+      return;
+    }
+
     const context = getContext();
     if (!context) {
-      const roleSelect = $("#explore-role");
       roleSelect?.focus();
       roleSelect?.reportValidity?.();
       return;
@@ -256,6 +395,8 @@ Help them think through how HALOS principles apply. Ask clarifying questions. Su
   function init() {
     renderConcerns();
     setupRoleToggle();
+    setupCharCounts();
+    setupInputListeners();
     setupCopy();
     const form = $("#explore-form");
     if (form) form.addEventListener("submit", handleSubmit);

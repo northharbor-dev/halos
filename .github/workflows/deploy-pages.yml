@@ -22,6 +22,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Validate signatories
+        run: node scripts/validate-signatories.js
+
       - name: Build HALOS image
         run: docker build -t halos .
 
@@ -39,6 +42,9 @@ jobs:
 
       - name: Copy spec into docs
         run: cp -r spec docs/
+
+      - name: Copy signatories into docs
+        run: cp -r signatories docs/
 
       - name: Copy agent discovery and .cursor into docs
         run: |

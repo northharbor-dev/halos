@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "HALOS Signatories",
+  "type": "object",
+  "required": ["signatories"],
+  "properties": {
+    "_instructions": { "type": "string" },
+    "signatories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "date_signed"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120,
+            "pattern": "^[^<>]*$"
+          },
+          "date_signed": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "github": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40,
+            "pattern": "^[a-zA-Z0-9_-]+$"
+          },
+          "role": { "type": "string", "maxLength": 80 },
+          "organization": { "type": "string", "maxLength": 120 },
+          "country": { "type": "string", "maxLength": 60 },
+          "website": {
+            "type": "string",
+            "maxLength": 200,
+            "format": "uri"
+          },
+          "statement": { "type": "string", "maxLength": 300 },
+          "visibility": {
+            "type": "string",
+            "enum": ["public", "hidden"]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

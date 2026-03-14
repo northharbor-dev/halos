@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="190" height="24" viewBox="0 0 190 24" role="img" aria-label="HALOS Early Supporter">
+  <defs>
+    <linearGradient id="early-bg" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="rgba(255,255,255,0.12)"/>
+      <stop offset="1" stop-color="rgba(255,255,255,0.06)"/>
+    </linearGradient>
+  </defs>
+  <rect width="190" height="24" rx="4" fill="url(#early-bg)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="95" y="16" text-anchor="middle" fill="#b8d4e8" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600">HALOS Early Supporter</text>
+</svg>

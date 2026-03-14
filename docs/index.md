@@ -47,6 +47,10 @@ layout: default
       <h3>Governance</h3>
       <p>How the framework evolves through public process.</p>
     </a>
+    <a class="card" href="supporters.html">
+      <h3>Supporters</h3>
+      <p>Individuals and organizations who support the HALOS principles.</p>
+    </a>
     <a class="card" href="everyday-humans.html">
       <h3>Everyday Humans</h3>
       <p>A plain-language introduction for people outside the tech world.</p>
@@ -91,4 +95,5 @@ layout: default
   <p>Questions, concerns, or thoughtful feedback are welcome at <a href="mailto:halos@northharbor.dev">halos@northharbor.dev</a>.</p>
 </section>
 
+<script src="{{ '/assets/explore-guardrails.js' | relative_url }}"></script>
 <script src="{{ '/assets/explore.js' | relative_url }}" defer></script>

@@ -34,8 +34,9 @@ RUN bundle config set --local path 'vendor/bundle' \
     && bundle install
 WORKDIR /workspace
 
-# Bundled spec, scripts, docs (for distribution without mount)
+# Bundled spec, scripts, docs, signatories (for distribution without mount)
 COPY spec /halos/spec
+COPY signatories /halos/signatories
 COPY scripts /halos/scripts
 COPY docs /halos/docs
 COPY FOR_AGENTS.md AGENTS.md .cursorrules /halos/

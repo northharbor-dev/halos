@@ -1,0 +1,9 @@
+{
+  "name": "halos",
+  "private": true,
+  "scripts": {
+    "test": "node test/explore-guardrails.test.js",
+    "test:unit": "node test/explore-guardrails.test.js",
+    "validate:signatories": "node scripts/validate-signatories.js"
+  }
+}

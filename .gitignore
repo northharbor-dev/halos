@@ -12,6 +12,8 @@
 docs/spec
 # Build artifact: agent discovery and .cursor copied into docs for Jekyll
 docs/agents
+# Build artifact: signatories copied into docs for Jekyll
+docs/signatories
 # Jekyll build output
 docs/_site
 docs/.jekyll-cache

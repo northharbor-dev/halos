@@ -1,3 +1,25 @@
 {
-  "proposals": []
+  "proposals": [
+    {
+      "id": "0001",
+      "title": "Strengthen Explore Tool Input Sanitization",
+      "status": "proposed",
+      "type": "specification",
+      "date": "2026-03-15"
+    },
+    {
+      "id": "0002",
+      "title": "HALOS Index: Persist Anonymized Roles and Concerns",
+      "status": "proposed",
+      "type": "specification",
+      "date": "2026-03-15"
+    },
+    {
+      "id": "0003",
+      "title": "HALOS Signatory Registry",
+      "status": "proposed",
+      "type": "specification",
+      "date": "2026-03-15"
+    }
+  ]
 }

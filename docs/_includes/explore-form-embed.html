@@ -4,22 +4,27 @@
 <p class="explore-intro">Answer a few questions about your role and concerns. We'll craft a prompt seeded with HALOS context and give you a link to continue the conversation in Claude, ChatGPT, or another AI of your choice.</p>
 
 <form id="explore-form" class="explore-form" novalidate>
+  <div class="explore-honeypot" aria-hidden="true">
+    <label for="explore-website">Website</label>
+    <input type="text" id="explore-website" name="website" tabindex="-1" autocomplete="off">
+  </div>
   <div class="explore-field">
     <label for="explore-role">Context / Role <span class="required">(required)</span></label>
     <select id="explore-role" name="role" required aria-describedby="explore-role-hint">
       <option value="">Choose a role or describe your own</option>
-      <option value="creator-marketplace">Creator marketplace (SHRTTY-style)</option>
-      <option value="developer">Developer / Engineer</option>
-      <option value="educator">Educator</option>
-      <option value="content-creator">Content creator</option>
-      <option value="startup-founder">Startup founder</option>
-      <option value="researcher">Researcher</option>
-      <option value="designer">Designer</option>
+      <option value="lifelong-learners">Lifelong Learners</option>
+      <option value="everyday-professionals">Everyday Professionals</option>
+      <option value="creators-innovators">Creators & Innovators</option>
+      <option value="leaders-decision-makers">Leaders & Decision-Makers</option>
+      <option value="community-anchors">Community Anchors</option>
+      <option value="tech-builders">Tech Builders</option>
+      <option value="retirees">Retirees</option>
       <option value="custom">Custom — describe your own</option>
     </select>
     <p id="explore-role-hint" class="explore-hint">Select a preset or choose "Custom" to describe your project, role, or domain.</p>
     <div id="explore-role-custom-wrap" class="explore-custom-wrap" hidden>
-      <textarea id="explore-role-custom" name="role-custom" rows="3" placeholder="e.g., A creator-driven marketplace where human ideas come first and AI assists (print-on-demand, remix economy, community curation)" aria-label="Describe your context (when Custom is selected)"></textarea>
+      <textarea id="explore-role-custom" name="role-custom" rows="3" maxlength="500" placeholder="e.g., Describe your role, project, or context and how you interact with AI" aria-label="Describe your context (when Custom is selected)" data-max="500"></textarea>
+    <p class="explore-char-count" id="explore-role-count" aria-live="polite"></p>
     </div>
   </div>
 
@@ -29,7 +34,8 @@
     <div id="explore-concerns" class="explore-options"></div>
     <div class="explore-custom-wrap">
       <label for="explore-concerns-custom" class="visually-hidden">Add your own concerns</label>
-      <textarea id="explore-concerns-custom" name="concerns-custom" rows="2" placeholder="Add any additional concerns or questions..." aria-describedby="explore-concerns-hint"></textarea>
+      <textarea id="explore-concerns-custom" name="concerns-custom" rows="2" maxlength="300" placeholder="Add any additional concerns or questions..." aria-describedby="explore-concerns-hint" data-max="300"></textarea>
+    <p class="explore-char-count" id="explore-concerns-count" aria-live="polite"></p>
     </div>
   </div>
 

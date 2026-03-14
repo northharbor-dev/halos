@@ -674,6 +674,7 @@ strong {
 }
 
 .explore-form {
+  position: relative;
   max-width: var(--prose-width);
   margin-left: auto;
   margin-right: auto;
@@ -897,6 +898,35 @@ strong {
   border-radius: 8px;
 }
 
+.explore-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.explore-guardrail-error {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 100, 80, 0.15);
+  border: 1px solid rgba(255, 100, 80, 0.4);
+  border-radius: 6px;
+  color: #ffb4a8;
+  font-size: 0.95rem;
+}
+
+.explore-char-count {
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+
+.explore-char-count[hidden] {
+  display: none;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -1104,4 +1134,166 @@ strong {
     align-items: center;
     padding: 0.85rem 1.25rem;
   }
+}
+
+/* ── Supporters / Signatory Registry ── */
+.supporters-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.25rem 0;
+  padding: 1rem;
+  background: var(--surface);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.supporters-filters label {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+.supporters-filter {
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-family: inherit;
+}
+
+.supporters-filters input[type="checkbox"] {
+  margin-right: 0.35rem;
+}
+
+.supporters-featured {
+  margin-top: 2rem;
+}
+
+.supporters-featured h3,
+.supporters-list-wrap h3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.supporters-sub {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.supporters-featured-list,
+.supporters-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.supporters-card {
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+}
+
+.supporters-card__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.supporters-card__name {
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.supporters-card__badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+}
+
+.supporters-card__badge--founding {
+  background: rgba(107, 208, 255, 0.2);
+  color: var(--halo);
+}
+
+.supporters-card__badge--early {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-soft);
+}
+
+.supporters-card__role,
+.supporters-card__org,
+.supporters-card__country {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+.supporters-card__statement {
+  margin: 0.6rem 0 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+.supporters-card__links {
+  font-size: 0.85rem;
+}
+
+.supporters-card__links a {
+  margin-right: 0.75rem;
+}
+
+.supporters-pagination {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.supporters-pagination__btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 140ms, border-color 140ms;
+}
+
+.supporters-pagination__btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(107, 208, 255, 0.2);
+}
+
+.supporters-pagination__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.supporters-pagination__info {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+.supporters-list-wrap.hidden,
+.supporters-empty.hidden {
+  display: none !important;
+}
+
+.supporters-empty {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-soft);
 }

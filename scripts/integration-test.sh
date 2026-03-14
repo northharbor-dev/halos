@@ -99,10 +99,13 @@ check "/" 200 "HALOS"
 check "/spec/spec.html" 200 "HALOS"
 check "/vision.html" 200 "HALOS"
 check "/principles.html" 200 "HALOS"
+check "/explore.html" 200 "What HALOS"
 check "/governance.html" 200 "HALOS"
 check "/everyday-humans.html" 200 "HALOS"
 check "/for-agents.html" 200 "HALOS"
 check "/help.html" 200 "HALOS"
+check "/supporters.html" 200 "Supporters"
+check "/signatories/signatories.json" 200 "signatories"
 check "/journal.html" 200 "Journal"
 check "/blog.html" 200 "Blog"
 check "/2025/03/15/why-halos.html" 200 "Why HALOS"
@@ -125,6 +128,8 @@ check "/agents/skills/spec-explainer/SKILL.html" 200 "spec-explainer"
 
 # Static assets
 check "/assets/style.css" 200 ""
+check "/assets/explore.js" 200 ""
+check "/identity-assets/homepage/halos-community-encompassed.png" 200 ""
 check "/identity-assets/selected/halos-halo-ring-institutional-randomized.svg" 200 ""
 
 # 404 check

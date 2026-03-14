@@ -6,4 +6,5 @@ layout: default
 
 {% include explore-form.html %}
 
+<script src="{{ '/assets/explore-guardrails.js' | relative_url }}"></script>
 <script src="{{ '/assets/explore.js' | relative_url }}" defer></script>

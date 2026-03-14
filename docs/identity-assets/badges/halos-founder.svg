@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="24" viewBox="0 0 180 24" role="img" aria-label="HALOS Founder">
+  <defs>
+    <linearGradient id="founder-bg" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#3F63E6"/>
+      <stop offset="1" stop-color="#2a4299"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="24" rx="4" fill="url(#founder-bg)"/>
+  <text x="90" y="16" text-anchor="middle" fill="#fff" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600">HALOS Founder</text>
+</svg>
