@@ -20,6 +20,10 @@ This repository is **not** a software implementation. It is a conceptual framewo
 
 HALOS internally uses the [Agent Protocol](https://agentprotocol.ai/specification) to govern its own agent behavior, but does not require adopters to do the same. Implementation of the spec is up to the maintainers of each agent ecosystem. See [Related Specs → Implementation Choices](spec/RELATED_SPECS.md#implementation-choices).
 
+## For AI Agents
+
+**HALOS governs this repository.** All agent behavior must follow the HALOS contract (human primacy, attribution, transparency, ethical guardrails). See [FOR_AGENTS.md](FOR_AGENTS.md), [AGENTS.md](AGENTS.md), and [docs/for-agents.md](docs/for-agents.md). Machine-readable spec: [spec/manifest.json](spec/manifest.json), [spec/core.json](spec/core.json).
+
 ## Why HALOS
 
 As AI systems become more capable collaborators, a gap has emerged: we lack shared norms for how humans and agents should work together. Who owns the output of a human–agent collaboration? How do we trace the origin of an idea when both contributed? How do we evolve standards without fragmenting the space?
@@ -48,10 +52,12 @@ HALOS addresses these questions by providing:
 ```
 halos/
 ├── README.md                 # This file
-├── AGENTS.md                 # HALOS agent (spec-implementing)
+├── FOR_AGENTS.md             # Agent entry point (root-level discovery)
+├── AGENTS.md                 # HALOS contract and spec-implementing agent
+├── .cursorrules              # Legacy Cursor config (points to HALOS)
 ├── LICENSE                   # CC-BY-4.0
 ├── CONTRIBUTING.md           # How to contribute
-├── .cursor/                  # HALOS contract (always), agent rules, spec conformance
+├── .cursor/                  # HALOS contract (always), agent rules, skills
 ├── spec/                     # Machine-readable specification
 │   ├── manifest.json         # Discovery entry point for agents
 │   ├── core.json             # Core requirements (source of truth)
@@ -63,7 +69,9 @@ halos/
 │   ├── governance.md         # How HALOS evolves
 │   ├── origin.md             # About the author and project origin
 │   ├── identity.md           # Public identity and design rationale
-│   └── everyday-humans.md    # Plain-language explanation for general readers
+│   ├── everyday-humans.md    # Plain-language explanation for general readers
+│   ├── for-agents.md         # Full agent guidelines
+│   └── agent-discovery.md    # Why/how discovery files were added
 └── proposals/
     ├── README.md             # Proposal process (RFC-style)
     └── TEMPLATE.md           # Template for new proposals
@@ -71,7 +79,10 @@ halos/
 
 ## Agents
 
-- **[AGENTS.md](AGENTS.md)** — HALOS agent that fully implements the spec when co-creating the framework
+- **[FOR_AGENTS.md](FOR_AGENTS.md)** — Root-level agent entry point
+- **[AGENTS.md](AGENTS.md)** — HALOS contract and spec-implementing agent
+- **[docs/for-agents.md](docs/for-agents.md)** — Full agent guidelines and discovery table
+- **[docs/agent-discovery.md](docs/agent-discovery.md)** — Why and how discovery files were added
 
 ## Specification
 
@@ -87,6 +98,8 @@ halos/
 - **[About the Author](docs/origin.md)** — Origin, authorship, and drafting context
 - **[Identity](docs/identity.md)** — Public identity, symbolism, and design rationale
 - **[HALOS for Everyday Humans](docs/everyday-humans.md)** — Plain-language framing for people outside the tech world
+- **[For AI Agents](docs/for-agents.md)** — Agent guidelines and discovery
+- **[Agent Discovery Conventions](docs/agent-discovery.md)** — Why and how discovery files were added
 - **[Proposals](proposals/README.md)** — Process for contributing and evolving HALOS
 
 ## Status

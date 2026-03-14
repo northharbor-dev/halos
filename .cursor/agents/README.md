@@ -23,3 +23,9 @@ Maps agents to rules for the HALOS repository.
 | Skills | *(none)* |
 
 Adds framework mechanics when working in `spec/`, `proposals/`, `docs/`. The HALOS contract (above) applies to all interactions.
+
+### Skills
+
+| Skill | Path | When used |
+|-------|------|-----------|
+| agent-convention-sync | `.cursor/skills/agent-convention-sync/` | Updating discovery files (FOR_AGENTS.md, .cursorrules, docs/for-agents.md) as agent conventions evolve |

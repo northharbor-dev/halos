@@ -38,6 +38,10 @@ title: HALOS
       <h3>Everyday Humans</h3>
       <p>A plain-language introduction for people outside the tech world.</p>
     </a>
+    <a class="card" href="for-agents.html">
+      <h3>For AI Agents</h3>
+      <p>How agents discover and adopt HALOS when working in this repository.</p>
+    </a>
   </div>
 </section>
 
