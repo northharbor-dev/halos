@@ -1,5 +1,6 @@
 title: HALOS
 description: Human-Agent Living Operating System
+baseurl: ""  # empty for custom domain halos.northharbor.dev (served at root)
 theme: minima
 defaults:
   - scope:
