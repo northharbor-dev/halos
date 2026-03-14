@@ -110,3 +110,5 @@ If you are not a technologist, your perspective still matters. Questions about t
 In many cases, people outside the technology world may identify real concerns that those closest to the frontier can overlook. Technical builders often see capability first. Others may more quickly see social disruption, unfairness, confusion, or harm. Both perspectives matter. A framework like HALOS becomes stronger when it is shaped not only by those building advanced systems, but also by those who will live with their consequences.
 
 This framework is being developed in public because these questions deserve public thought, not just private technical decisions.
+
+**[Explore what HALOS means for you](explore.html)** — answer a few questions about your role and concerns, then get a prompt you can open in Claude, ChatGPT, or any AI to continue the conversation with HALOS as context.

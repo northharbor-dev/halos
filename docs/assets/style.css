@@ -28,6 +28,7 @@ html[data-page-width="wide"] {
 
 html {
   scroll-behavior: smooth;
+  background: var(--bg);
 }
 
 html[data-text-size="compact"] {
@@ -445,6 +446,55 @@ strong {
   margin-top: 0;
 }
 
+.section-card__lead {
+  max-width: var(--prose-width);
+  margin: 0.5rem 0 1.25rem;
+  font-size: var(--deck-size);
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+/* ── Homepage: visual and explore panel ── */
+.home-visual {
+  margin: 0 auto 2.5rem;
+  max-width: min(520px, 90vw);
+  text-align: center;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.home-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  /* Fade edges into page bg — solid by 72% to cover square corners (~71%) */
+  background: radial-gradient(
+    circle at 50% 50%,
+    transparent 50%,
+    var(--bg) 72%
+  );
+}
+
+.home-visual__img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 0;
+}
+
+.home-explore-panel {
+  margin-top: 2rem;
+}
+
+.home-explore-title {
+  margin-bottom: 1rem;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -605,6 +655,260 @@ strong {
   font-size: 0.92rem;
 }
 
+/* ── Explore page (What HALOS means for you) ── */
+.explore-section {
+  padding-top: 0;
+}
+
+.explore-intro {
+  max-width: var(--prose-width);
+  margin-left: auto;
+  margin-right: auto;
+  font-size: var(--body-size);
+  line-height: var(--body-leading);
+  color: var(--text-soft);
+}
+
+.explore-form-section {
+  margin-top: 1.5rem;
+}
+
+.explore-form {
+  max-width: var(--prose-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.explore-field {
+  margin-bottom: 1.75rem;
+}
+
+.explore-field label,
+.explore-label {
+  display: block;
+  font-size: var(--deck-size);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.explore-field .required,
+.explore-field .optional {
+  font-weight: 400;
+  color: var(--text-soft);
+  font-size: 0.9em;
+}
+
+.explore-hint {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  margin: 0 0 0.6rem;
+  line-height: 1.5;
+}
+
+.explore-form select,
+.explore-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: var(--body-size);
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 140ms ease, background 140ms ease;
+}
+
+.explore-form select:hover,
+.explore-form select:focus,
+.explore-form textarea:hover,
+.explore-form textarea:focus {
+  border-color: rgba(107, 208, 255, 0.4);
+  background: var(--surface-strong);
+  outline: none;
+}
+
+.explore-form textarea {
+  resize: vertical;
+  min-height: 4rem;
+}
+
+.explore-custom-wrap {
+  margin-top: 0.75rem;
+}
+
+.explore-custom-wrap textarea {
+  margin-top: 0;
+}
+
+.explore-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.explore-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 140ms ease, background 140ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.explore-option:hover,
+.explore-option:focus-within {
+  border-color: rgba(107, 208, 255, 0.35);
+  background: var(--surface-strong);
+}
+
+.explore-option input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--accent);
+}
+
+.explore-option span {
+  flex: 1;
+  font-size: var(--card-size);
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.explore-actions {
+  margin-top: 2rem;
+}
+
+.explore-btn {
+  display: inline-block;
+  padding: 0.85rem 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 140ms ease;
+  border: 1px solid transparent;
+}
+
+.explore-btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+.explore-btn-primary:hover,
+.explore-btn-primary:active {
+  background: var(--halo);
+  color: var(--bg);
+  border-color: var(--halo);
+}
+
+.explore-btn-ghost {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--border);
+}
+
+.explore-btn-ghost:hover,
+.explore-btn-ghost:active {
+  border-color: var(--accent);
+  color: var(--halo);
+}
+
+.explore-output-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.explore-output-title {
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
+}
+
+.explore-output-actions {
+  margin-bottom: 0.75rem;
+}
+
+.explore-output-content {
+  margin-bottom: 1.25rem;
+}
+
+.explore-output-content textarea {
+  width: 100%;
+  padding: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  resize: vertical;
+  overflow-x: auto;
+  word-break: break-word;
+}
+
+.explore-links {
+  margin-bottom: 1rem;
+}
+
+.explore-link {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background: rgba(107, 208, 255, 0.12);
+  border: 1px solid rgba(107, 208, 255, 0.3);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 140ms ease;
+}
+
+.explore-link:hover {
+  background: rgba(107, 208, 255, 0.2);
+  border-color: rgba(107, 208, 255, 0.5);
+  color: var(--halo);
+}
+
+.explore-output-note {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.explore-output-note a {
+  color: var(--accent);
+}
+
+.explore-char-warning {
+  font-size: 0.9rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(107, 208, 255, 0.08);
+  border: 1px solid rgba(107, 208, 255, 0.2);
+  border-radius: 8px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 @media (max-width: 720px) {
   .site-nav,
   .page-shell {
@@ -711,6 +1015,15 @@ strong {
   .card-grid {
     grid-template-columns: minmax(0, 1fr);
   }
+
+  .explore-option {
+    padding: 1rem 1rem;
+  }
+
+  .explore-btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -744,6 +1057,15 @@ strong {
     width: clamp(2.25rem, 8vw, 2.75rem);
     height: clamp(2.25rem, 8vw, 2.75rem);
   }
+
+  .explore-form select,
+  .explore-form textarea {
+    padding: 0.9rem 1rem;
+  }
+
+  .explore-output-content textarea {
+    font-size: max(0.85rem, 1.05rem);
+  }
 }
 
 @media (pointer: coarse) {
@@ -761,5 +1083,25 @@ strong {
 
   .page-width-control__button {
     min-height: 44px;
+  }
+
+  .explore-btn {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .explore-option {
+    min-height: 44px;
+    padding: 0.85rem 1rem;
+  }
+
+  .explore-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.85rem 1.25rem;
   }
 }

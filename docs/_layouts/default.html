@@ -32,6 +32,7 @@
         </button>
         <div id="nav-menu" class="nav-collapse">
         <nav class="site-links" aria-label="Primary">
+          <a href="{{ '/#explore' | relative_url }}" {% if page.url == "/" or page.url == "/index.html" or page.url == "/explore.html" %}class="is-current"{% endif %}>Explore</a>
           <a href="{{ '/spec/spec.html' | relative_url }}" {% if page.url contains '/spec/' %}class="is-current"{% endif %}>Spec</a>
           <a href="{{ '/vision.html' | relative_url }}" {% if page.url == "/vision.html" %}class="is-current"{% endif %}>Vision</a>
           <a href="{{ '/principles.html' | relative_url }}" {% if page.url == "/principles.html" %}class="is-current"{% endif %}>Principles</a>

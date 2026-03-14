@@ -21,6 +21,7 @@ Ask the HALOS agent. Example prompts:
 | Fix a typo or improve docs | "How do I contribute a small edit?" |
 | Understand a principle | "What is HALOS-CORE-1?" or "Explain HALOS-CORE-4" |
 | Adopt HALOS | "How do I adopt HALOS in my project?" |
+| Explore what HALOS means for you | [explore.html](explore.html) — build a seeded prompt and open in Claude, ChatGPT, etc. |
 | Publish after acceptance | "What's the publishing checklist?" |
 | Review a proposal | "What should I check when reviewing?" |
 
@@ -51,12 +52,17 @@ Starts the server in Docker, tests all paths (pages, spec, skills, assets), then
 ./scripts/serve.sh
 ```
 
-**Option 2 — Docker:**
+**Option 2 — Docker (one-time build):**
 ```bash
-docker run --rm -p 3000:3000 halos serve
+docker run --rm -v "$(pwd):/workspace" -p 3000:3000 halos serve
 ```
 
-Visit http://localhost:3000.
+**Option 3 — Docker with live reload** (best for interactive editing):
+```bash
+./scripts/serve-watch.sh
+```
+
+Visit http://localhost:3000. With live reload, edits to docs or spec trigger an automatic rebuild and browser refresh.
 
 ### How do I propose a change?
 
@@ -98,10 +104,13 @@ The HALOS agent has skills for specific tasks:
 
 Paste the prompt in [LEARN_HALOS.md](https://github.com/northharbor-dev/halos/blob/main/LEARN_HALOS.md) into ChatGPT, Claude, Gemini, or any AI chat. The AI will have the full HALOS framework. Try: "Explain HALOS", "How do I adopt HALOS?", "Help me write a proposal that aligns with HALOS."
 
+**Explore what HALOS means for you:** Use the [Explore tool](explore.html) to describe your role and concerns, then get a seeded prompt and a clickable link to open in Claude, ChatGPT, or any AI chatbot.
+
 ## Links
 
 - [Spec](/spec/spec.html)
 - [Principles](principles.html)
+- [Explore](explore.html)
 - [Governance](governance.html)
 - [For Agents](for-agents.html)
 - [Everyday Humans](everyday-humans.html)

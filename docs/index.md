@@ -1,5 +1,6 @@
 ---
 title: HALOS
+layout: default
 ---
 
 <section class="hero">
@@ -11,12 +12,24 @@ title: HALOS
     <h1>HALOS</h1>
     <p><strong>Human-Agent Living Operating System</strong></p>
     <p>A framework for principled collaboration between humans and intelligent agents.</p>
-    <p>HALOS is developed in public and stewarded through NorthHarbor Development. This site is the simplest public reading surface for the framework, while the GitHub repository remains the canonical source for its documents, history, and contribution process.</p>
   </div>
 </section>
 
+<section class="home-visual" aria-hidden="true">
+  <picture>
+    <source srcset="/identity-assets/homepage/halos-community-encompassed.png?v=3" type="image/png">
+    <img src="/identity-assets/homepage/halos-community-encompassed.png?v=3" alt="" width="600" height="600" class="home-visual__img">
+  </picture>
+</section>
+
+<section class="section-card home-explore-panel" id="explore">
+  <h2 class="home-explore-title">Explore what HALOS means for you</h2>
+  {% include explore-form-embed.html %}
+</section>
+
 <section class="section-card">
-  <h2>Start Here</h2>
+  <h2>Dive deeper</h2>
+  <p class="section-card__lead">Specification, vision, principles, governance, and more.</p>
   <div class="card-grid">
     <a class="card" href="spec/spec.html">
       <h3>Specification</h3>
@@ -62,7 +75,7 @@ title: HALOS
     </a>
     <a class="card" href="identity.html">
       <h3>Identity</h3>
-      <p>Why the project’s visual identity is published in the open.</p>
+      <p>Why the project's visual identity is published in the open.</p>
     </a>
     <a class="card" href="https://github.com/northharbor-dev/halos">
       <h3>Repository</h3>
@@ -73,6 +86,9 @@ title: HALOS
 
 <section class="section-card">
   <h2>Why This Exists</h2>
+  <p>HALOS is developed in public and stewarded through NorthHarbor Development. This site is the simplest public reading surface for the framework, while the GitHub repository remains the canonical source for its documents, history, and contribution process.</p>
   <p>HALOS is an attempt to think carefully about human-AI collaboration before more powerful systems become more deeply embedded in society. It does not claim to solve every problem, but it aims to contribute principles, governance, and public discussion that may help shape a more responsible path.</p>
   <p>Questions, concerns, or thoughtful feedback are welcome at <a href="mailto:halos@northharbor.dev">halos@northharbor.dev</a>.</p>
 </section>
+
+<script src="{{ '/assets/explore.js' | relative_url }}" defer></script>
