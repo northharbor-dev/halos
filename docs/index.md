@@ -70,6 +70,29 @@ layout: default
   </div>
 </section>
 
+<section class="section-card" id="getting-involved" aria-labelledby="getting-involved-heading">
+  <h2 id="getting-involved-heading">Getting Involved</h2>
+  <p class="section-card__lead">HALOS is developed in public and welcomes participation. Read the spec, become a signatory, contribute improvements via GitHub, or follow project updates on the NorthHarbor LinkedIn company page.</p>
+  <div class="card-grid">
+    <a class="card" href="spec/spec.html">
+      <h3>Read the Spec</h3>
+      <p>Machine-readable core and extensions. Understand what HALOS requires.</p>
+    </a>
+    <a class="card" href="supporters.html">
+      <h3>Become a Signatory</h3>
+      <p>Publicly affirm your support for the principles. Add yourself via pull request.</p>
+    </a>
+    <a class="card" href="https://github.com/northharbor-dev/halos" rel="noopener noreferrer">
+      <h3>Contribute</h3>
+      <p>Propose changes, improve docs, or join the review process. All via GitHub.</p>
+    </a>
+    <a class="card" href="https://www.linkedin.com/company/northharbor" rel="noopener noreferrer">
+      <h3>Follow Updates</h3>
+      <p>Stay connected for milestones, announcements, and discussion.</p>
+    </a>
+  </div>
+</section>
+
 <section class="section-card">
   <h2>Context</h2>
   <div class="card-grid">
