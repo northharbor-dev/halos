@@ -1218,6 +1218,11 @@ strong {
   white-space: nowrap;
 }
 
+.supporters-badge--founder {
+  background: linear-gradient(135deg, #3F63E6 0%, #2a4299 100%);
+  color: #fff;
+}
+
 .supporters-badge--founding {
   background: rgba(107, 208, 255, 0.2);
   color: var(--halo);

@@ -14,7 +14,8 @@
   let filtered = [];
   let currentPage = 1;
 
-  function getBadgeTier(index) {
+  function getBadgeTier(s, index) {
+    if (s.role === "Creator") return "founder";
     if (index < 1) return null;
     if (index <= FOUNDING_COUNT) return "founding";
     if (index <= EARLY_COUNT) return "early";
@@ -22,8 +23,8 @@
   }
 
   function renderSignatory(s, index) {
-    const tier = getBadgeTier(index);
-    const tierLabel = tier === "founding" ? "Founding Supporter" : tier === "early" ? "Early Supporter" : "";
+    const tier = getBadgeTier(s, index);
+    const tierLabel = tier === "founder" ? "Founder" : tier === "founding" ? "Founding Supporter" : tier === "early" ? "Early Supporter" : "";
 
     let links = [];
     if (s.github) links.push(`<a href="https://github.com/${escapeHtml(s.github)}" rel="noopener noreferrer">GitHub</a>`);
@@ -57,7 +58,7 @@
 
     filtered = allSignatories.filter((s, i) => {
       const index = i + 1;
-      if (foundingOnly && index > FOUNDING_COUNT) return false;
+      if (foundingOnly && getBadgeTier(s, index) !== "founder" && index > FOUNDING_COUNT) return false;
       if (roleFilter && (s.role || "").toLowerCase() !== roleFilter.toLowerCase()) return false;
       if (orgFilter && (s.organization || "").toLowerCase() !== orgFilter.toLowerCase()) return false;
       if (countryFilter && (s.country || "").toLowerCase() !== countryFilter.toLowerCase()) return false;

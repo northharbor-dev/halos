@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1584" height="528" viewBox="0 0 1584 528" fill="none">
+  <defs>
+    <linearGradient id="banner-bg" x1="0" y1="0" x2="1584" y2="528" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#061228"/>
+      <stop offset="0.5" stop-color="#0a1a3a"/>
+      <stop offset="1" stop-color="#020814"/>
+    </linearGradient>
+    <linearGradient id="banner-ring" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#D6FAFF"/>
+      <stop offset="0.4" stop-color="#78D3FF"/>
+      <stop offset="1" stop-color="#3F63E6"/>
+    </linearGradient>
+    <filter id="banner-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1584" height="528" fill="url(#banner-bg)"/>
+
+  <!-- Left: empty for avatar overlap zone (LinkedIn profile photo sits bottom-left) -->
+
+  <!-- Center-right: Bob Hong branding -->
+  <g transform="translate(520 185)">
+    <text x="0" y="52" fill="#EDFDFE" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="56" font-weight="700" letter-spacing="-0.02em">Bob Hong</text>
+    <text x="0" y="118" fill="rgba(214, 250, 255, 0.9)" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="34" font-weight="500">Creator, NorthHarbor</text>
+    <text x="0" y="182" fill="rgba(165, 229, 255, 0.7)" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="24" font-weight="400">HALOS - Human-Agent Living Operating System</text>
+    <text x="0" y="228" fill="rgba(165, 229, 255, 0.65)" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="24" font-weight="400">halos.northharbor.dev</text>
+  </g>
+
+  <!-- Halo ring motif (right side) -->
+  <g transform="translate(1380 264)">
+    <circle cx="0" cy="0" r="6" fill="#EDFDFE" filter="url(#banner-glow)" opacity="0.9"/>
+    <circle cx="0" cy="0" r="22" stroke="#A5E5FF" stroke-opacity="0.4" stroke-width="1.5" fill="none"/>
+    <circle cx="0" cy="0" r="45" stroke="url(#banner-ring)" stroke-width="5" stroke-dasharray="80 12 22 12" fill="none" opacity="0.95"/>
+    <circle cx="0" cy="0" r="70" stroke="url(#banner-ring)" stroke-opacity="0.7" stroke-width="4" stroke-dasharray="110 14 36 14" fill="none"/>
+  </g>
+</svg>
