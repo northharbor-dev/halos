@@ -7,6 +7,8 @@ deck: Philosophy, motivation, and long-term direction for HALOS.
 
 *Philosophy and Motivation*
 
+**HALOS** is an open framework for defining provenance, attribution, and accountability in human–agent collaboration. In this document, *agent* refers to computational systems capable of participating in workflows alongside humans—such as language models, autonomous systems, or other machine intelligence—that can reason, act, or produce outputs in response to human direction or environmental context.
+
 ---
 
 ## The Problem
@@ -14,6 +16,10 @@ deck: Philosophy, motivation, and long-term direction for HALOS.
 Humans have collaborated through shared norms for millennia. Handshakes, contracts, attribution, and reputation all function because we agree on what they mean. When AI systems join as collaborators, those norms break down. We have no equivalent of "signed by" or "inspired by" for human–agent work. We have no agreed way to trace lineage when an idea passes through both human and machine minds.
 
 The result is ambiguity. Who originated a concept? Who is responsible when something goes wrong? How do we credit creative contribution when the collaboration is asymmetric—human direction, machine execution, human refinement? These questions matter for law, ethics, commerce, and trust.
+
+## Why Now
+
+AI systems have crossed from tools to collaborators. They now co-author, suggest, and execute in research, development, and creative work—blurring boundaries between human and machine contribution. Without shared norms, adoption will harden into incompatible practice. HALOS addresses this gap now, before that window closes.
 
 ## The Aspiration
 
