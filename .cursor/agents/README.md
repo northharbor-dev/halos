@@ -11,9 +11,13 @@ Maps agents to rules for the HALOS repository.
 
 ## Global (always applied)
 
-| Rule | Path | Scope |
-|------|------|-------|
-| HALOS contract | `.cursor/rules/halos-alignment.mdc` | `alwaysApply: true` — principles govern every interaction |
+| Rule                    | Path                                                     | Scope                                                         |
+|-------------------------|----------------------------------------------------------|---------------------------------------------------------------|
+| HALOS contract          | `.cursor/rules/halos-alignment.mdc`                      | `alwaysApply: true` — principles govern every interaction     |
+| Elliot (security)       | `../nh-core/.cursor/rules/elliot.mdc`                    | `alwaysApply: true` — security checks on every conversation   |
+| Offer follow-up actions | `../nh-core/.cursor/rules/offer-follow-up-actions.mdc`   | `alwaysApply: true` — proactively offer to run next steps     |
+
+*nh-core rules are consumed here, not duplicated. halos defines the HALOS contract; nh-core provides shared agent intelligence.*
 
 ## HALOS (spec-implementing agent)
 
