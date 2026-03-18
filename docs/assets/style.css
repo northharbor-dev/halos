@@ -101,6 +101,37 @@ strong {
   padding: 1rem 0;
 }
 
+.site-parent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  opacity: 0.75;
+  transition: opacity 0.15s;
+}
+.site-parent:hover { opacity: 1; }
+.site-parent__mark { width: 32px; height: 32px; border-radius: 6px; flex-shrink: 0; }
+.site-parent__label {
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.site-parent__suffix {
+  color: var(--text-soft);
+  font-weight: 500;
+  margin-left: 0.2em;
+}
+.site-parent__sep {
+  color: var(--text-soft);
+  opacity: 0.4;
+  font-size: 1.25rem;
+  margin: 0 0.35rem;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 .site-brand {
   display: inline-flex;
   align-items: center;
@@ -177,19 +208,64 @@ strong {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* Reading controls — tab anchored flush to left viewport edge, below nav */
 .reading-controls-wrap {
-  margin-left: auto;
+  position: fixed;
+  left: 0;
+  top: 120px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0;
+  z-index: 200;
 }
 
 .reading-controls-toggle {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 52px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: none;
+  border-radius: 0 6px 6px 0;
+  background: #0c1d38;
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: color 140ms ease, background 140ms ease, border-color 140ms ease;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+}
+
+.reading-controls-toggle:hover,
+.reading-controls-wrap.reading-open .reading-controls-toggle {
+  color: var(--text);
+  background: #132844;
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .reading-controls {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 0.5rem;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: #0c1d38;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+  padding: 1rem;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-8px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.reading-controls-wrap.reading-open .reading-controls {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
 }
 
 .text-size-control {
@@ -454,7 +530,16 @@ strong {
   line-height: 1.6;
 }
 
-/* ── Homepage: visual and explore panel ── */
+/* ── Homepage: lead-in and explore ── */
+.home-lead-in p {
+  max-width: var(--prose-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+.home-lead-in p + p {
+  margin-top: 1rem;
+}
+
 .home-visual {
   margin: 0 auto 2.5rem;
   max-width: min(520px, 90vw);
@@ -977,64 +1062,10 @@ strong {
     overflow-y: auto;
   }
 
-  /* Extra room when reading options are open (e.g. Cursor browser's short panel) */
-  .site-shell.nav-open .nav-collapse:has(.reading-controls-wrap.reading-open) {
-    max-height: min(90vh, 500px);
-  }
-
   .site-links {
     justify-content: flex-start;
     gap: 0.5rem;
     padding-top: 0.75rem;
-  }
-
-  .reading-controls-wrap {
-    margin-left: 0;
-    width: 100%;
-  }
-
-  .reading-controls-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0.75rem 0.5rem;
-    margin-top: 0.5rem;
-    border: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    background: transparent;
-    color: var(--text-soft);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: color 140ms ease, background 140ms ease;
-  }
-
-  .reading-controls-toggle:hover {
-    color: var(--text);
-    background: rgba(255, 255, 255, 0.03);
-  }
-
-  .reading-controls-toggle__chevron {
-    font-size: 0.7rem;
-    transition: transform 0.2s ease;
-  }
-
-  .reading-controls-wrap.reading-open .reading-controls-toggle__chevron {
-    transform: rotate(180deg);
-  }
-
-  .reading-controls {
-    margin-left: 0;
-    align-items: flex-start;
-    padding-top: 0.5rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.25s ease;
-  }
-
-  .reading-controls-wrap.reading-open .reading-controls {
-    max-height: 12rem;
   }
 
   .hero {

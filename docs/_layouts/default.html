@@ -21,6 +21,11 @@
   <body>
     <header class="site-shell">
       <div class="site-nav">
+        <a class="site-parent" href="https://northharbor.dev" title="NorthHarbor Development">
+          <svg class="site-parent__mark" width="32" height="32" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="256" height="256" rx="52" fill="#0a1628"/><path d="M56 166C80 112 176 112 200 166" stroke="#5FD6FF" stroke-width="3" stroke-opacity=".55"/><circle cx="56" cy="166" r="3.5" fill="#DFFAFF"/><circle cx="96" cy="132" r="3.5" fill="#DFFAFF"/><circle cx="128" cy="118" r="4" fill="#DFFAFF"/><circle cx="160" cy="132" r="3.5" fill="#DFFAFF"/><circle cx="200" cy="166" r="3.5" fill="#DFFAFF"/><path d="M56 166L96 132L128 118L160 132L200 166" stroke="#48C4FF" stroke-width="1.75" stroke-opacity=".45"/><path d="M112 158L118 90H138L144 158H112Z" fill="#63C8FF" stroke="#B9F3FF" stroke-width="1.5"/><rect x="116" y="78" width="24" height="12" rx="4" fill="#94EBFF" stroke="#F1FDFF" stroke-width="1.5"/><path d="M128 72L135 60L128 44L121 60L128 72Z" fill="#FFF4CA"/><path d="M136 79L182 69" stroke="#C9F4FF" stroke-width="5" stroke-linecap="round" stroke-opacity=".35"/><path d="M96 182L128 160L164 170L132 192L96 182Z" fill="#5BC5FF" opacity=".95"/></svg>
+          <span class="site-parent__label">NorthHarbor<span class="site-parent__suffix">Dev</span></span>
+        </a>
+        <span class="site-parent__sep">›</span>
         <a class="site-brand" href="{{ '/' | relative_url }}">
           <img src="{{ '/identity-assets/selected/halos-halo-ring-institutional-randomized.svg' | relative_url }}" alt="HALOS mark">
           <span>HALOS</span>
@@ -37,7 +42,7 @@
           <a href="{{ '/vision.html' | relative_url }}" {% if page.url == "/vision.html" %}class="is-current"{% endif %}>Vision</a>
           <a href="{{ '/principles.html' | relative_url }}" {% if page.url == "/principles.html" %}class="is-current"{% endif %}>Principles</a>
           <a href="{{ '/governance.html' | relative_url }}" {% if page.url == "/governance.html" %}class="is-current"{% endif %}>Governance</a>
-          <a href="{{ '/everyday-humans.html' | relative_url }}" {% if page.url == "/everyday-humans.html" %}class="is-current"{% endif %}>Everyday Humans</a>
+          <a href="{{ '/everyday-humans.html' | relative_url }}" {% if page.url == "/everyday-humans.html" %}class="is-current"{% endif %}>For Everyone</a>
           <a href="{{ '/for-agents.html' | relative_url }}" {% if page.url == "/for-agents.html" %}class="is-current"{% endif %}>For Agents</a>
           <a href="{{ '/help.html' | relative_url }}" {% if page.url == "/help.html" %}class="is-current"{% endif %}>Help</a>
           <a href="{{ '/supporters.html' | relative_url }}" {% if page.url == "/supporters.html" %}class="is-current"{% endif %}>Supporters</a>
@@ -45,28 +50,28 @@
           <a href="{{ '/blog.html' | relative_url }}" {% if page.url == "/blog.html" or page.date %}class="is-current"{% endif %}>Blog</a>
           <a href="https://github.com/northharbor-dev/halos">GitHub</a>
         </nav>
-        <div class="reading-controls-wrap">
-          <button type="button" class="reading-controls-toggle" aria-label="Expand reading options" aria-expanded="false" aria-controls="reading-panel">
-            <span class="reading-controls-toggle__label">Reading options</span>
-            <span class="reading-controls-toggle__chevron" aria-hidden="true">▼</span>
-          </button>
-          <div id="reading-panel" class="reading-controls">
-            <div class="text-size-control" aria-label="Text size selector">
-              <span class="text-size-control__label">Text</span>
-              <button type="button" class="text-size-control__button" data-size="compact" aria-label="Compact text size">A</button>
-              <button type="button" class="text-size-control__button" data-size="comfortable" aria-label="Comfortable text size">A</button>
-              <button type="button" class="text-size-control__button" data-size="large" aria-label="Large text size">A</button>
-            </div>
-            <div class="page-width-control" aria-label="Page width selector">
-              <span class="page-width-control__label">Width</span>
-              <button type="button" class="page-width-control__button" data-width="current" aria-label="Current width">Current</button>
-              <button type="button" class="page-width-control__button" data-width="wide" aria-label="Wide width">Wide</button>
-            </div>
-          </div>
-        </div>
         </div>
       </div>
     </header>
+
+    <div class="reading-controls-wrap">
+      <button type="button" class="reading-controls-toggle" aria-label="Reading options" aria-expanded="false" aria-controls="reading-panel">
+        <svg aria-hidden="true" width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 2h8M1 7h8M1 12h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div id="reading-panel" class="reading-controls">
+        <div class="text-size-control" aria-label="Text size selector">
+          <span class="text-size-control__label">Text</span>
+          <button type="button" class="text-size-control__button" data-size="compact" aria-label="Compact text size">A</button>
+          <button type="button" class="text-size-control__button" data-size="comfortable" aria-label="Comfortable text size">A</button>
+          <button type="button" class="text-size-control__button" data-size="large" aria-label="Large text size">A</button>
+        </div>
+        <div class="page-width-control" aria-label="Page width selector">
+          <span class="page-width-control__label">Width</span>
+          <button type="button" class="page-width-control__button" data-width="current" aria-label="Current width">Current</button>
+          <button type="button" class="page-width-control__button" data-width="wide" aria-label="Wide width">Wide</button>
+        </div>
+      </div>
+    </div>
 
     <main class="page-shell">
       {% if page.url == "/" %}
@@ -88,7 +93,6 @@
             </div>
           </div>
           {% else %}
-          <p class="doc-hero__eyebrow">HALOS Document</p>
           <h1>{{ page.title }}</h1>
           {% if page.deck %}
           <p class="doc-hero__deck">{{ page.deck }}</p>
