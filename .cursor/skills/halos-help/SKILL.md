@@ -21,7 +21,7 @@ Provide friendly, concise answers to common questions. Route to the right doc or
 
 ### What is HALOS?
 
-A framework for principled human-agent collaboration. Eight core principles govern behavior (human primacy, attribution, transparency, ethical guardrails, etc.). Learn more: [docs/everyday-humans.md](docs/everyday-humans.md) or [docs/principles.md](docs/principles.md).
+A framework for principled human-agent collaboration. Eight core principles govern behavior (human primacy, attribution, transparency, ethical guardrails, etc.). Learn more: [HALOS for Everyone](docs/everyday-humans.md) or [docs/principles.md](docs/principles.md).
 
 ### How do I validate?
 

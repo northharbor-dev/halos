@@ -71,7 +71,7 @@ halos/
 │   ├── governance.md         # How HALOS evolves
 │   ├── origin.md             # About the author and project origin
 │   ├── identity.md           # Public identity and design rationale
-│   ├── everyday-humans.md    # Plain-language explanation for general readers
+│   ├── everyday-humans.md    # HALOS for Everyone — plain-language framing
 │   ├── for-agents.md         # Full agent guidelines
 │   └── agent-discovery.md    # Why/how discovery files were added
 └── proposals/
@@ -109,7 +109,7 @@ See [docker/README.md](docker/README.md) for build and multi-platform options.
 - **[Governance](docs/governance.md)** — How proposals are made, reviewed, and adopted
 - **[About the Author](docs/origin.md)** — Origin, authorship, and drafting context
 - **[Identity](docs/identity.md)** — Public identity, symbolism, and design rationale
-- **[HALOS for Everyday Humans](docs/everyday-humans.md)** — Plain-language framing for people outside the tech world
+- **[HALOS for Everyone](docs/everyday-humans.md)** — Plain-language framing for everyone
 - **[For AI Agents](docs/for-agents.md)** — Agent guidelines and discovery
 - **[Agent Discovery Conventions](docs/agent-discovery.md)** — Why and how discovery files were added
 - **[Proposals](proposals/README.md)** — Process for contributing and evolving HALOS

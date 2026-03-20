@@ -11,8 +11,18 @@ layout: default
     <span class="hero__eyebrow">Open Framework</span>
     <h1>HALOS</h1>
     <p><strong>Human-Agent Living Operating System</strong></p>
-    <p>A framework for principled collaboration between humans and intelligent agents.</p>
+    <p>AI without clear rules risks harm. HALOS helps shape a better path—humans central, AI visible, governance before it's too late.</p>
   </div>
+</section>
+
+<section class="section-card home-lead-in">
+  <p>AI is reshaping how we work, create, and make decisions. Without clear rules and accountability, that change risks confusion, harm, and loss of human agency. HALOS exists to help shape a better path: humans remain central, AI involvement is visible, and governance happens before damage is harder to undo.</p>
+  <p>Use the tool below to see how HALOS applies to your role and concerns.</p>
+</section>
+
+<section class="section-card home-explore-panel" id="explore">
+  <h2 class="home-explore-title">See how HALOS affects you</h2>
+  {% include explore-form-embed.html %}
 </section>
 
 <section class="home-visual" aria-hidden="true">
@@ -20,11 +30,6 @@ layout: default
     <source srcset="/identity-assets/homepage/halos-community-encompassed.png?v=3" type="image/png">
     <img src="/identity-assets/homepage/halos-community-encompassed.png?v=3" alt="" width="600" height="600" class="home-visual__img">
   </picture>
-</section>
-
-<section class="section-card home-explore-panel" id="explore">
-  <h2 class="home-explore-title">Explore what HALOS means for you</h2>
-  {% include explore-form-embed.html %}
 </section>
 
 <section class="section-card">
@@ -52,8 +57,8 @@ layout: default
       <p>Individuals and organizations who support the HALOS principles.</p>
     </a>
     <a class="card" href="everyday-humans.html">
-      <h3>Everyday Humans</h3>
-      <p>A plain-language introduction for people outside the tech world.</p>
+      <h3>For Everyone (full read)</h3>
+      <p>Plain-language framing for everyone.</p>
     </a>
     <a class="card" href="for-agents.html">
       <h3>For AI Agents</h3>

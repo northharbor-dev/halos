@@ -18,7 +18,7 @@ Ask the HALOS agent for help. In chat, try:
 | Run integration tests | `./scripts/integration-test.sh` |
 | Draft a proposal | [proposals/TEMPLATE.md](proposals/TEMPLATE.md), [proposals/README.md](proposals/README.md) |
 | Make a small edit | [CONTRIBUTING.md](CONTRIBUTING.md) |
-| Understand principles | [docs/principles.md](docs/principles.md), [docs/everyday-humans.md](docs/everyday-humans.md) |
+| Understand principles | [docs/principles.md](docs/principles.md), [For Everyone](docs/everyday-humans.md) |
 | Read the spec | [spec/spec.md](spec/spec.md), [spec/manifest.json](spec/manifest.json) |
 | Learn in any AI | [LEARN_HALOS.md](LEARN_HALOS.md) — paste into ChatGPT, Claude, etc. |
 | Publish after acceptance | [spec/PUBLISHING.md](spec/PUBLISHING.md) |
