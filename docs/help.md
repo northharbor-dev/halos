@@ -4,8 +4,6 @@ title: Help
 deck: Get help with HALOS—validation, proposals, contributing, and the spec
 ---
 
-# HALOS Help
-
 Get help via chat or explore the guides below.
 
 ## Get help in chat
@@ -113,4 +111,4 @@ Paste the prompt in [LEARN_HALOS.md](https://github.com/northharbor-dev/halos/bl
 - [Explore](explore.html)
 - [Governance](governance.html)
 - [For Agents](for-agents.html)
-- [Everyday Humans](everyday-humans.html)
+- [For Everyone](everyday-humans.html)

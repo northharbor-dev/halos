@@ -3,10 +3,6 @@ title: Vision
 deck: Philosophy, motivation, and long-term direction for HALOS.
 ---
 
-# HALOS Vision
-
-*Philosophy and Motivation*
-
 **HALOS** is an open framework for defining provenance, attribution, and accountability in human–agent collaboration. In this document, *agent* refers to computational systems capable of participating in workflows alongside humans—such as language models, autonomous systems, or other machine intelligence—that can reason, act, or produce outputs in response to human direction or environmental context.
 
 ---

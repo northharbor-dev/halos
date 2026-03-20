@@ -3,8 +3,6 @@ title: About the Author
 deck: Origin, authorship, and the public development context for HALOS.
 ---
 
-# About the Author
-
 HALOS was originated by Bob Hong, founder of NorthHarbor, through a line of work exploring principled collaboration between humans and intelligent systems.
 
 Bob's work focuses on designing systems that treat ideas, knowledge, and creative insight as valuable assets. His approach emphasizes transparency, attribution, and governance models that allow humans and AI agents to collaborate while preserving human agency and creative origin.

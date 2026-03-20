@@ -4,8 +4,6 @@ title: Agent Files
 deck: Discovery files, rules, and skills served from the HALOS site
 ---
 
-# Agent Files
-
 Agent discovery files, rules, and skills are copied from the repository during site build and served here. The [GitHub repository](https://github.com/northharbor-dev/halos) is the canonical source.
 
 ## Discovery Files

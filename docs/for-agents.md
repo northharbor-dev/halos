@@ -4,8 +4,6 @@ title: For AI Agents
 deck: How agents discover and adopt HALOS when working in this repository
 ---
 
-# For AI Agents
-
 This page explains how HALOS is exposed to AI coding agents and how to adopt it when working in this repository.
 
 ## Contract

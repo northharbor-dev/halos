@@ -3,12 +3,6 @@ title: Principles
 deck: Foundational ideas that anchor the framework and should change rarely.
 ---
 
-# HALOS Principles
-
-*Foundational Ideas*
-
----
-
 These principles anchor the HALOS framework. They are intended to change rarely. Implementations, specifications, and proposals should be evaluated against them.
 
 ## 1. Human Primacy

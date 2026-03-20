@@ -3,12 +3,6 @@ title: Governance
 deck: How HALOS evolves through public stewardship, proposals, and review.
 ---
 
-# HALOS Governance
-
-*How the Framework Evolves*
-
----
-
 ## Purpose
 
 Governance exists to keep HALOS credible, coherent, and responsive. It answers: who can propose changes? How are proposals reviewed? Who decides? The process should be lightweight enough to avoid paralysis and rigorous enough to maintain quality.
