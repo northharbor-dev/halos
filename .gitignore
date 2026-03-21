@@ -15,6 +15,7 @@ docs/agents
 # Build artifact: signatories copied into docs for Jekyll
 docs/signatories
 # Jekyll build output
+_site
 docs/_site
 docs/.jekyll-cache
 
