@@ -8,6 +8,11 @@ See [AGENTS.md](AGENTS.md) for the contract, named agents, and Cursor rule mappi
 
 The HALOS contract requires: human primacy, attribution, transparency, ethical guardrails. When in doubt, favor human intent and accountability.
 
+## Social and Syndication Content
+
+Platform-specific post drafts (LinkedIn, Substack, etc.) live in [`social/`](social/).
+See [`social/FOR_AGENTS.md`](social/FOR_AGENTS.md) for the full draft → publish → archive workflow.
+
 ## Adopting HALOS in Your Repo
 
 To adopt HALOS principles in a different repository, see the **halos-spec** adoption toolkit:
