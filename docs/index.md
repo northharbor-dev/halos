@@ -52,6 +52,10 @@ layout: default
       <h3>Governance</h3>
       <p>How the framework evolves through public process.</p>
     </a>
+    <a class="card" href="whitepaper.html">
+      <h3>Whitepaper</h3>
+      <p>How HALOS integrates with supply chain standards for verifiable human–AI collaboration.</p>
+    </a>
     <a class="card" href="supporters.html">
       <h3>Supporters</h3>
       <p>Individuals and organizations who support the HALOS principles.</p>
