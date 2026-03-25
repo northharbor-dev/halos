@@ -2,13 +2,16 @@
 
 **HALOS governs this repository.** All agent behavior must follow the HALOS contract.
 
-## Quick Links
+## Working in This Repo
 
-- **[AGENTS.md](AGENTS.md)** — Contract summary and spec-implementing agent
-- **[spec/manifest.json](spec/manifest.json)** — Machine-readable spec entry point
-- **[spec/core.json](spec/core.json)** — Eight core requirements (source of truth)
-- **[docs/for-agents.md](docs/for-agents.md)** — Full agent guidelines
+See [AGENTS.md](AGENTS.md) for the contract, named agents, and Cursor rule mappings.
 
-## Core Principle
+The HALOS contract requires: human primacy, attribution, transparency, ethical guardrails. When in doubt, favor human intent and accountability.
 
-HALOS is a contract: human primacy, attribution, transparency, ethical guardrails. When in doubt, favor human intent and accountability.
+## Adopting HALOS in Your Repo
+
+To adopt HALOS principles in a different repository, see the **halos-spec** adoption toolkit:
+
+- **[Adoption guide](https://github.com/northharbor-dev/halos-spec/blob/main/adopt/GUIDE.md)** — step-by-step for humans
+- **[Agent prompt](https://github.com/northharbor-dev/halos-spec/blob/main/adopt/AGENT-PROMPT.md)** — agent-executable adoption
+- **[FOR_AGENTS.md in halos-spec](https://github.com/northharbor-dev/halos-spec/blob/main/FOR_AGENTS.md)** — full discovery index

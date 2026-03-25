@@ -1,55 +1,44 @@
 ---
 layout: default
 title: For AI Agents
-deck: How agents discover and adopt HALOS when working in this repository
+deck: How HALOS works with AI agents — in this repo and in yours
 ---
 
-This page explains how HALOS is exposed to AI coding agents and how to adopt it when working in this repository.
+HALOS defines principles for human-agent collaboration. This page explains how agents interact with HALOS in two contexts: working in this repository, and adopting HALOS elsewhere.
 
-## Contract
+## Working in This Repository
 
-HALOS is a **contract** that all agent behavior must follow. The eight core requirements govern every interaction:
+This repo is the HALOS community home — website, narrative, proposals, and governance. Agents working here must follow the HALOS contract.
 
-1. **Human Primacy** — Humans are originators; agents assist. Human judgment overrides agent output when in tension.
-2. **Ideas as Assets** — Ideas have value; attribution and lineage matter.
-3. **Attribution and Provenance** — Contribution must be traceable; disclose agent involvement.
-4. **Transparency of AI Involvement** — AI participation must be visible when it matters.
-5. **Ethical Guardrails** — No harmful or deceptive uses; preserve human agency.
-6. **Evolving Standards, Stable Principles** — Principles are the anchor; standards may change.
-7. **Governance Through Proposal** — Framework changes follow the proposal process.
-8. **Innovation with Accountability** — Articulate how work aligns with or departs from principles.
-
-## Discovery Files
-
-This repository exposes HALOS through multiple entry points so agents using different conventions can find it:
+**Key files:**
 
 | File | Purpose | Convention |
 |------|----------|------------|
-| [FOR_AGENTS.md](/agents/FOR_AGENTS.html) | Root-level agent entry point | Many tools index root markdown files |
-| [AGENTS.md](/agents/AGENTS.html) | Contract and agent definitions | Cursor, some agent frameworks |
-| [.cursorrules](/agents/cursorrules) | Legacy Cursor config | Cursor (legacy) |
+| [AGENTS.md](/agents/AGENTS.html) | Contract and agent definitions | Cursor, agent frameworks |
 | [.cursor/rules/](/agents/rules/) | Cursor rules (halos-alignment, etc.) | Cursor |
 | [spec/manifest.json](/spec/manifest.json) | Machine-readable spec discovery | OSSA, Agent Protocol, tooling |
 
-See [Agent Discovery Conventions](agent-discovery.html) for why these were added and how to maintain them.
+**When working here:**
+1. Read the HALOS contract in [AGENTS.md](/agents/AGENTS.html) or `.cursor/rules/halos-alignment.mdc`
+2. Apply the eight core principles to every interaction
+3. For spec or framework changes, use the proposal process (`proposals/`)
 
-## Machine-Readable Spec
+## Adopting HALOS in Your Repository
 
-- **Manifest:** [spec/manifest.json](/spec/manifest.json) — Version, core requirements, extensions
-- **Core:** [spec/core.json](/spec/core.json) — Eight requirements with ids, titles, descriptions
-- **Schema:** [spec/schema/](/spec/schema/) — JSON Schema for validation
+The canonical specifications and adoption toolkit live in [**halos-spec**](https://github.com/northharbor-dev/halos-spec):
 
-## Adopting HALOS
+- [**Adoption guide**](https://github.com/northharbor-dev/halos-spec/blob/main/adopt/GUIDE.md) — step-by-step for humans
+- [**Agent prompt**](https://github.com/northharbor-dev/halos-spec/blob/main/adopt/AGENT-PROMPT.md) — agent-executable adoption process
+- [**Templates**](https://github.com/northharbor-dev/halos-spec/tree/main/adopt/templates) — starter `halos.yaml`, adoption doc, conflict register
+- [**Profile schema**](https://github.com/northharbor-dev/halos-spec/blob/main/spec/schema/halos-profile.schema.json) — validates your governance profile
 
-When you encounter this repository:
-
-1. Read the core requirements in [spec/core.json](/spec/core.json) or [halos-alignment.mdc](/agents/rules/halos-alignment.mdc)
-2. Apply them to every interaction: propose, don't override; preserve attribution; disclose AI involvement
-3. For spec or framework changes, use the proposal process (`proposals/`) and run `node scripts/generate-spec.js` after JSON edits
+Adoption has two phases:
+1. **Governance** — create a `halos.yaml` profile, map existing artifacts, surface conflicts
+2. **Provenance** — add `.halos.json` records, integrate with domain standards (SLSA, CycloneDX, etc.)
 
 ## Links
 
+- [Principles](https://github.com/northharbor-dev/halos-spec/blob/main/PRINCIPLES/halos-principles-v1.0.md)
 - [Specification](/spec/spec.html)
 - [Agent Files](agents.html) — Rules, skills, and discovery files served on this site
-- [Related Specs](/spec/RELATED_SPECS.html)
 - [Governance](governance.html)
