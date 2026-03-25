@@ -8,6 +8,8 @@ deck: "HALOS: A Human-Centered Provenance Layer for AI Systems"
 
 ### Enabling Verifiable Human–AI Collaboration with Policy Enforcement
 
+*March 2026 — HALOS Principles v1.0, Provenance Spec v0.1*
+
 ---
 
 ## Abstract
@@ -16,19 +18,19 @@ As artificial intelligence becomes deeply embedded in software development, cont
 
 > We lack a standardized way to capture, verify, and enforce **human accountability and AI involvement** across digital artifacts.
 
-Existing standards such as CycloneDX and SLSA provide strong foundations for **transparency** and **integrity**, but do not address:
+Existing standards provide strong foundations for **transparency** (CycloneDX, SPDX) and **integrity** (SLSA, in-toto), but do not address:
 
 * Who (human vs AI) contributed
 * How decisions were made
 * Where responsibility lies
 
-HALOS (Human–Agent Lineage & Oversight Specification) introduces:
+HALOS (Human–Agent Lineage and Origin Standard) introduces:
 
 * A **governance layer** (Principles)
 * A **provenance model** (Provenance Spec)
-* A pathway to **enforcement** through systems like Chainloop
+* A pathway to **enforcement** through policy engines
 
-SLSA, CycloneDX, and Chainloop are **example implementations** of the layers that HALOS integrates with — they are not the only options. HALOS is designed to be implementation-agnostic, and alternate systems are expected to fulfill these roles depending on the domain, industry, or organizational context.
+The standards and tools named in this paper — CycloneDX, SLSA, Chainloop, and others — are **representative examples** of the layers that HALOS integrates with. HALOS is designed to be implementation-agnostic; alternate systems are expected to fulfill these roles depending on the domain, industry, or organizational context.
 
 This paper outlines how HALOS integrates with modern supply chain frameworks to create a **verifiable, enforceable model for human–AI collaboration**.
 
@@ -50,23 +52,19 @@ But current systems do not reliably answer:
 * Who is accountable?
 * How did this artifact evolve?
 
----
-
 ### 1.2 Existing standards solve adjacent problems
 
-* CycloneDX
-  → What is inside a system
+A growing ecosystem of standards addresses software supply chain concerns, but each focuses on a specific layer:
 
-* SLSA
-  → Can we trust how it was built
+| Standard | What it answers |
+|----------|----------------|
+| CycloneDX, SPDX, SWID | What is inside a system (transparency) |
+| SLSA, in-toto, Sigstore | How it was built and whether we can trust the build (integrity) |
+| Chainloop, OPA, Kyverno | Whether an artifact is allowed to proceed (enforcement) |
 
-These are necessary — but incomplete.
-
----
+These are necessary — but none answers: **who contributed (human or AI), and who is accountable?**
 
 ### 1.3 The missing layer
-
-What is missing is:
 
 > A **human-centered provenance model** that captures authorship, collaboration, and decision-making across both humans and AI.
 
@@ -86,8 +84,8 @@ HALOS introduces a layered approach:
 +--------------------------------------+
 | Attestations (embedded in systems)   |
 +--------------------------------------+
-| CycloneDX / SLSA                     |
-| (Transparency + integrity)           |
+| Transparency + Integrity layers      |
+| (CycloneDX, SLSA, or equivalents)   |
 +--------------------------------------+
 | Execution Systems (CI/CD pipelines)  |
 +--------------------------------------+
@@ -104,7 +102,7 @@ The HALOS Provenance Spec defines how to represent:
 * Review and approval
 * Lineage of transformations
 
-The current model (v0.1) is an **accountability envelope**.
+The current model (v0.1) is an **accountability envelope** — a structured record attached to an artifact that declares who made it, how AI was involved, and whether a human reviewed it.
 
 Future versions evolve toward a **provenance graph**:
 
@@ -112,7 +110,7 @@ Future versions evolve toward a **provenance graph**:
 * Activities (create, review, transform)
 * Relationships (authored_by, derived_from, approved_by)
 
-This evolution is necessary to support richer collaboration scenarios. 
+This evolution is necessary to support richer collaboration scenarios where artifacts pass through multiple human and AI contributors over time.
 
 ---
 
@@ -128,46 +126,24 @@ Organizations need to answer:
 * Does it meet governance requirements?
 * Can we trust its lineage?
 
----
-
-## 5. Chainloop as Enforcement Layer
-
-Chainloop provides:
-
-* Evidence collection
-* Attestation storage
-* Policy evaluation
-* Enforcement gates
+Provenance records are only as valuable as the systems that evaluate and act on them.
 
 ---
 
-### 5.1 System Integration
+## 5. Enforcement
 
-```
-Developer / Agent
-        ↓
-Artifact Creation
-        ↓
-HALOS Metadata Generated
-        ↓
-+-----------------------------+
-| HALOS Attestation           |
-| - human_author              |
-| - ai_assistance             |
-| - lineage                   |
-| - review                    |
-+-----------------------------+
-        ↓
-Chainloop Control Plane
-        ↓
-Policy Evaluation
-        ↓
-Allow / Block Promotion
-```
+HALOS provenance becomes actionable when paired with an enforcement layer — a system that collects attestations, evaluates them against policy, and gates promotion or deployment.
 
----
+An enforcement layer provides:
 
-## 6. HALOS + Chainloop: End-to-End Flow
+* Evidence collection — gathering HALOS provenance alongside other attestations
+* Attestation storage — durable, verifiable record of what was collected
+* Policy evaluation — checking provenance against organizational rules
+* Enforcement gates — allowing, blocking, or warning before promotion
+
+**Example systems:** Chainloop, OPA (Open Policy Agent), Kyverno, or custom CI policy steps. The specific system depends on the organization's existing toolchain and deployment model.
+
+### End-to-End Flow
 
 ```
 [Human + AI Collaboration]
@@ -177,10 +153,10 @@ Allow / Block Promotion
  HALOS Provenance Generated
             ↓
  Embedded into:
-   - CycloneDX SBOM
-   - SLSA Provenance
+   - CycloneDX SBOM (or equivalent)
+   - SLSA Provenance (or equivalent)
             ↓
-       Chainloop
+   Enforcement Layer
    (Collect + Verify)
             ↓
      Policy Engine
@@ -196,67 +172,57 @@ Allow / Block Promotion
 
 ---
 
-## 7. Policy Examples
+## 6. Policy Examples
 
-### 7.1 Human Accountability
+Enforcement systems evaluate HALOS provenance fields against organizational policy. Here are representative rules:
 
-Rule:
+### 6.1 Human accountability
 
-* All production artifacts must have a human reviewer
+**Rule:** All production artifacts must have a human reviewer.
 
-Evaluation:
+**Evaluation:** `halos.review` must contain at least one entry where the reviewer is human.
 
-* `halos.review.human_approved == true`
+**Scenario:** A CI pipeline generates a container image with AI-assisted code. Before promotion to production, the enforcement layer checks that a human reviewed the changes — not just that tests passed.
 
----
+### 6.2 AI transparency
 
-### 7.2 AI Transparency
+**Rule:** AI contributions must be declared.
 
-Rule:
+**Evaluation:** If `ai_assistance` is missing or empty on an artifact known to involve AI tooling, the check fails.
 
-* AI contributions must be declared
+**Scenario:** An organization requires all AI-assisted artifacts to be labeled. A developer commits code generated by an AI pair programmer but omits the `ai_assistance` field. The enforcement layer flags this before the artifact reaches production.
 
-Evaluation:
+### 6.3 Lineage completeness
 
-* Missing or empty `ai_assistance` → fail
+**Rule:** Artifacts must include upstream references.
 
----
+**Evaluation:** `lineage` must contain at least one parent artifact ID.
 
-### 7.3 Lineage Completeness
-
-Rule:
-
-* Artifact must include at least one upstream reference
-
-Evaluation:
-
-* `lineage.length > 0`
+**Scenario:** A document is published that was derived from an internal report. The lineage field traces back to the original, enabling audit of how the content evolved.
 
 ---
 
-## 8. Why This Matters
+## 7. Why This Matters
 
-This model enables:
+### 7.1 Verifiable accountability
 
-### 8.1 Verifiable accountability
+Responsibility is explicit and traceable. When something goes wrong, the provenance record answers: who directed this work, who reviewed it, and who is accountable.
 
-* Responsibility is explicit and traceable
+### 7.2 Transparent AI usage
 
-### 8.2 Transparent AI usage
+AI is visible, not hidden. Stakeholders — internal reviewers, customers, regulators — can see when and how AI participated in creating an artifact.
 
-* AI is visible, not hidden
+### 7.3 Resilient systems
 
-### 8.3 Resilient systems
+Provenance supports fallback and audit. If an AI model is found to be unreliable, organizations can identify which artifacts were produced with its assistance.
 
-* Provenance supports fallback and audit
+### 7.4 Policy-driven governance
 
-### 8.4 Policy-driven governance
-
-* Rules are enforced automatically
+Rules are enforced automatically at pipeline boundaries, not through manual review alone. Governance scales with the organization.
 
 ---
 
-## 9. Strategic Positioning
+## 8. Strategic Positioning
 
 HALOS is not a replacement for existing standards.
 
@@ -273,17 +239,18 @@ The following table illustrates how HALOS relates to complementary systems. The 
 
 ---
 
-## 10. Future Directions
+## 9. Future Directions
 
-* Graph-based provenance (v0.2+)
-* Cryptographic signing of HALOS metadata
-* Identity integration (OIDC, SPIFFE)
-* Policy-as-code frameworks
-* Visualization and audit tooling
+* **Graph-based provenance** (v0.2+) — richer modeling of multi-contributor, multi-step workflows
+* **Domain profiles** — implementation guidance mapping HALOS principles to specific industries and toolchains (software development, regulated healthcare, consumer platforms)
+* **Cryptographic signing** of HALOS metadata — tamper-evident provenance records
+* **Identity integration** (OIDC, SPIFFE) — tying provenance to verified identities
+* **Policy-as-code frameworks** — HALOS-aware policy templates for enforcement systems
+* **Visualization and audit tooling** — making provenance human-readable at scale
 
 ---
 
-## 11. Conclusion
+## 10. Conclusion
 
 As AI becomes integral to how systems are built and operated, we must evolve beyond traditional notions of provenance.
 
@@ -293,15 +260,22 @@ The future requires:
 * Transparent AI collaboration
 * Enforceable governance
 
-HALOS, combined with systems like Chainloop, provides a path toward:
+HALOS provides a path toward:
 
 > **Trustworthy, verifiable, and enforceable human–AI systems**
+
+The principles define what must be true. The provenance spec captures evidence. Enforcement systems ensure those truths hold.
+
+---
+
+## Adopting HALOS
+
+To adopt HALOS principles in your repository or organization, see the [adoption toolkit](https://github.com/northharbor-dev/halos-spec/blob/main/adopt/GUIDE.md) in the halos-spec repository.
 
 ---
 
 ## One-line Summary
 
-HALOS defines what must be true about human–AI collaboration.
-Chainloop ensures those truths are enforced.
+HALOS defines what must be true about human–AI collaboration. Enforcement systems ensure those truths hold.
 
 ---
