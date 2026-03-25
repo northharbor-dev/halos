@@ -1,0 +1,57 @@
+{
+  "snapshot_date": "2026-03-25",
+  "project_start": "2026-03-13",
+  "days_since_start": 12,
+  "repos": {
+    "halos": {
+      "commits": 44,
+      "active_days": 6
+    },
+    "halos_spec": {
+      "commits": 5,
+      "active_days": 1
+    },
+    "total_commits": 49
+  },
+  "spec": {
+    "spec_data_files": 3,
+    "json_schemas": 7,
+    "adoption_templates": 5,
+    "provenance_examples": 3,
+    "domain_profiles": 1,
+    "mappings": 1
+  },
+  "proposals": {
+    "total": 4,
+    "by_status": {
+      "accepted": 1,
+      "proposed": 2,
+      "draft": 1
+    }
+  },
+  "site": {
+    "pages": 17,
+    "journal_entries_published": 6,
+    "journal_drafts": 4,
+    "blog_posts": 1,
+    "whitepaper_words": 1349
+  },
+  "tooling": {
+    "cursor_skills": 5,
+    "agent_discovery_files": 3,
+    "learn_halos_prompt": 1
+  },
+  "community": {
+    "signatories": 2
+  },
+  "issues": {
+    "halos": {
+      "open": 2,
+      "closed": 2
+    },
+    "halos_spec": {
+      "open": 10,
+      "closed": 0
+    }
+  }
+}
