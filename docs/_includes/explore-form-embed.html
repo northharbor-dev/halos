@@ -1,7 +1,7 @@
 {% comment %}
-  Embedded variant for homepage — no extra section wrappers, flows inside home-explore-panel
+  Embedded variant for homepage — no extra section wrappers, flows inside home-explore-frame
 {% endcomment %}
-<p class="explore-intro">Answer a few questions about your role and concerns. We'll craft a prompt seeded with HALOS context and give you a link to continue the conversation in Claude, ChatGPT, or another AI of your choice.</p>
+<p class="explore-intro">Tell us a little about yourself and what's on your mind. We'll put together a personalised question you can take to ChatGPT, Claude, or any AI assistant — to explore how AI governance actually affects your life.</p>
 
 <form id="explore-form" class="explore-form" novalidate>
   <div class="explore-honeypot" aria-hidden="true">
@@ -9,9 +9,9 @@
     <input type="text" id="explore-website" name="website" tabindex="-1" autocomplete="off">
   </div>
   <div class="explore-field">
-    <label for="explore-role">Context / Role <span class="required">(required)</span></label>
+    <label for="explore-role">Who are you? <span class="required">(required)</span></label>
     <select id="explore-role" name="role" required aria-describedby="explore-role-hint">
-      <option value="">Choose a role or describe your own</option>
+      <option value="">Pick the option that best describes you</option>
       <option value="lifelong-learners">Lifelong Learners</option>
       <option value="everyday-professionals">Everyday Professionals</option>
       <option value="creators-innovators">Creators & Innovators</option>
@@ -19,55 +19,55 @@
       <option value="community-anchors">Community Anchors</option>
       <option value="tech-builders">Tech Builders</option>
       <option value="retirees">Retirees</option>
-      <option value="custom">Custom — describe your own</option>
+      <option value="custom">None of these — I'll describe myself</option>
     </select>
-    <p id="explore-role-hint" class="explore-hint">Select a preset or choose "Custom" to describe your project, role, or domain.</p>
+    <p id="explore-role-hint" class="explore-hint">Choose the closest fit, or write your own description below.</p>
     <div id="explore-role-custom-wrap" class="explore-custom-wrap" hidden>
-      <textarea id="explore-role-custom" name="role-custom" rows="3" maxlength="500" placeholder="e.g., Describe your role, project, or context and how you interact with AI" aria-label="Describe your context (when Custom is selected)" data-max="500"></textarea>
+      <textarea id="explore-role-custom" name="role-custom" rows="3" maxlength="500" placeholder="e.g., I'm a nurse who uses AI tools at work, a parent worried about my kids' online experiences, a small business owner..." aria-label="Describe yourself (when 'None of these' is selected)" data-max="500"></textarea>
     <p class="explore-char-count" id="explore-role-count" aria-live="polite"></p>
     </div>
   </div>
 
   <div class="explore-field">
-    <span class="explore-label">Concerns / Questions <span class="optional">(optional)</span></span>
-    <p class="explore-hint">Select what you want to explore. You can add your own below.</p>
+    <span class="explore-label">What's on your mind? <span class="optional">(optional)</span></span>
+    <p class="explore-hint">Pick the topics you're curious or concerned about. Add anything else in the box below.</p>
     <div id="explore-concerns" class="explore-options"></div>
     <div class="explore-custom-wrap">
       <label for="explore-concerns-custom" class="visually-hidden">Add your own concerns</label>
-      <textarea id="explore-concerns-custom" name="concerns-custom" rows="2" maxlength="300" placeholder="Add any additional concerns or questions..." aria-describedby="explore-concerns-hint" data-max="300"></textarea>
+      <textarea id="explore-concerns-custom" name="concerns-custom" rows="2" maxlength="300" placeholder="Anything else on your mind? Add it here..." aria-describedby="explore-concerns-hint" data-max="300"></textarea>
     <p class="explore-char-count" id="explore-concerns-count" aria-live="polite"></p>
     </div>
   </div>
 
   <div class="explore-field">
-    <label for="explore-chatbot">Open in</label>
+    <label for="explore-chatbot">Start the conversation in</label>
     <select id="explore-chatbot" name="chatbot" aria-describedby="explore-chatbot-hint">
       <option value="claude">Claude</option>
       <option value="chatgpt">ChatGPT</option>
-      <option value="copy">Copy only (for Gemini or any AI)</option>
+      <option value="copy">Copy only (paste into Gemini or any AI)</option>
     </select>
-    <p id="explore-chatbot-hint" class="explore-hint">Choose where to continue the conversation. "Copy only" gives you the prompt to paste anywhere.</p>
+    <p id="explore-chatbot-hint" class="explore-hint">Pick your preferred AI assistant. Don't use one yet? Choose "Copy only" and paste the text into any AI chat you like.</p>
   </div>
 
   <div class="explore-actions">
-    <button type="submit" id="explore-submit" class="explore-btn explore-btn-primary">Generate prompt and link</button>
+    <button type="submit" id="explore-submit" class="explore-btn explore-btn-primary">Show me how HALOS affects me →</button>
   </div>
 </form>
 
 <div class="explore-output-section" id="explore-output-section" hidden>
-  <h3 class="explore-output-title">Your HALOS prompt</h3>
+  <h3 class="explore-output-title">Your personalised conversation starter</h3>
   <div class="explore-output-actions">
-    <button type="button" id="explore-copy" class="explore-btn explore-btn-ghost" aria-live="polite">Copy prompt</button>
+    <button type="button" id="explore-copy" class="explore-btn explore-btn-ghost" aria-live="polite">Copy to clipboard</button>
   </div>
   <div class="explore-output-content">
     <textarea id="explore-prompt" readonly rows="12" aria-label="Generated prompt"></textarea>
   </div>
   <div id="explore-links" class="explore-links"></div>
   <p class="explore-output-note">
-    Full framework: <a href="/principles.html">principles</a>, <a href="https://github.com/northharbor-dev/halos/blob/main/LEARN_HALOS.md">LEARN_HALOS</a>. Machine-readable spec: <a href="/spec/manifest.json">manifest.json</a>, <a href="/spec/core.json">core.json</a>.
+    Want to go deeper? Read the <a href="/principles.html">principles</a> or explore the <a href="https://github.com/northharbor-dev/halos/blob/main/LEARN_HALOS.md">full framework guide</a>.
   </p>
 </div>
 
 <noscript>
-  <p>This interactive form requires JavaScript. You can <a href="https://github.com/northharbor-dev/halos/blob/main/LEARN_HALOS.md">copy the LEARN_HALOS prompt</a> and paste it into any AI chat instead.</p>
+  <p>This tool needs JavaScript to work. You can <a href="https://github.com/northharbor-dev/halos/blob/main/LEARN_HALOS.md">read the framework guide directly</a> and paste it into any AI chat instead.</p>
 </noscript>

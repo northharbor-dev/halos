@@ -39,21 +39,21 @@ layout: default
   <p>We have both the right and the responsibility to define how AI participates in our work. HALOS recognizes and supports the full spectrum of human-AI collaboration — and provides a framework for making that involvement visible and accountable, regardless of where on that spectrum a project sits.</p>
   <div class="home-intro-modes" aria-label="HALOS collaboration modes">
     <div class="home-intro-mode">
-      <img src="identity-assets/badges/halos-mode-human.svg" width="80" height="80" alt="Human only">
+      <img src="identity-assets/badges/halos-mode-human.svg" width="72" height="72" alt="Human only">
       <div class="home-intro-mode__text">
         <span class="home-intro-mode__label">Human</span>
         <span class="home-intro-mode__desc">You write and decide</span>
       </div>
     </div>
     <div class="home-intro-mode">
-      <img src="identity-assets/badges/halos-mode-human-ai.svg" width="80" height="80" alt="Human + AI">
+      <img src="identity-assets/badges/halos-mode-human-ai.svg" width="72" height="72" alt="Human + AI">
       <div class="home-intro-mode__text">
         <span class="home-intro-mode__label">Human + AI</span>
         <span class="home-intro-mode__desc">You direct, AI assists</span>
       </div>
     </div>
     <div class="home-intro-mode">
-      <img src="identity-assets/badges/halos-mode-ai.svg" width="80" height="80" alt="AI">
+      <img src="identity-assets/badges/halos-mode-ai.svg" width="72" height="72" alt="AI">
       <div class="home-intro-mode__text">
         <span class="home-intro-mode__label">AI</span>
         <span class="home-intro-mode__desc">AI acts, you review</span>
@@ -64,14 +64,13 @@ layout: default
 
 <section class="home-explore-frame" id="explore" aria-labelledby="explore-title">
   <h2 class="home-explore-title" id="explore-title">See how HALOS affects you</h2>
+  <div class="home-visual" aria-hidden="true">
+    <picture>
+      <source srcset="/identity-assets/homepage/halos-community-encompassed.png?v=3" type="image/png">
+      <img src="/identity-assets/homepage/halos-community-encompassed.png?v=3" alt="" width="600" height="600" class="home-visual__img">
+    </picture>
+  </div>
   {% include explore-form-embed.html %}
-</section>
-
-<section class="home-visual" aria-hidden="true">
-  <picture>
-    <source srcset="/identity-assets/homepage/halos-community-encompassed.png?v=3" type="image/png">
-    <img src="/identity-assets/homepage/halos-community-encompassed.png?v=3" alt="" width="600" height="600" class="home-visual__img">
-  </picture>
 </section>
 
 <section class="section-card">
