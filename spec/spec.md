@@ -65,3 +65,15 @@ Experimentation is encouraged; innovators must articulate how their work aligns 
 ---
 
 *For ecosystem context and future mappings, see [Related Specs](RELATED_SPECS.md).*
+
+---
+
+## Get Involved
+
+The HALOS specification is developed openly. The **[halos-spec repository](https://github.com/northharbor-dev/halos-spec)** is the canonical source for schemas, the adoption toolkit, and the principles document.
+
+**For adopters** — use the [adoption guide](https://github.com/northharbor-dev/halos-spec/blob/main/adopt/GUIDE.md) and [templates](https://github.com/northharbor-dev/halos-spec/tree/main/adopt/templates) to implement HALOS in your repository. Or copy the [agent prompt](https://github.com/northharbor-dev/halos-spec/blob/main/adopt/AGENT-PROMPT.md) and let your AI coding agent self-adopt.
+
+**For contributors** — propose spec changes through the [governance process](/governance.html), then open a pull request in [halos-spec](https://github.com/northharbor-dev/halos-spec). The [JSON schema](https://github.com/northharbor-dev/halos-spec/blob/main/spec/schema/halos-profile.schema.json) is the validation source of truth.
+
+**For implementors** — machine-readable spec files: [manifest.json](manifest.json), [core.json](core.json). Star or watch [halos-spec](https://github.com/northharbor-dev/halos-spec) to track changes.

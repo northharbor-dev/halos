@@ -128,13 +128,17 @@ layout: default
       <h3>Read the Spec</h3>
       <p>Machine-readable core and extensions. Understand what HALOS requires.</p>
     </a>
+    <a class="card" href="https://github.com/northharbor-dev/halos-spec" rel="noopener noreferrer">
+      <h3>Spec Repository</h3>
+      <p>The canonical source for schemas, adoption toolkit, and principles. Contribute via pull request in halos-spec.</p>
+    </a>
     <a class="card" href="supporters.html">
       <h3>Become a Signatory</h3>
       <p>Publicly affirm your support for the principles. Add yourself via pull request.</p>
     </a>
     <a class="card" href="https://github.com/northharbor-dev/halos" rel="noopener noreferrer">
       <h3>Contribute</h3>
-      <p>Propose changes, improve docs, or join the review process. All via GitHub.</p>
+      <p>Propose governance changes, improve docs, or join the review process. All via GitHub.</p>
     </a>
     <a class="card" href="https://www.linkedin.com/company/northharbor" rel="noopener noreferrer">
       <h3>Follow Updates</h3>

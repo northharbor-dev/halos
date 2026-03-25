@@ -92,4 +92,15 @@ This governance document may itself be updated through the proposal process. Met
 
 ---
 
-*Governance is minimal by design. As the community grows, this document may be refined. Proposals welcome.*
+## Repositories
+
+| Repository | Purpose |
+| --- | --- |
+| [**halos**](https://github.com/northharbor-dev/halos) | Community site, proposals, governance, journal |
+| [**halos-spec**](https://github.com/northharbor-dev/halos-spec) | Canonical spec source, JSON schemas, adoption toolkit |
+
+Spec-related proposals and pull requests should target [halos-spec](https://github.com/northharbor-dev/halos-spec). Community discussion, governance proposals, and site content live in [halos](https://github.com/northharbor-dev/halos).
+
+---
+
+*Governance is minimal by design. As the community grows, this document may be refined. [Proposals welcome.](https://github.com/northharbor-dev/halos/issues)*
