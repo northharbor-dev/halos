@@ -2,6 +2,7 @@
   "version": "1.0.0",
   "specUrl": "https://halos.northharbor.dev/spec/manifest.json",
   "relatedSpecs": [
+    { "id": "halos-spec", "source": "NorthHarbor Development", "url": "https://github.com/northharbor-dev/halos-spec", "relationship": "provenance" },
     { "id": "agent-skills", "source": "Anthropic / agentskills.io", "url": "https://agentskills.io/specification", "relationship": "capabilities" },
     { "id": "ossa", "source": "Open Standard for Software Agents", "url": "https://openstandardagents.org/specification/", "relationship": "structural" },
     { "id": "agent-protocol", "source": "agentprotocol.ai", "url": "https://agentprotocol.ai/specification", "relationship": "execution" },
