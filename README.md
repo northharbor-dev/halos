@@ -100,7 +100,7 @@ See [docker/README.md](docker/README.md) for build and multi-platform options.
 
 - **[Manifest](spec/manifest.json)** — Machine-readable entry point; agents discover version, core, extensions
 - **[Spec (human-readable)](spec/spec.md)** — Core and optional extensions
-- **[Provenance Model (halos-spec)](https://github.com/northharbor-dev/halos-spec)** — Specifies the types of data and events to be collected to satisfy HALOS provenance intent. Not a mandated implementation; a curated library of reference implementations will be built over time.
+- **[Provenance Model (halos-spec)](https://github.com/northharbor-dev/halos-spec)** — Defines the structure of HALOS provenance records: machine-readable descriptions of how artifacts were created through human–agent collaboration, implementing HALOS-CORE-3 and HALOS-CORE-4. Not a mandated implementation; domain profiles map HALOS principles to specific toolchains.
 - **[Related Specs](spec/RELATED_SPECS.md)** — How HALOS fits in the agent-spec ecosystem and future mapping options
 
 ## Documentation

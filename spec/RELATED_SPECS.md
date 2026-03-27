@@ -28,7 +28,7 @@ Other specs address those concerns. HALOS can coexist with, or eventually be imp
 
 | Spec | Scope | HALOS Relationship |
 |------|-------|---------------------|
-| **[halos-spec](https://github.com/northharbor-dev/halos-spec)** | Provenance model: the types of data and events to be collected to satisfy HALOS provenance intent | **Provenance.** Defines the data model that gives HALOS attribution and transparency requirements concrete form. Not a mandated implementation; a curated library of reference implementations will be built over time. |
+| **[halos-spec](https://github.com/northharbor-dev/halos-spec)** | Provenance model: the structure of HALOS provenance records — machine-readable descriptions of how artifacts were created through human–agent collaboration | **Provenance.** Gives HALOS-CORE-3 and HALOS-CORE-4 concrete form. Not a mandated implementation; domain profiles map HALOS principles to specific toolchains. |
 
 ---
 
