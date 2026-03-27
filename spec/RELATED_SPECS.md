@@ -24,6 +24,14 @@ Other specs address those concerns. HALOS can coexist with, or eventually be imp
 
 ---
 
+## Companion Specs (NorthHarbor)
+
+| Spec | Scope | HALOS Relationship |
+|------|-------|---------------------|
+| **[halos-spec](https://github.com/northharbor-dev/halos-spec)** | Provenance model: the structure of HALOS provenance records — machine-readable descriptions of how artifacts were created through human–agent collaboration | **Provenance.** Gives HALOS-CORE-3 and HALOS-CORE-4 concrete form. Not a mandated implementation; domain profiles map HALOS principles to specific toolchains. |
+
+---
+
 ## Related Specs (Full List)
 
 | Spec | Source | Scope | Format | Covers | Used By / Spec |
@@ -40,7 +48,7 @@ Other specs address those concerns. HALOS can coexist with, or eventually be imp
 |------|-------------------|
 | Agent Skills | **Capabilities.** Skills define *what* an agent can do; HALOS defines *how* it should behave when doing it. Skills can be HALOS-aligned if their instructions embody the principles. |
 | OSSA | **Structural.** OSSA defines the agent manifest; HALOS could map as a behavioral overlay or constraint set for OSSA agents claiming alignment. |
-| Agent Protocol | **Execution.** Protocol defines how tasks run; HALOS principles apply regardless of execution model. HALOS internally uses the Agent Protocol to govern its own agent behavior (see [Implementation Choices](#implementation-choices)). |
+| Agent Protocol | **Execution.** Protocol defines how tasks run; HALOS principles apply regardless of execution model. Implementations may choose Agent Protocol as their runtime, but HALOS does not require it. |
 | A2A | **Communication.** A2A defines agent-to-agent messages; HALOS governs the behavioral norms underlying that communication. |
 | ADP | **Discovery.** ADP enables finding agents; HALOS-aligned agents could advertise alignment in their discovery manifests. |
 
@@ -55,9 +63,9 @@ Other specs address those concerns. HALOS can coexist with, or eventually be imp
 
 ## Implementation Choices
 
-HALOS internally uses the [Agent Protocol](https://agentprotocol.ai/specification) to govern its own agent behavior. This choice is transparent and on the record.
+HALOS is a principles framework, not an implementation. It does not use, bundle, or require Agent Protocol or any other runtime.
 
-**HALOS does not mandate this for anyone else.** The specification defines principles and requirements; how to implement them is up to the maintainers of each agent ecosystem. Some may use Agent Protocol; others may use OSSA, A2A, custom tooling, or entirely different stacks. HALOS remains implementation-agnostic — what matters is alignment with the core principles, not the particular runtime or framework used to achieve it.
+How to implement the principles is up to the maintainers of each agent ecosystem. Some may use Agent Protocol; others may use OSSA, A2A, custom tooling, or entirely different stacks. HALOS remains implementation-agnostic — what matters is alignment with the core principles, not the particular runtime or framework used to achieve it.
 
 ---
 
