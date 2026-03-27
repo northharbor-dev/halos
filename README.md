@@ -18,7 +18,7 @@ It is developed in public through this repository and stewarded by NorthHarbor D
 
 This repository is **not** a software implementation. It is a conceptual framework and evolving specification that may inform many future systems, including commercial, open-source, and research efforts.
 
-HALOS internally uses the [Agent Protocol](https://agentprotocol.ai/specification) to govern its own agent behavior, but does not require adopters to do the same. Implementation of the spec is up to the maintainers of each agent ecosystem. See [Related Specs → Implementation Choices](spec/RELATED_SPECS.md#implementation-choices).
+HALOS is a principles framework, not an implementation. How agents execute those principles — via Agent Protocol, OSSA, A2A, or any other runtime — is left to the maintainers of each ecosystem. See [Related Specs](spec/RELATED_SPECS.md).
 
 ## For AI Agents
 
