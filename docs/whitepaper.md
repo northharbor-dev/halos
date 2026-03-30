@@ -241,7 +241,7 @@ The following table illustrates how HALOS relates to complementary systems. The 
 
 ## 9. Future Directions
 
-* **Graph-based provenance** (v0.2+) — richer modeling of multi-contributor, multi-step workflows
+* **Graph-based provenance** (v0.2 draft) — richer modeling of multi-contributor, multi-step workflows with decision provenance, human–AI interaction semantics, and policy evaluation traces
 * **Domain profiles** — implementation guidance mapping HALOS principles to specific industries and toolchains (software development, regulated healthcare, consumer platforms)
 * **Cryptographic signing** of HALOS metadata — tamper-evident provenance records
 * **Identity integration** (OIDC, SPIFFE) — tying provenance to verified identities
