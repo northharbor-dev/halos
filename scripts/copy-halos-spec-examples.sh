@@ -54,9 +54,17 @@ for slug in "${!DOMAINS[@]}"; do
     echo "source_repo: halos-spec"
     echo "---"
     echo ""
-    # Skip the first heading line (already in frontmatter as title)
-    # Use awk instead of sed for macOS/GNU compatibility
-    awk 'NR==1 && /^# /{next} {print}' "$src"
+    # Skip the first heading line (already in frontmatter as title).
+    # Rewrite relative .halos.json links to GitHub URLs — these files are
+    # not served on the site, they live in halos-spec.
+    # Use awk instead of sed for macOS/GNU compatibility.
+    awk -v slug="$slug" '
+      NR==1 && /^# / { next }
+      {
+        gsub(/\]\([^)]*\.halos\.json\)/, "](https://github.com/northharbor-dev/halos-spec/blob/main/examples/" slug ".halos.json)")
+        print
+      }
+    ' "$src"
   } > "$dst"
 
   echo "Copied: $slug"

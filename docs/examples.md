@@ -7,6 +7,8 @@ Each example includes a detailed collaboration narrative — who the human is, w
 
 All scenarios, names, and organizations are fictional. Provenance records use the [v0.2-draft](https://github.com/northharbor-dev/halos-spec/blob/main/spec/provenance/v0.2-draft.md) graph model with decision provenance, human-AI interaction semantics, and policy evaluation traces.
 
+The machine-readable `.halos.json` provenance records, additional example types, and a generation skill for contributing new examples are all in the **[halos-spec examples directory →](https://github.com/northharbor-dev/halos-spec/tree/main/examples)**
+
 ---
 
 ## Domain Examples
