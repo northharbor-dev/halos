@@ -10,7 +10,7 @@ layout: default
   <div>
     <span class="hero__eyebrow">Open Framework</span>
     <h1>HALOS</h1>
-    <p><strong>Human-Agent Living Operating System</strong></p>
+    <p><strong>Human–Agent Lineage and Origin Standard</strong></p>
     <p>AI without clear rules risks harm. HALOS helps shape a better path—humans central, AI visible, governance before it's too late.</p>
   </div>
 </section>
@@ -60,6 +60,45 @@ layout: default
       </div>
     </div>
   </div>
+</section>
+
+<section class="section-card">
+  <h2>The Framework</h2>
+  <p class="section-card__lead">HALOS is organized in two layers — stable principles and an evolving provenance specification.</p>
+  <div class="card-grid">
+    <a class="card" href="principles.html">
+      <h3>HALOS Principles — v1.0, Stable</h3>
+      <p>The normative foundation: human primacy, attribution, transparency of AI involvement, and ethical guardrails. The principles do not version — they anchor everything else.</p>
+    </a>
+    <a class="card" href="https://github.com/northharbor-dev/halos-spec/blob/main/spec/provenance/v0.1.md" rel="noopener noreferrer">
+      <h3>Provenance Spec — v0.1, Active</h3>
+      <p>The technical standard for recording how an artifact was created: who the accountable human is, what AI contributed, and whether a human reviewed it before use. v0.2 graph model in draft.</p>
+    </a>
+  </div>
+</section>
+
+<section class="section-card">
+  <h2>Where HALOS Fits</h2>
+  <p class="section-card__lead">HALOS is the human-centered provenance and accountability layer — complementary to, not competing with, adjacent standards.</p>
+  <div class="card-grid">
+    <div class="card">
+      <h3>vs. CycloneDX / SBOM</h3>
+      <p>CycloneDX answers "what is in this software?" HALOS adds "who was responsible and what AI contributed." HALOS provenance can embed directly as <code>component.evidence</code>.</p>
+    </div>
+    <div class="card">
+      <h3>vs. SLSA</h3>
+      <p>SLSA answers "how was it built?" HALOS adds "what decisions were made and by whom." HALOS provenance supplements SLSA attestations with human-authorship and AI-disclosure data.</p>
+    </div>
+    <div class="card">
+      <h3>vs. W3C PROV</h3>
+      <p>The v0.2 graph model is conceptually aligned with W3C PROV (Entities, Activities, Agents) but uses plain JSON and simplified typing — no RDF required.</p>
+    </div>
+    <div class="card">
+      <h3>vs. NIST AI RMF / ISO 42001</h3>
+      <p>Governance frameworks define policy. HALOS operates at the artifact level inside those processes — providing the traceability records that demonstrate compliance.</p>
+    </div>
+  </div>
+  <p><a href="https://github.com/northharbor-dev/halos-spec/blob/main/mappings/cyclonedx-slsa.md" rel="noopener noreferrer">Integration details and embedding guide →</a></p>
 </section>
 
 <section class="home-explore-frame" id="explore" aria-labelledby="explore-title">
