@@ -21,5 +21,20 @@
       "type": "specification",
       "date": "2026-03-15"
     }
+  ,
+    {
+      "id": "0004",
+      "title": "HALOS Verify: Conformance Testing and Benchmark",
+      "status": "draft",
+      "type": "specification",
+      "date": "2026-03-15"
+    },
+    {
+      "id": "0005",
+      "title": "HALOS Provenance Spec v0.3: Scope and Input",
+      "status": "draft",
+      "type": "specification",
+      "date": "2026-03-31"
+    }
   ]
 }
