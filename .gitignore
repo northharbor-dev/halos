@@ -14,6 +14,8 @@ docs/spec
 docs/agents
 # Build artifact: signatories copied into docs for Jekyll
 docs/signatories
+# Build artifact: examples copied from halos-spec for Jekyll
+docs/_examples
 # Jekyll build output
 _site
 docs/_site

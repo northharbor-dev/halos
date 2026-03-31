@@ -9,6 +9,9 @@ sass:
 collections:
   journal:
     output: false
+  examples:
+    output: true
+    permalink: /examples/:slug/
 
 defaults:
   - scope:

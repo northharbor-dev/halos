@@ -46,6 +46,15 @@ jobs:
       - name: Copy signatories into docs
         run: cp -r signatories docs/
 
+      - name: Checkout halos-spec for examples
+        uses: actions/checkout@v4
+        with:
+          repository: northharbor-dev/halos-spec
+          path: halos-spec
+
+      - name: Copy halos-spec examples into docs
+        run: bash scripts/copy-halos-spec-examples.sh halos-spec
+
       - name: Copy agent discovery and .cursor into docs
         run: |
           mkdir -p docs/agents docs/agents/rules docs/agents/agents docs/agents/skills
