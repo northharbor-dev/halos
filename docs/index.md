@@ -3,22 +3,136 @@ title: HALOS
 layout: default
 ---
 
-<section class="hero">
-  <div class="hero__mark">
-    <img src="identity-assets/selected/halos-halo-ring-institutional-randomized.svg" alt="HALOS identity mark">
-  </div>
-  <div>
-    <span class="hero__eyebrow">Open Framework</span>
+<section class="hero-provocation">
+  <p class="hero-provocation__question">"Who made this?"</p>
+  <p class="hero-provocation__body">Every day, AI generates code that ships to production, writes reports that inform decisions, creates content that shapes opinion. Almost none of it carries a record of who was responsible, what the AI contributed, or whether a human reviewed it.</p>
+  <div class="hero-provocation__reveal">
+    <div class="hero-provocation__mark">
+      <img src="identity-assets/selected/halos-halo-ring-institutional-randomized.svg" alt="HALOS identity mark">
+    </div>
     <h1>HALOS</h1>
-    <p><strong>Human–Agent Lineage and Origin Standard</strong></p>
-    <p>AI without clear rules risks harm. HALOS helps shape a better path—humans central, AI visible, governance before it's too late.</p>
+    <p class="hero-provocation__subtitle"><strong>Human–Agent Lineage and Origin Standard</strong></p>
+  </div>
+</section>
+
+<section class="section-card home-explainer">
+  <p class="home-explainer__text">HALOS is an open standard for recording who is responsible when humans and AI work together. It tracks what the AI contributed, whether a human reviewed it, and who is accountable for the result. Two parts: stable <span class="color-halo">Principles</span> that define the ethics, and an evolving <span class="color-accent">Provenance Spec</span> that captures the record.</p>
+</section>
+
+<section class="section-card" id="story">
+  <h2>What it looks like in practice</h2>
+  <p class="section-card__lead">An investigative reporter uses AI to analyze 4,300 regulatory filings. Here's what HALOS records at each step.</p>
+  <div class="story-timeline">
+    <div class="story-step">
+      <div class="story-step__badge">
+        <img src="identity-assets/badges/halos-mode-human-ai.svg" width="56" height="56" alt="Human + AI">
+      </div>
+      <div class="story-step__content">
+        <p class="story-step__title">Reporter directs AI to process 12 years of public filings</p>
+        <p class="story-step__desc">Carlos feeds 4,300 regulatory documents to an AI analysis tool with structured instructions for categorization and pattern detection.</p>
+      </div>
+      <div class="story-step__annotation">
+        <span class="story-step__tag story-step__tag--ai">human+ai</span>
+        Human directed, AI processed
+      </div>
+    </div>
+    <div class="story-step">
+      <div class="story-step__badge">
+        <img src="identity-assets/badges/halos-mode-ai.svg" width="56" height="56" alt="AI">
+      </div>
+      <div class="story-step__content">
+        <p class="story-step__title">AI surfaces a correlation between violations and health complaints</p>
+        <p class="story-step__desc">The AI identifies that violation spikes at a chemical facility align with elevated respiratory complaints in the adjacent neighborhood.</p>
+      </div>
+      <div class="story-step__annotation">
+        <span class="story-step__tag story-step__tag--ai">ai-generated</span>
+        AI surfaced the pattern
+      </div>
+    </div>
+    <div class="story-step">
+      <div class="story-step__badge">
+        <img src="identity-assets/badges/halos-mode-human.svg" width="56" height="56" alt="Human">
+      </div>
+      <div class="story-step__content">
+        <p class="story-step__title">Reporter verifies, interviews 14 residents, consults experts</p>
+        <p class="story-step__desc">Carlos spends three weeks on the ground. He checks the AI's work against primary sources — finds a 7% misclassification rate — and corrects the dataset. Two researchers call the correlation "suggestive but not conclusive."</p>
+      </div>
+      <div class="story-step__annotation">
+        <span class="story-step__tag story-step__tag--human">modified</span>
+        Human verified and contextualized
+      </div>
+    </div>
+    <div class="story-step">
+      <div class="story-step__badge">
+        <img src="identity-assets/badges/halos-mode-human.svg" width="56" height="56" alt="Human">
+      </div>
+      <div class="story-step__content">
+        <p class="story-step__title">Article publishes with full AI disclosure and editorial accountability</p>
+        <p class="story-step__desc">The published article includes an editor's note disclosing AI use. Every finding was verified by the reporter. The correlation is framed as a question, not an answer.</p>
+      </div>
+      <div class="story-step__annotation">
+        <span class="story-step__tag story-step__tag--human">reviewed</span>
+        Transparent and accountable
+      </div>
+    </div>
+  </div>
+  <p class="story-cta"><a href="examples.html">See all domain examples — journalism, education, government, music, and more →</a></p>
+</section>
+
+<section class="home-explore-frame" id="explore" aria-labelledby="explore-title">
+  <h2 class="home-explore-title" id="explore-title">See what HALOS means for your world</h2>
+  <div class="home-visual" aria-hidden="true">
+    <picture>
+      <source srcset="/identity-assets/homepage/halos-community-encompassed.png?v=3" type="image/png">
+      <img src="/identity-assets/homepage/halos-community-encompassed.png?v=3" alt="" width="600" height="600" class="home-visual__img">
+    </picture>
+  </div>
+  {% include explore-form-embed.html %}
+</section>
+
+<section class="section-card" id="audience">
+  <h2>Who is this for?</h2>
+  <div class="card-grid card-grid--audience">
+    <a class="card card--audience" href="#adopt">
+      <h3>Developers & Engineers</h3>
+      <p>Add provenance to your AI-assisted code in one command. Copy the adoption prompt and your AI agent handles the rest.</p>
+    </a>
+    <a class="card card--audience" href="principles.html">
+      <h3>Policy & Governance</h3>
+      <p>HALOS provides the artifact-level traceability that governance frameworks like NIST AI RMF and ISO 42001 require but don't define.</p>
+    </a>
+    <a class="card card--audience" href="examples.html">
+      <h3>Researchers & Academics</h3>
+      <p>Study human-AI collaboration with structured provenance data. Document AI involvement for reproducibility and peer review.</p>
+    </a>
+    <a class="card card--audience" href="#explore">
+      <h3>Everyone</h3>
+      <p>Understand what AI accountability means for your work and life. Try the explore tool above to see how HALOS affects you.</p>
+    </a>
+  </div>
+</section>
+
+<section class="section-card" id="framework">
+  <h2>The Framework</h2>
+  <p class="section-card__lead">Two layers — stable ethics, evolving technical standard.</p>
+  <div class="layer-stack">
+    <div class="layer layer--provenance">
+      <div class="layer__badge">Evolving</div>
+      <h3><a class="layer__title-link" href="provenance.html">Provenance Spec — v0.3</a></h3>
+      <p>The technical record. Who contributed, what AI did, whether it was reviewed. Graph model with decision provenance and interaction semantics.</p>
+    </div>
+    <div class="layer layer--principles">
+      <div class="layer__badge">Stable</div>
+      <h3><a class="layer__title-link" href="principles.html">Principles — v1.0</a></h3>
+      <p>The ethical foundation. Human primacy, attribution, transparency of AI involvement, and guardrails.</p>
+    </div>
   </div>
 </section>
 
 <section class="adopt-callout" id="adopt" aria-label="Adopt HALOS">
   <div class="adopt-callout__inner">
     <div class="adopt-callout__header">
-      <p class="adopt-callout__headline">Adopt HALOS in your project</p>
+      <p class="adopt-callout__headline">Ready to add provenance to your project?</p>
       <p class="adopt-callout__desc">Copy the agent prompt and paste it into Claude Code, Cursor, or Copilot — your AI agent generates <code>halos.yaml</code> and adoption docs automatically.</p>
     </div>
     <div class="adopt-callout__action">
@@ -31,147 +145,67 @@ layout: default
       </button>
       <a class="adopt-callout__guide-link" href="https://github.com/northharbor-dev/halos-spec/blob/main/adopt/GUIDE.md" rel="noopener noreferrer">Read the guide →</a>
     </div>
-  </div>
-</section>
-
-<section class="section-card home-intro">
-  <p>AI is reshaping how we work, create, and make decisions. Without clear rules and accountability, that change risks confusion, harm, and loss of human agency. HALOS exists to help shape a better path: humans remain central, AI involvement is visible, and governance happens before damage is harder to undo.</p>
-  <p>We have both the right and the responsibility to define how AI participates in our work. HALOS recognizes and supports the full spectrum of human-AI collaboration — and provides a framework for making that involvement visible and accountable, regardless of where on that spectrum a project sits.</p>
-  <div class="home-intro-modes" aria-label="HALOS collaboration modes">
-    <div class="home-intro-mode">
-      <img src="identity-assets/badges/halos-mode-human.svg" width="72" height="72" alt="Human only">
-      <div class="home-intro-mode__text">
-        <span class="home-intro-mode__label">Human</span>
-        <span class="home-intro-mode__desc">You write and decide</span>
+    <div class="adopt-phases">
+      <div class="adopt-phase">
+        <span class="adopt-phase__number">1</span>
+        <div class="adopt-phase__text">
+          <strong>Governance</strong> — Create a <code>halos.yaml</code> profile and review against principles. No tooling changes required.
+        </div>
+      </div>
+      <div class="adopt-phase">
+        <span class="adopt-phase__number">2</span>
+        <div class="adopt-phase__text">
+          <strong>Provenance</strong> — When ready, instrument your workflow to produce <code>.halos.json</code> records for significant artifacts.
+        </div>
       </div>
     </div>
-    <div class="home-intro-mode">
-      <img src="identity-assets/badges/halos-mode-human-ai.svg" width="72" height="72" alt="Human + AI">
-      <div class="home-intro-mode__text">
-        <span class="home-intro-mode__label">Human + AI</span>
-        <span class="home-intro-mode__desc">You direct, AI assists</span>
-      </div>
-    </div>
-    <div class="home-intro-mode">
-      <img src="identity-assets/badges/halos-mode-ai.svg" width="72" height="72" alt="AI">
-      <div class="home-intro-mode__text">
-        <span class="home-intro-mode__label">AI</span>
-        <span class="home-intro-mode__desc">AI acts, you review</span>
-      </div>
+    <div class="adopt-preview">
+      <p class="adopt-preview__label">What gets generated:</p>
+<pre class="adopt-preview__code"><code>schema: halos/profile/v1
+principles_version: "1.0"
+project:
+  name: your-project
+  governance_model: maintainer-led</code></pre>
     </div>
   </div>
 </section>
 
-<section class="section-card" id="framework">
-  <h2>The Framework</h2>
-  <p class="section-card__lead">HALOS is organized in two layers — stable principles and an evolving provenance specification.</p>
-  <div class="layer-stack">
-    <div class="layer layer--provenance">
-      <div class="layer__badge">Evolving</div>
-      <h3><a class="layer__title-link" href="provenance.html">Provenance Spec — v0.3, Active</a></h3>
-      <p>The technical standard for recording how an artifact was created: who the accountable human is, what AI contributed, and whether a human reviewed it. Graph model with decision provenance, human–AI interaction semantics, and multi-policy governance.</p>
-      <a class="layer__github" href="https://github.com/northharbor-dev/halos-spec/blob/main/spec/provenance/v0.3.md" rel="noopener noreferrer" aria-label="View Provenance Spec on GitHub">
-        <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-        GitHub
-      </a>
+<section class="section-card social-proof" id="supporters">
+  <div class="social-proof__inner">
+    <div class="social-proof__badge">
+      <img src="identity-assets/badges/halos-founding-supporter.svg" width="80" height="80" alt="Founding Supporter badge">
     </div>
-    <div class="layer layer--principles">
-      <div class="layer__badge">Stable</div>
-      <h3><a class="layer__title-link" href="principles.html">HALOS Principles — v1.0</a></h3>
-      <p>The normative foundation: human primacy, attribution, transparency of AI involvement, and ethical guardrails. The principles anchor everything else.</p>
-      <a class="layer__github" href="https://github.com/northharbor-dev/halos-spec/blob/main/spec/principles/v1.0.md" rel="noopener noreferrer" aria-label="View Principles on GitHub">
-        <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-        GitHub
-      </a>
+    <div class="social-proof__text">
+      <p>HALOS is in its founding phase. The first 25 signatories become <strong>Founding Supporters</strong>.</p>
+      <a href="supporters.html" class="social-proof__link">View the registry & add your name →</a>
     </div>
   </div>
-</section>
-
-<section class="section-card">
-  <h2>Where HALOS Fits</h2>
-  <p class="section-card__lead">HALOS is the human-centered provenance and accountability layer — complementary to, not competing with, adjacent standards.</p>
-  <div class="card-grid">
-    <div class="card">
-      <h3>vs. CycloneDX / SBOM</h3>
-      <p>CycloneDX answers "what is in this software?" HALOS adds "who was responsible and what AI contributed." HALOS provenance can embed directly as <code>component.evidence</code>.</p>
-    </div>
-    <div class="card">
-      <h3>vs. SLSA</h3>
-      <p>SLSA answers "how was it built?" HALOS adds "what decisions were made and by whom." HALOS provenance supplements SLSA attestations with human-authorship and AI-disclosure data.</p>
-    </div>
-    <div class="card">
-      <h3>vs. W3C PROV</h3>
-      <p>The v0.3 graph model is conceptually aligned with W3C PROV (Entities, Activities, Agents) but uses plain JSON and simplified typing — no RDF required.</p>
-    </div>
-    <div class="card">
-      <h3>vs. NIST AI RMF / ISO 42001</h3>
-      <p>Governance frameworks define policy. HALOS operates at the artifact level inside those processes — providing the traceability records that demonstrate compliance.</p>
-    </div>
-  </div>
-  <p><a href="https://github.com/northharbor-dev/halos-spec/blob/main/mappings/cyclonedx-slsa.md" rel="noopener noreferrer">Integration details and embedding guide →</a></p>
-</section>
-
-<section class="home-explore-frame" id="explore" aria-labelledby="explore-title">
-  <h2 class="home-explore-title" id="explore-title">See how HALOS affects you</h2>
-  <div class="home-visual" aria-hidden="true">
-    <picture>
-      <source srcset="/identity-assets/homepage/halos-community-encompassed.png?v=3" type="image/png">
-      <img src="/identity-assets/homepage/halos-community-encompassed.png?v=3" alt="" width="600" height="600" class="home-visual__img">
-    </picture>
-  </div>
-  {% include explore-form-embed.html %}
 </section>
 
 <section class="section-card" id="go-further">
   <h2>Go Further</h2>
-  <p class="section-card__lead">Learn more about the framework or get involved.</p>
-  <h3 style="margin-top:1.5rem; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-soft); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Learn</h3>
-  <div class="card-grid">
-    <a class="card" href="vision.html">
-      <h3>Vision</h3>
-      <p>Philosophy, motivation, and long-term direction.</p>
+  <div class="card-grid card-grid--further">
+    <a class="card" href="everyday-humans.html">
+      <h3>Understand</h3>
+      <p>A plain-language guide to what HALOS means for everyday people — no technical background needed.</p>
     </a>
-    <a class="card" href="whitepaper.html">
-      <h3>Whitepaper</h3>
-      <p>How HALOS integrates with supply chain standards for verifiable human–AI collaboration.</p>
+    <a class="card" href="spec/spec.html">
+      <h3>Read the Spec</h3>
+      <p>Dive into the Provenance Spec and Principles — the full technical and normative foundation.</p>
     </a>
-    <a class="card" href="for-agents.html">
-      <h3>For AI Agents</h3>
-      <p>How agents discover and adopt HALOS when working in this repository.</p>
-    </a>
-    <a class="card" href="faq.html">
-      <h3>FAQ</h3>
-      <p>Common questions about extensibility, versioning, adoption, and how HALOS fits with other standards.</p>
-    </a>
-    <a class="card" href="origin.html">
-      <h3>About the Author</h3>
-      <p>Origin, authorship, and the public development context for HALOS.</p>
-    </a>
-  </div>
-  <h3 style="margin-top:2rem; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-soft); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Participate</h3>
-  <div class="card-grid">
-    <a class="card" href="https://github.com/northharbor-dev/halos-spec" rel="noopener noreferrer">
-      <h3>Spec Repository</h3>
-      <p>The canonical source for schemas, adoption toolkit, and principles. Contribute via pull request.</p>
-    </a>
-    <a class="card" href="supporters.html">
-      <h3>Become a Signatory</h3>
-      <p>Publicly affirm your support for the principles. Add yourself via pull request.</p>
+    <a class="card" href="examples.html">
+      <h3>See Examples</h3>
+      <p>Real-world scenarios across journalism, education, government, music, humanitarian aid, and more.</p>
     </a>
     <a class="card" href="https://github.com/northharbor-dev/halos" rel="noopener noreferrer">
       <h3>Contribute</h3>
-      <p>Propose governance changes, improve docs, or join the review process. All via GitHub.</p>
-    </a>
-    <a class="card" href="https://www.linkedin.com/company/northharbor" rel="noopener noreferrer">
-      <h3>Follow Updates</h3>
-      <p>Stay connected for milestones, announcements, and discussion.</p>
+      <p>Propose changes, improve docs, or join the review process. All development happens in public on GitHub.</p>
     </a>
   </div>
 </section>
 
-<section class="section-card">
-  <h2>Why This Exists</h2>
-  <p>HALOS is an attempt to think carefully about human-AI collaboration before more powerful systems become more deeply embedded in society. It does not claim to solve every problem, but it aims to contribute principles, governance, and public discussion that may help shape a more responsible path.</p>
+<section class="section-card closing">
+  <p>HALOS is an attempt to think carefully about human-AI collaboration before more powerful systems become deeply embedded in how we work, create, and govern. It does not claim to solve every problem. It aims to contribute principles, accountability, and public discussion while the window to shape these norms is still open.</p>
   <p>Questions, concerns, or thoughtful feedback are welcome at <a href="mailto:halos@northharbor.dev">halos@northharbor.dev</a>.</p>
 </section>
 
@@ -184,9 +218,7 @@ layout: default
   var BLOB = 'https://github.com/northharbor-dev/halos-spec/blob/main/';
 
   function rewriteLinks(text) {
-    // Markdown hyperlink: (GUIDE.md) is relative to adopt/ in the source repo
     text = text.replace('(GUIDE.md)', '(' + BLOB + 'adopt/GUIDE.md)');
-    // Backtick file/directory references agents need to fetch
     text = text.replace('`PRINCIPLES/halos-principles-v1.0.md`', '`' + RAW + 'PRINCIPLES/halos-principles-v1.0.md`');
     text = text.replace('`spec/schema/halos-profile.schema.json`', '`' + RAW + 'spec/schema/halos-profile.schema.json`');
     text = text.replace('`adopt/templates/`', '`' + BLOB + 'adopt/templates/`');
@@ -215,6 +247,23 @@ layout: default
         btn.disabled = false;
         window.open(PROMPT_URL, '_blank');
       });
+  });
+})();
+</script>
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.section-card, .adopt-callout, .home-explore-frame, .social-proof, .hero-provocation__reveal, .story-step').forEach(function (el) {
+    el.classList.add('scroll-reveal');
+    observer.observe(el);
   });
 })();
 </script>
