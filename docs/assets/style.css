@@ -1997,7 +1997,7 @@ strong {
 
 .story-step__annotation {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.875rem;
   color: var(--text-soft);
   text-align: right;
   white-space: nowrap;
@@ -2005,26 +2005,26 @@ strong {
 }
 
 .story-step__tag {
-  display: block;
-  margin-bottom: 0.25rem;
-  padding: 0.15rem 0.5rem;
-  border-radius: 6px;
-  font-size: 0.7rem;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-transform: lowercase;
 }
 
 .story-step__tag--ai {
-  background: rgba(107, 208, 255, 0.14);
+  background: rgba(107, 208, 255, 0.18);
   color: var(--accent);
-  border: 1px solid rgba(107, 208, 255, 0.25);
+  border: 1px solid rgba(107, 208, 255, 0.35);
 }
 
 .story-step__tag--human {
-  background: rgba(214, 250, 255, 0.1);
+  background: rgba(214, 250, 255, 0.14);
   color: var(--halo);
-  border: 1px solid rgba(214, 250, 255, 0.2);
+  border: 1px solid rgba(214, 250, 255, 0.3);
 }
 
 .story-cta {
