@@ -43,3 +43,39 @@ The site generates `feed.xml` for blog posts. Readers can subscribe at:
 ```
 https://halos.northharbor.dev/feed.xml
 ```
+
+## Post images
+
+New blog posts should ship with two image assets:
+
+- **Social/page image** — larger image used for `og:image`, `twitter:image`, and link previews.
+- **Feed image** — smaller square or thumbnail-friendly image used in RSS/Atom readers.
+
+Recommended front matter:
+
+```yaml
+---
+title: "Post title"
+excerpt: "One-sentence summary."
+date: YYYY-MM-DD
+image: /assets/posts/YYYY-MM-DD-slug/social.png
+feed_image: /assets/posts/YYYY-MM-DD-slug/feed.png
+---
+```
+
+Current fallback behavior:
+
+- If a post omits `image`, HALOS uses the default banner image.
+- If a post omits `feed_image`, HALOS uses the default feed thumbnail.
+
+Suggested workflow for new posts:
+
+1. Create the draft in `docs/_posts/` with `title`, `excerpt`, `date`, `image`, and `feed_image`.
+2. Generate a relevant hero/social image for the post topic.
+3. Export a smaller companion image for feed readers.
+4. Save both under `docs/assets/posts/YYYY-MM-DD-slug/`.
+5. Verify the post page exposes `og:image` and the feed exposes `media:thumbnail`.
+
+See [`assets/posts/README.md`](assets/posts/README.md) for the folder convention and suggested sizes.
+
+Until per-post images exist, the default HALOS images keep previews and feed readers populated.

@@ -12,6 +12,7 @@ The HALOS contract requires: human primacy, attribution, transparency, ethical g
 
 Platform-specific post drafts (LinkedIn, Substack, etc.) live in [`social/`](social/).
 See [`social/FOR_AGENTS.md`](social/FOR_AGENTS.md) for the full draft → publish → archive workflow.
+For blog post image requirements and feed/social preview fields, see [`docs/SYNDICATION.md`](docs/SYNDICATION.md).
 
 ## Adopting HALOS in Your Repo
 

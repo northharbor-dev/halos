@@ -2,6 +2,8 @@ title: HALOS
 description: Human–Agent Lineage and Origin Standard
 url: "https://halos.northharbor.dev"
 baseurl: ""  # empty for custom domain halos.northharbor.dev (served at root)
+default_social_image: /identity-assets/profile/halos-linkedin-banner.png
+default_feed_image: /identity-assets/profile/halos-profile-420.png
 theme: minima
 sass:
   quiet_deps: true
@@ -23,4 +25,5 @@ defaults:
       path: ""
       type: posts
     values:
-      image: /identity-assets/profile/halos-profile-420.png
+      image: /identity-assets/profile/halos-linkedin-banner.png
+      feed_image: /identity-assets/profile/halos-profile-420.png
