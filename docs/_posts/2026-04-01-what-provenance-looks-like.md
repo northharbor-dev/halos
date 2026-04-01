@@ -2,6 +2,8 @@
 title: "What Provenance Looks Like"
 excerpt: "Nine domains, nine humans who disagreed with their AI, and a spec that finally has the right name."
 date: 2026-04-01
+image: /assets/posts/2026-04-01-what-provenance-looks-like/social-draft.png
+feed_image: /assets/posts/2026-04-01-what-provenance-looks-like/feed-draft.png
 ---
 
 A governance standard for AI-assisted work is only useful if you can show what it looks like in practice. Not in the abstract — in the specific context where a human used AI, disagreed with it, and made a decision that mattered.

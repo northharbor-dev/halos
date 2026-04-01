@@ -801,6 +801,19 @@ strong {
   color: var(--text-soft);
 }
 
+.post-banner {
+  margin: 1.5rem 0 0;
+}
+
+.post-banner__image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 48px rgba(5, 12, 24, 0.28);
+}
+
 .doc-hero__eyebrow {
   margin: 0 0 0.75rem;
   color: var(--accent);

@@ -2,6 +2,8 @@
 title: "From Framework to Standard: 12 Days of HALOS"
 excerpt: "A framework is a set of ideas. A standard is a shared commitment. Here's what it took to become one."
 date: 2026-03-25
+image: /assets/posts/2026-03-25-from-framework-to-standard/social-draft.png
+feed_image: /assets/posts/2026-03-25-from-framework-to-standard/feed-draft.png
 ---
 
 A framework is a set of ideas. A standard is something you can implement, adopt, and validate against. The distance between the two is where most good intentions stall.

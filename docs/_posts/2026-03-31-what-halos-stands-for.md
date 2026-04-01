@@ -2,6 +2,8 @@
 title: "What HALOS Stands For"
 excerpt: "A name change, a clearer two-part structure, eight domain examples, and where HALOS fits alongside CycloneDX, SLSA, and W3C PROV."
 date: 2026-03-31
+image: /assets/posts/2026-03-31-what-halos-stands-for/social-draft.png
+feed_image: /assets/posts/2026-03-31-what-halos-stands-for/feed-draft.png
 ---
 
 Names matter for standards. If a standard's own name implies the wrong thing, everything built on top of it starts from the wrong mental model. That problem has a clean fix: get the name right.
