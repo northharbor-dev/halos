@@ -1872,10 +1872,24 @@ strong {
   top: -60px;
   left: 50%;
   transform: translateX(-50%);
-  width: 600px;
-  height: 600px;
+  width: 700px;
+  height: 700px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(107, 208, 255, 0.14), rgba(63, 99, 230, 0.06) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(107, 208, 255, 0.22) 0%, rgba(63, 99, 230, 0.10) 40%, transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-provocation::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(214, 250, 255, 0.10) 0%, transparent 65%);
   pointer-events: none;
   z-index: 0;
 }
@@ -1911,9 +1925,36 @@ strong {
   gap: 0.5rem;
 }
 
+.hero-provocation__mark {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.hero-provocation__mark::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -80%;
+  width: 60%;
+  height: 120%;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(214, 250, 255, 0.50) 48%,
+    rgba(255, 255, 255, 0.30) 50%,
+    rgba(214, 250, 255, 0.50) 52%,
+    transparent 70%
+  );
+  transform: skewX(-10deg);
+  pointer-events: none;
+}
+
 .hero-provocation__mark img {
-  width: 88px;
-  height: 88px;
+  width: 112px;
+  height: 112px;
+  display: block;
 }
 
 .hero-provocation h1 {
@@ -1921,6 +1962,7 @@ strong {
   font-size: clamp(2.4rem, 4vw, 4rem);
   letter-spacing: 0.06em;
   text-align: center;
+  text-shadow: 0 0 48px rgba(107, 208, 255, 0.18);
 }
 
 .hero-provocation__subtitle strong {
@@ -2251,5 +2293,91 @@ strong {
   .story-step.scroll-reveal {
     transform: translateY(16px);
     transition-delay: calc(var(--step-index, 0) * 80ms);
+  }
+}
+
+/* ── Hero mark dramatic emergence ── */
+@media (prefers-reduced-motion: no-preference) {
+  /* Override default scroll-reveal for hero container — animate children instead */
+  .hero-provocation__reveal.scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero-provocation__mark,
+  .hero-provocation__reveal h1,
+  .hero-provocation__subtitle {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .hero-provocation__reveal.is-visible .hero-provocation__mark {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+    animation: halos-mark-emerge 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0ms both;
+  }
+
+  .hero-provocation__reveal.is-visible h1 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 380ms;
+  }
+
+  .hero-provocation__reveal.is-visible .hero-provocation__subtitle {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 580ms;
+  }
+
+  .hero-provocation__reveal.is-visible .hero-provocation__mark::after {
+    animation: halos-light-streak 0.65s ease-out 0.55s both;
+  }
+
+  @keyframes halos-mark-emerge {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.84);
+      filter: brightness(0.3) drop-shadow(0 0 0px rgba(107, 208, 255, 0));
+    }
+    38% {
+      opacity: 1;
+      transform: translateY(0) scale(1.09);
+      filter: brightness(1.8) drop-shadow(0 0 24px rgba(107, 208, 255, 0.95))
+              drop-shadow(0 0 52px rgba(107, 208, 255, 0.45));
+    }
+    55% {
+      filter: brightness(2.0) drop-shadow(0 0 32px rgba(214, 250, 255, 1))
+              drop-shadow(0 0 64px rgba(107, 208, 255, 0.65));
+    }
+    75% {
+      transform: scale(1.02);
+      filter: brightness(1.25) drop-shadow(0 0 18px rgba(107, 208, 255, 0.55));
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: brightness(1) drop-shadow(0 0 10px rgba(107, 208, 255, 0.28));
+    }
+  }
+
+  @keyframes halos-light-streak {
+    0% {
+      left: -80%;
+      opacity: 0;
+    }
+    15% {
+      opacity: 1;
+    }
+    85% {
+      opacity: 1;
+    }
+    100% {
+      left: 160%;
+      opacity: 0;
+    }
   }
 }
