@@ -139,6 +139,10 @@ layout: default
       <h3>For AI Agents</h3>
       <p>How agents discover and adopt HALOS when working in this repository.</p>
     </a>
+    <a class="card" href="faq.html">
+      <h3>FAQ</h3>
+      <p>Common questions about extensibility, versioning, adoption, and how HALOS fits with other standards.</p>
+    </a>
     <a class="card" href="origin.html">
       <h3>About the Author</h3>
       <p>Origin, authorship, and the public development context for HALOS.</p>
