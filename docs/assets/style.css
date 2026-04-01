@@ -1844,3 +1844,399 @@ strong {
   border-color: rgba(107, 208, 255, 0.4);
   background: rgba(107, 208, 255, 0.06);
 }
+
+/* ── Hero provocation (redesigned homepage hero) ── */
+.hero-provocation {
+  text-align: center;
+  padding: 10vh 0 4rem;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.hero-provocation::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(107, 208, 255, 0.14), rgba(63, 99, 230, 0.06) 50%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-provocation > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-provocation__question {
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text);
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-provocation__body {
+  max-width: 56ch;
+  margin: 0 auto 3rem;
+  font-size: var(--deck-size);
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.hero-provocation__reveal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-provocation__mark img {
+  width: 88px;
+  height: 88px;
+}
+
+.hero-provocation h1 {
+  margin: 0.25rem 0 0.3rem;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.hero-provocation__subtitle strong {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--halo);
+  letter-spacing: 0.03em;
+}
+
+/* ── Three-sentence explainer ── */
+.home-explainer {
+  border-top: none;
+  padding-top: 2rem;
+}
+
+.home-explainer__text {
+  max-width: var(--prose-width);
+  margin: 0 auto;
+  font-size: calc(var(--deck-size) + 0.05rem);
+  line-height: 1.8;
+  color: var(--text-soft);
+}
+
+.color-halo {
+  color: var(--halo);
+  font-weight: 600;
+}
+
+.color-accent {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ── Story timeline ── */
+.story-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 1.5rem 0;
+  max-width: var(--prose-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.story-step {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+}
+
+.story-step:first-child {
+  border-top: none;
+}
+
+.story-step__badge {
+  flex-shrink: 0;
+}
+
+.story-step__badge img {
+  border-radius: 12px;
+}
+
+.story-step__content {
+  min-width: 0;
+}
+
+.story-step__title {
+  margin: 0 0 0.35rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+.story-step__desc {
+  margin: 0;
+  font-size: var(--card-size);
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+.story-step__annotation {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  text-align: right;
+  white-space: nowrap;
+  padding-top: 0.1rem;
+}
+
+.story-step__tag {
+  display: block;
+  margin-bottom: 0.25rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+
+.story-step__tag--ai {
+  background: rgba(107, 208, 255, 0.14);
+  color: var(--accent);
+  border: 1px solid rgba(107, 208, 255, 0.25);
+}
+
+.story-step__tag--human {
+  background: rgba(214, 250, 255, 0.1);
+  color: var(--halo);
+  border: 1px solid rgba(214, 250, 255, 0.2);
+}
+
+.story-cta {
+  margin-top: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 640px) {
+  .story-step {
+    grid-template-columns: 48px 1fr;
+    gap: 1rem;
+  }
+
+  .story-step__badge img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .story-step__annotation {
+    grid-column: 2;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .hero-provocation {
+    padding: 6vh 0 2.5rem;
+  }
+
+  .hero-provocation::before {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+/* ── Audience cards ── */
+.card-grid--audience {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card--audience h3 {
+  color: var(--accent);
+}
+
+/* ── Adopt phases ── */
+.adopt-phases {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.adopt-phase {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.adopt-phase__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(107, 208, 255, 0.14);
+  color: var(--accent);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.adopt-phase__text {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+.adopt-phase__text strong {
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.adopt-phase__text code {
+  font-size: 0.85em;
+  background: rgba(107, 208, 255, 0.12);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  color: var(--accent);
+}
+
+.adopt-preview {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.adopt-preview__label {
+  margin: 0 0 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.adopt-preview__code {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--text-soft);
+  overflow-x: auto;
+}
+
+.adopt-preview__code code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+@media (max-width: 520px) {
+  .adopt-phases {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Social proof ── */
+.social-proof {
+  border-top: none;
+  padding-top: 0;
+}
+
+.social-proof__inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: var(--prose-width);
+  margin: 0 auto;
+  padding: 1.5rem 1.75rem;
+  background: linear-gradient(135deg, rgba(63, 99, 230, 0.1), rgba(107, 208, 255, 0.06));
+  border: 1px solid rgba(107, 208, 255, 0.18);
+  border-radius: 12px;
+}
+
+.social-proof__badge img {
+  display: block;
+  flex-shrink: 0;
+}
+
+.social-proof__text p {
+  margin: 0 0 0.5rem;
+  font-size: var(--card-size);
+  max-width: none;
+}
+
+.social-proof__link {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 520px) {
+  .social-proof__inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem;
+  }
+}
+
+/* ── Go Further (4-card) ── */
+.card-grid--further {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* ── Closing statement ── */
+.closing {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+}
+
+.closing p {
+  color: var(--text-soft);
+  font-size: var(--body-size);
+}
+
+/* ── Scroll reveal animations ── */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .story-step.scroll-reveal {
+    transform: translateY(16px);
+    transition-delay: calc(var(--step-index, 0) * 80ms);
+  }
+}
