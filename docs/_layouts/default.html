@@ -16,7 +16,7 @@
         } catch (_) {}
       })();
     </script>
-    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v=2">
   </head>
   <body>
     <header class="site-shell">
@@ -37,18 +37,21 @@
         </button>
         <div id="nav-menu" class="nav-collapse">
         <nav class="site-links" aria-label="Primary">
-          <a href="{{ '/#explore' | relative_url }}" {% if page.url == "/" or page.url == "/index.html" or page.url == "/explore.html" %}class="is-current"{% endif %}>Explore</a>
-          <a href="{{ '/spec/spec.html' | relative_url }}" {% if page.url contains '/spec/' %}class="is-current"{% endif %}>Spec</a>
-          <a href="{{ '/vision.html' | relative_url }}" {% if page.url == "/vision.html" %}class="is-current"{% endif %}>Vision</a>
-          <a href="{{ '/principles.html' | relative_url }}" {% if page.url == "/principles.html" %}class="is-current"{% endif %}>Principles</a>
-          <a href="{{ '/governance.html' | relative_url }}" {% if page.url == "/governance.html" %}class="is-current"{% endif %}>Governance</a>
-          <a href="{{ '/everyday-humans.html' | relative_url }}" {% if page.url == "/everyday-humans.html" %}class="is-current"{% endif %}>For Everyone</a>
-          <a href="{{ '/for-agents.html' | relative_url }}" {% if page.url == "/for-agents.html" %}class="is-current"{% endif %}>For Agents</a>
+          <a href="{{ '/everyday-humans.html' | relative_url }}" {% if page.url == "/everyday-humans.html" %}class="is-current"{% endif %}>Understand</a>
+          <a href="{{ '/#framework' | relative_url }}" {% if page.url == "/" or page.url == "/index.html" %}class="is-current"{% endif %}>Framework</a>
           <a href="{{ '/examples.html' | relative_url }}" {% if page.url == "/examples.html" or page.url contains '/examples/' %}class="is-current"{% endif %}>Examples</a>
-          <a href="{{ '/help.html' | relative_url }}" {% if page.url == "/help.html" %}class="is-current"{% endif %}>Help</a>
-          <a href="{{ '/supporters.html' | relative_url }}" {% if page.url == "/supporters.html" %}class="is-current"{% endif %}>Supporters</a>
-          <a href="{{ '/journal.html' | relative_url }}" {% if page.url == "/journal.html" %}class="is-current"{% endif %}>Journal</a>
-          <a href="{{ '/blog.html' | relative_url }}" {% if page.url == "/blog.html" or page.date %}class="is-current"{% endif %}>Blog</a>
+          <a href="{{ '/#adopt' | relative_url }}">Adopt</a>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown__trigger" aria-expanded="false">About</button>
+            <div class="nav-dropdown__menu">
+              <a href="{{ '/vision.html' | relative_url }}" {% if page.url == "/vision.html" %}class="is-current"{% endif %}>Vision</a>
+              <a href="{{ '/principles.html' | relative_url }}" {% if page.url == "/principles.html" %}class="is-current"{% endif %}>Principles</a>
+              <a href="{{ '/governance.html' | relative_url }}" {% if page.url == "/governance.html" %}class="is-current"{% endif %}>Governance</a>
+              <a href="{{ '/supporters.html' | relative_url }}" {% if page.url == "/supporters.html" %}class="is-current"{% endif %}>Supporters</a>
+              <a href="{{ '/origin.html' | relative_url }}" {% if page.url == "/origin.html" %}class="is-current"{% endif %}>Origin</a>
+            </div>
+          </div>
+          <a href="{{ '/blog.html' | relative_url }}" {% if page.url == "/blog.html" or page.date %}class="is-current"{% endif %}>Updates</a>
           <a href="https://github.com/northharbor-dev/halos">GitHub</a>
         </nav>
         </div>
@@ -108,6 +111,7 @@
     <footer class="site-footer">
       <div class="site-footer__inner">
         <p>HALOS is developed in public through NorthHarbor Development. <a href="https://github.com/northharbor-dev/halos" rel="noopener noreferrer">GitHub</a> · <a href="https://www.linkedin.com/company/northharbor" rel="noopener noreferrer">Follow on LinkedIn</a></p>
+        <p><a href="{{ '/spec/spec.html' | relative_url }}">Spec</a> · <a href="{{ '/help.html' | relative_url }}">Help</a> · <a href="{{ '/for-agents.html' | relative_url }}">For Agents</a> · <a href="{{ '/journal.html' | relative_url }}">Journal</a> · <a href="{{ '/identity.html' | relative_url }}">Identity</a></p>
       </div>
     </footer>
     <script>
