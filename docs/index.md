@@ -15,7 +15,7 @@ layout: default
   </div>
 </section>
 
-<section class="adopt-callout" aria-label="Adopt HALOS">
+<section class="adopt-callout" id="adopt" aria-label="Adopt HALOS">
   <div class="adopt-callout__inner">
     <div class="adopt-callout__header">
       <p class="adopt-callout__headline">Adopt HALOS in your project</p>
@@ -62,18 +62,28 @@ layout: default
   </div>
 </section>
 
-<section class="section-card">
+<section class="section-card" id="framework">
   <h2>The Framework</h2>
   <p class="section-card__lead">HALOS is organized in two layers — stable principles and an evolving provenance specification.</p>
-  <div class="card-grid">
-    <a class="card" href="principles.html">
-      <h3>HALOS Principles — v1.0, Stable</h3>
-      <p>The normative foundation: human primacy, attribution, transparency of AI involvement, and ethical guardrails. The principles do not version — they anchor everything else.</p>
-    </a>
-    <a class="card" href="https://github.com/northharbor-dev/halos-spec/blob/main/spec/provenance/v0.1.md" rel="noopener noreferrer">
-      <h3>Provenance Spec — v0.1, Active</h3>
-      <p>The technical standard for recording how an artifact was created: who the accountable human is, what AI contributed, and whether a human reviewed it before use. v0.2 graph model in draft.</p>
-    </a>
+  <div class="layer-stack">
+    <div class="layer layer--provenance">
+      <div class="layer__badge">Evolving</div>
+      <h3><a class="layer__title-link" href="provenance.html">Provenance Spec — v0.3, Active</a></h3>
+      <p>The technical standard for recording how an artifact was created: who the accountable human is, what AI contributed, and whether a human reviewed it. Graph model with decision provenance, human–AI interaction semantics, and multi-policy governance.</p>
+      <a class="layer__github" href="https://github.com/northharbor-dev/halos-spec/blob/main/spec/provenance/v0.3.md" rel="noopener noreferrer" aria-label="View Provenance Spec on GitHub">
+        <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+    </div>
+    <div class="layer layer--principles">
+      <div class="layer__badge">Stable</div>
+      <h3><a class="layer__title-link" href="principles.html">HALOS Principles — v1.0</a></h3>
+      <p>The normative foundation: human primacy, attribution, transparency of AI involvement, and ethical guardrails. The principles anchor everything else.</p>
+      <a class="layer__github" href="https://github.com/northharbor-dev/halos-spec/blob/main/spec/principles/v1.0.md" rel="noopener noreferrer" aria-label="View Principles on GitHub">
+        <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+    </div>
   </div>
 </section>
 
@@ -91,7 +101,7 @@ layout: default
     </div>
     <div class="card">
       <h3>vs. W3C PROV</h3>
-      <p>The v0.2 graph model is conceptually aligned with W3C PROV (Entities, Activities, Agents) but uses plain JSON and simplified typing — no RDF required.</p>
+      <p>The v0.3 graph model is conceptually aligned with W3C PROV (Entities, Activities, Agents) but uses plain JSON and simplified typing — no RDF required.</p>
     </div>
     <div class="card">
       <h3>vs. NIST AI RMF / ISO 42001</h3>
@@ -112,64 +122,33 @@ layout: default
   {% include explore-form-embed.html %}
 </section>
 
-<section class="section-card">
-  <h2>Dive deeper</h2>
-  <p class="section-card__lead">Specification, vision, principles, governance, and more.</p>
+<section class="section-card" id="go-further">
+  <h2>Go Further</h2>
+  <p class="section-card__lead">Learn more about the framework or get involved.</p>
+  <h3 style="margin-top:1.5rem; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-soft); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Learn</h3>
   <div class="card-grid">
-    <a class="card" href="spec/spec.html">
-      <h3>Specification</h3>
-      <p>Machine-readable spec: Core and Extensions for HALOS alignment.</p>
-    </a>
     <a class="card" href="vision.html">
       <h3>Vision</h3>
       <p>Philosophy, motivation, and long-term direction.</p>
-    </a>
-    <a class="card" href="principles.html">
-      <h3>Principles</h3>
-      <p>Foundational ideas that anchor the framework.</p>
-    </a>
-    <a class="card" href="governance.html">
-      <h3>Governance</h3>
-      <p>How the framework evolves through public process.</p>
     </a>
     <a class="card" href="whitepaper.html">
       <h3>Whitepaper</h3>
       <p>How HALOS integrates with supply chain standards for verifiable human–AI collaboration.</p>
     </a>
-    <a class="card" href="supporters.html">
-      <h3>Supporters</h3>
-      <p>Individuals and organizations who support the HALOS principles.</p>
-    </a>
-    <a class="card" href="everyday-humans.html">
-      <h3>For Everyone (full read)</h3>
-      <p>Plain-language framing for everyone.</p>
-    </a>
     <a class="card" href="for-agents.html">
       <h3>For AI Agents</h3>
       <p>How agents discover and adopt HALOS when working in this repository.</p>
     </a>
-    <a class="card" href="agents.html">
-      <h3>Agent Files</h3>
-      <p>Discovery files, rules, and skills served on this site.</p>
-    </a>
-    <a class="card" href="journal.html">
-      <h3>Journal</h3>
-      <p>Living history: decisions, milestones, and progress in HALOS's voice.</p>
+    <a class="card" href="origin.html">
+      <h3>About the Author</h3>
+      <p>Origin, authorship, and the public development context for HALOS.</p>
     </a>
   </div>
-</section>
-
-<section class="section-card" id="getting-involved" aria-labelledby="getting-involved-heading">
-  <h2 id="getting-involved-heading">Getting Involved</h2>
-  <p class="section-card__lead">HALOS is developed in public and welcomes participation. Read the spec, become a signatory, contribute improvements via GitHub, or follow project updates on the NorthHarbor LinkedIn company page.</p>
+  <h3 style="margin-top:2rem; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-soft); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Participate</h3>
   <div class="card-grid">
-    <a class="card" href="spec/spec.html">
-      <h3>Read the Spec</h3>
-      <p>Machine-readable core and extensions. Understand what HALOS requires.</p>
-    </a>
     <a class="card" href="https://github.com/northharbor-dev/halos-spec" rel="noopener noreferrer">
       <h3>Spec Repository</h3>
-      <p>The canonical source for schemas, adoption toolkit, and principles. Contribute via pull request in halos-spec.</p>
+      <p>The canonical source for schemas, adoption toolkit, and principles. Contribute via pull request.</p>
     </a>
     <a class="card" href="supporters.html">
       <h3>Become a Signatory</h3>
@@ -187,26 +166,7 @@ layout: default
 </section>
 
 <section class="section-card">
-  <h2>Context</h2>
-  <div class="card-grid">
-    <a class="card" href="origin.html">
-      <h3>About the Author</h3>
-      <p>Origin, authorship, and the public development context for HALOS.</p>
-    </a>
-    <a class="card" href="identity.html">
-      <h3>Identity</h3>
-      <p>Why the project's visual identity is published in the open.</p>
-    </a>
-    <a class="card" href="https://github.com/northharbor-dev/halos">
-      <h3>Repository</h3>
-      <p>The canonical source for documents, proposals, history, and contribution.</p>
-    </a>
-  </div>
-</section>
-
-<section class="section-card">
   <h2>Why This Exists</h2>
-  <p>HALOS is developed in public and stewarded through NorthHarbor Development. This site is the simplest public reading surface for the framework, while the GitHub repository remains the canonical source for its documents, history, and contribution process.</p>
   <p>HALOS is an attempt to think carefully about human-AI collaboration before more powerful systems become more deeply embedded in society. It does not claim to solve every problem, but it aims to contribute principles, governance, and public discussion that may help shape a more responsible path.</p>
   <p>Questions, concerns, or thoughtful feedback are welcome at <a href="mailto:halos@northharbor.dev">halos@northharbor.dev</a>.</p>
 </section>

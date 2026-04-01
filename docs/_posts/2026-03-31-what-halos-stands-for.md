@@ -30,7 +30,7 @@ The framework has always had two distinct parts. They just weren't clearly label
 
 **HALOS Principles — v1.0, Stable.** The eight core requirements: human primacy, attribution and provenance, transparency of AI involvement, ethical guardrails, and the governance process through which the standard itself evolves. The Principles are normative and stable. They do not version; they anchor everything else. An organization that commits to the HALOS Principles is making a declaration about how it operates — what it considers the human's role in AI-assisted work, what it treats as attributable, and what it owes to the people affected by its AI systems.
 
-**Provenance Spec — v0.1, Active.** The technical specification for recording how an artifact was created: who the accountable human is, what AI tools contributed, what decisions were made, and whether a human reviewed the result. The Provenance Spec does version — it will evolve as we learn what needs to be captured and how. The current v0.2 graph model introduces decision provenance, human–AI interaction semantics, and policy evaluation traces.
+**Provenance Spec — v0.3, Active.** The technical specification for recording how an artifact was created: who the accountable human is, what AI tools contributed, what decisions were made, and whether a human reviewed the result. The Provenance Spec does version — it will evolve as we learn what needs to be captured and how. The v0.2 graph model introduced decision provenance, human–AI interaction semantics, and policy evaluation traces. v0.3 adds multi-policy governance — recognizing that artifacts routinely fall under multiple concurrent governance policies.
 
 Why does this split matter for adopters? **You can commit to Phase 1 today with no tooling changes.**
 
@@ -62,7 +62,7 @@ What they do not address — as a rule — is human accountability and decision 
 
 Theory is fine. The harder question is what provenance records look like in practice — in the contexts where AI is actually being used, and where the human's role is not supervisory in an abstract sense but specific and consequential.
 
-The eight domain examples in `halos-spec/examples/` were written to answer that question concretely. Each includes a scenario narrative — who is doing what, how AI is used, where human judgment is required — alongside a full v0.2 `.halos.json` provenance record for a real artifact in that domain.
+The eight domain examples in `halos-spec/examples/` were written to answer that question concretely. Each includes a scenario narrative — who is doing what, how AI is used, where human judgment is required — alongside a full v0.3 `.halos.json` provenance record for a real artifact in that domain.
 
 A few that illustrate the range:
 
