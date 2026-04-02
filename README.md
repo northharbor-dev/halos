@@ -4,7 +4,7 @@
   <img src="docs/identity-assets/selected/halos-halo-ring-institutional-randomized.svg" alt="HALOS identity mark" width="160" />
 </p>
 
-**Human-Agent Living Operating System**
+**Human–Agent Lineage and Origin Standard**
 
 A framework for principled collaboration between humans and intelligent agents.
 

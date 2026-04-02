@@ -13,7 +13,7 @@ Minimal symbolic logo for HALOS, dark navy background, three luminous orbital ar
 ## Prompt 2
 
 ```text
-Framework identity mark for HALOS (Human-Agent Living Operating System), deep midnight blue field, three elegant offset arcs orbiting a central core, refined cyan and ice-blue highlights, ordered and architectural composition, representing human, agent, and artifact in relation, modern but restrained, suitable for open governance documents and repository identity, no words or letters.
+Framework identity mark for HALOS (Human–Agent Lineage and Origin Standard), deep midnight blue field, three elegant offset arcs orbiting a central core, refined cyan and ice-blue highlights, ordered and architectural composition, representing human, agent, and artifact in relation, modern but restrained, suitable for open governance documents and repository identity, no words or letters.
 ```
 
 ## Prompt 3

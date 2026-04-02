@@ -7,7 +7,7 @@ The Halo Ring direction treats HALOS as a structured framework with layered boun
 ## Prompt 1
 
 ```text
-Minimal logo for HALOS (Human-Agent Living Operating System), dark midnight navy background, a stable luminous center surrounded by segmented concentric rings in cool cyan and ice-blue, precise geometric spacing, subtle glow, institutional and framework-oriented rather than product-like, elegant and durable, no text, no photorealism, no generic circuit patterns, designed for a standards framework and open governance context.
+Minimal logo for HALOS (Human–Agent Lineage and Origin Standard), dark midnight navy background, a stable luminous center surrounded by segmented concentric rings in cool cyan and ice-blue, precise geometric spacing, subtle glow, institutional and framework-oriented rather than product-like, elegant and durable, no text, no photorealism, no generic circuit patterns, designed for a standards framework and open governance context.
 ```
 
 ## Prompt 2
