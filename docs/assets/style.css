@@ -1928,33 +1928,142 @@ strong {
 .hero-provocation__mark {
   position: relative;
   display: inline-block;
-  overflow: hidden;
+  overflow: visible;
   border-radius: 20px;
 }
 
 .hero-provocation__mark::after {
   content: "";
   position: absolute;
-  top: -10%;
-  left: -80%;
-  width: 60%;
-  height: 120%;
-  background: linear-gradient(
-    105deg,
-    transparent 30%,
-    rgba(214, 250, 255, 0.50) 48%,
-    rgba(255, 255, 255, 0.30) 50%,
-    rgba(214, 250, 255, 0.50) 52%,
-    transparent 70%
-  );
-  transform: skewX(-10deg);
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%) scale(0.6);
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(214, 250, 255, 0.3) 25%,
+    rgba(107, 208, 255, 0.1) 50%,
+    transparent 70%);
+  opacity: 0;
   pointer-events: none;
 }
 
 .hero-provocation__mark img {
+  position: relative;
+  z-index: 1;
   width: 112px;
   height: 112px;
   display: block;
+}
+
+/* Northern lights aurora behind logo mark */
+.hero-provocation__mark .aurora {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  height: 480px;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(50px);
+  opacity: 0.8;
+}
+
+.aurora__layer {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+}
+
+.aurora__layer--1 {
+  background: radial-gradient(ellipse at 38% 45%,
+    rgba(52, 211, 153, 0.55) 0%,
+    rgba(16, 185, 129, 0.3) 30%,
+    rgba(63, 99, 230, 0.12) 55%,
+    transparent 70%);
+  animation: aurora-drift-1 8s ease-in-out infinite;
+}
+
+.aurora__layer--2 {
+  background: radial-gradient(ellipse at 62% 50%,
+    rgba(167, 139, 250, 0.55) 0%,
+    rgba(139, 92, 246, 0.3) 30%,
+    rgba(107, 208, 255, 0.1) 55%,
+    transparent 70%);
+  animation: aurora-drift-2 11s ease-in-out infinite;
+}
+
+.aurora__layer--3 {
+  background: radial-gradient(ellipse at 50% 55%,
+    rgba(45, 212, 191, 0.45) 0%,
+    rgba(52, 211, 153, 0.2) 25%,
+    rgba(139, 92, 246, 0.15) 50%,
+    transparent 70%);
+  animation: aurora-drift-3 14s ease-in-out infinite;
+}
+
+@keyframes aurora-drift-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.75;
+  }
+  25% {
+    transform: translate(24px, -14px) scale(1.12);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-18px, 12px) scale(0.93);
+    opacity: 0.55;
+  }
+  75% {
+    transform: translate(14px, 6px) scale(1.06);
+    opacity: 0.9;
+  }
+}
+
+@keyframes aurora-drift-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.65;
+  }
+  30% {
+    transform: translate(-22px, 12px) scale(1.14);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(18px, -10px) scale(0.9);
+    opacity: 0.5;
+  }
+  80% {
+    transform: translate(-10px, -6px) scale(1.08);
+    opacity: 0.8;
+  }
+}
+
+@keyframes aurora-drift-3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.55;
+  }
+  20% {
+    transform: translate(16px, 10px) scale(1.1);
+    opacity: 0.85;
+  }
+  45% {
+    transform: translate(-14px, -12px) scale(0.94);
+    opacity: 0.6;
+  }
+  70% {
+    transform: translate(10px, 18px) scale(1.16);
+    opacity: 1;
+  }
+  90% {
+    transform: translate(-8px, -4px) scale(0.97);
+    opacity: 0.65;
+  }
 }
 
 .hero-provocation h1 {
@@ -2334,7 +2443,7 @@ strong {
   }
 
   .hero-provocation__reveal.is-visible .hero-provocation__mark::after {
-    animation: halos-light-streak 0.65s ease-out 0.55s both;
+    animation: halos-light-bloom 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
   }
 
   @keyframes halos-mark-emerge {
@@ -2364,19 +2473,16 @@ strong {
     }
   }
 
-  @keyframes halos-light-streak {
+  @keyframes halos-light-bloom {
     0% {
-      left: -80%;
+      transform: translate(-50%, -50%) scale(0.6);
       opacity: 0;
     }
-    15% {
-      opacity: 1;
-    }
-    85% {
-      opacity: 1;
+    40% {
+      opacity: 0.9;
     }
     100% {
-      left: 160%;
+      transform: translate(-50%, -50%) scale(2.2);
       opacity: 0;
     }
   }
