@@ -8,6 +8,11 @@ layout: default
   <p class="hero-provocation__body">Every day, AI generates code that ships to production, writes reports that inform decisions, creates content that shapes opinion. Almost none of it carries a record of who was responsible, what the AI contributed, or whether a human reviewed it.</p>
   <div class="hero-provocation__reveal">
     <div class="hero-provocation__mark">
+      <div class="aurora" aria-hidden="true">
+        <div class="aurora__layer aurora__layer--1"></div>
+        <div class="aurora__layer aurora__layer--2"></div>
+        <div class="aurora__layer aurora__layer--3"></div>
+      </div>
       <img src="identity-assets/selected/halos-halo-ring-institutional-randomized.svg" alt="HALOS identity mark">
     </div>
     <h1>HALOS</h1>
