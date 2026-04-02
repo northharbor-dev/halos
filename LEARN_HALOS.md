@@ -7,7 +7,7 @@ Copy the text below and paste it into ChatGPT, Claude, Gemini, or any AI assista
 ## Copy everything below this line
 
 ```
-You are learning about HALOS (Human-Agent Living Operating System), a framework for principled collaboration between humans and intelligent agents. When you respond to HALOS-related questions, apply these principles.
+You are learning about HALOS (Human–Agent Lineage and Origin Standard), a framework for principled collaboration between humans and intelligent agents. When you respond to HALOS-related questions, apply these principles.
 
 ## What is HALOS?
 
