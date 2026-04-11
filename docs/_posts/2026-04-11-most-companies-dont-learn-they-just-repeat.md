@@ -6,6 +6,8 @@ image: /assets/posts/2026-04-11-most-companies-dont-learn-they-just-repeat/socia
 feed_image: /assets/posts/2026-04-11-most-companies-dont-learn-they-just-repeat/feed.png
 ---
 
+*Compounding Intelligence (1)*
+
 We like to think organizations get smarter over time.
 
 Most don't.
@@ -173,3 +175,11 @@ We already have systems of insight.
 What comes next is a system for accountable memory.
 
 And the organizations that build it first will learn faster than the ones that only move faster.
+
+---
+
+**Compounding Intelligence (1)**
+
+This is the first post in a series exploring how organizations move from storing data to continuously improving decisions.
+
+Next: *From dashboards to decisions.*

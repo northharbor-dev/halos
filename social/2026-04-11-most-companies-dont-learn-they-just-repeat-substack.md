@@ -4,8 +4,12 @@ subject: "Most Companies Don't Learn. They Just Repeat."
 date: 2026-04-11
 platform: substack
 post: most-companies-dont-learn-they-just-repeat
-status: draft
+status: published
+published_date: 2026-04-11
+published_url: https://open.substack.com/pub/halosproject/p/most-companies-dont-learn-they-just?utm_campaign=post-expanded-share&utm_medium=web
 ---
+
+*Compounding Intelligence (1)*
 
 We like to tell ourselves a flattering story about modern organizations.
 
@@ -124,5 +128,11 @@ What comes next is the system that remembers judgment.
 And that is where real compounding begins.
 
 ---
+
+**Compounding Intelligence (1)**
+
+This is the first post in a series exploring how organizations move from storing data to continuously improving decisions.
+
+Next: *From dashboards to decisions.*
 
 *Originally published at `https://halos.northharbor.dev/2026/04/11/most-companies-dont-learn-they-just-repeat.html`.*

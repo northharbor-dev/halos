@@ -6,6 +6,8 @@ post: most-companies-dont-learn-they-just-repeat
 status: draft
 ---
 
+**Compounding Intelligence (1)**
+
 **Most companies don't learn. They just repeat.**
 
 We like to think organizations get smarter over time.
@@ -54,6 +56,9 @@ That's a big part of what HALOS is for.
 I'm publishing the full piece on Substack because that's where the discussion is happening.
 Read it there and jump into the conversation:
 
-[Substack link]
+https://open.substack.com/pub/halosproject/p/most-companies-dont-learn-they-just?utm_campaign=post-expanded-share&utm_medium=web
+
+This is the first post in a series exploring how organizations move from storing data to continuously improving decisions.
+Next: *From dashboards to decisions.*
 
 #AIGovernance #AIProvenance #ResponsibleAI #OpenSource #BuildInPublic
