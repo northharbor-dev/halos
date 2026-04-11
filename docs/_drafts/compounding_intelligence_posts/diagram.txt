@@ -1,0 +1,39 @@
+Compounding Intelligence Organization
+
+HALOS TRUST LAYER
+(Provenance • Lineage • Accountability • Governance)
+
+↓
+
+DECISION LOOP
+Observe → Interpret → Simulate → Decide → Act → Learn
+
+↓
+
+AGENTS + WORKFLOWS
+Reasoning • Simulation • Execution
+
+↓
+
+SEMANTIC GRAPH
+Entities • Relationships • Context
+
+↓
+
+PROJECTION LAYER
+Unified Views • Decision Inputs
+
+↓
+
+STORAGE + DATA
+Object Storage • Parquet • Transactional DBs
+
+↓
+
+APPEND-ONLY LEDGER
+Events • Decisions • Evidence
+
+↓
+
+OPERATIONAL SYSTEMS
+Apps • Users • Signals

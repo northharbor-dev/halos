@@ -15,6 +15,8 @@ Ask the HALOS agent for help. In chat, try:
 |------------|-----|
 | Validate spec | `docker run --rm halos validate` or [docker/README.md](docker/README.md) |
 | Build and serve site | `./scripts/serve.sh` or `docker run -p 3000:3000 halos serve` |
+| Preview desktop + mobile | `./scripts/preview-local.sh /path/to/page.html` |
+| Check site on phone | Run `./scripts/serve.sh`, then open one of the printed `http://<lan-ip>:3000` URLs on your phone |
 | Run integration tests | `./scripts/integration-test.sh` |
 | Draft a proposal | [proposals/TEMPLATE.md](proposals/TEMPLATE.md), [proposals/README.md](proposals/README.md) |
 | Make a small edit | [CONTRIBUTING.md](CONTRIBUTING.md) |

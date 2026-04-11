@@ -60,7 +60,25 @@ docker run --rm -v "$(pwd):/workspace" -p 3000:3000 halos serve
 ./scripts/serve-watch.sh
 ```
 
-Visit http://localhost:3000. With live reload, edits to docs or spec trigger an automatic rebuild and browser refresh.
+On your computer, visit http://localhost:3000.
+
+Before checking on your phone, you can generate local desktop and mobile previews with Playwright:
+
+```bash
+./scripts/preview-local.sh /2026/04/11/your-post-slug.html
+```
+
+That writes screenshots to `/tmp/halos-preview/` so you can review the page in desktop and mobile sizes first.
+
+To check the site on your phone while on the same LAN, use:
+
+`http://<your-mac-lan-ip>:3000`
+
+The local `./scripts/serve.sh` output now prints the phone-check URLs it detects so you can copy one directly.
+
+If you want an interactive browser window before checking your phone, `./scripts/preview-local.sh` also prints matching `npx playwright open ...` commands for desktop and mobile.
+
+With live reload, edits to docs or spec trigger an automatic rebuild and browser refresh.
 
 ### How do I propose a change?
 

@@ -24,6 +24,10 @@ Once published externally, they move here.
 - Set `status: draft` in front matter
 - Screenshot placeholders use `[Screenshot N — description]` format
 - The draft stays in `docs/_drafts/` until the post goes live
+- When drafting a LinkedIn post, choose one primary link target:
+  - canonical HALOS blog post when attribution is the priority
+  - Substack when discussion is the priority
+- When drafting a Substack post derived from a HALOS blog post, include a canonical note back to `halos.northharbor.dev`
 
 ### 2. Publishing
 - Human publishes the post externally (LinkedIn, Substack, etc.)
@@ -67,3 +71,4 @@ Example: `2026-03-25-from-framework-to-standard-linkedin.md`
 - If asked to archive a published post, follow the workflow above
 - Screenshot placeholders are intentional — do not remove them
 - `docs/SYNDICATION.md` covers canonical link and attribution requirements for cross-posting
+- For short LinkedIn posts, prefer a single clear CTA rather than multiple outbound links

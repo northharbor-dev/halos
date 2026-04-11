@@ -1,13 +1,37 @@
 ---
 title: Syndication
-deck: Cross-post HALOS blog posts to Medium, Dev.to, and LinkedIn.
+deck: Cross-post HALOS blog posts to Substack, LinkedIn, Medium, and Dev.to.
 ---
 
 # Syndicating HALOS Blog Posts
 
 Longer blog posts from [docs/_posts/](_posts/) can be syndicated to other platforms to reach broader audiences.
 
+## Preferred flow
+
+For HALOS essays and substantive project updates, use this default flow unless there is a reason not to:
+
+1. Publish the canonical version on `halos.northharbor.dev` from `docs/_posts/`.
+2. Publish the discussion version on Substack with a canonical note pointing back to the HALOS blog post.
+3. Publish a short LinkedIn post that points to the primary engagement destination.
+
+Current preference:
+
+- The HALOS blog is the canonical/original publication.
+- Substack is the preferred discussion venue when discussion and replies matter.
+- LinkedIn should usually include **one primary link**, not multiple competing links.
+
+If Substack is the active discussion venue for a post, LinkedIn should link to Substack rather than splitting attention across the blog post and Substack.
+
 ## Manual cross-posting
+
+### Substack
+
+1. Start from the canonical post in `docs/_posts/`.
+2. Adapt it for email/newsletter reading if needed.
+3. Add a canonical note near the end: "Originally published at https://halos.northharbor.dev/YYYY/MM/DD/slug.html"
+4. Publish on Substack.
+5. Use the published Substack URL as the primary CTA from LinkedIn when Substack is the discussion hub.
 
 ### Medium
 
@@ -26,15 +50,18 @@ Longer blog posts from [docs/_posts/](_posts/) can be syndicated to other platfo
 
 ### LinkedIn
 
-1. Create a new article (or share as a post with a link).
-2. For articles: paste content; link back to the original.
-3. For posts: share the link with a short intro.
+1. Decide on one primary destination before drafting the post.
+2. If the goal is canonical attribution, link to the HALOS blog post.
+3. If the goal is discussion and Substack is the active venue, link to the Substack post.
+4. Avoid including both blog and Substack links in the same short LinkedIn post unless there is a strong reason.
+5. For LinkedIn articles, paste the adapted content and link back to the original HALOS blog post.
 
 ## Best practices
 
 - **Canonical links** — Always link back to the original on halos.northharbor.dev so search engines attribute the content correctly.
 - **Attribution** — "Posted by HALOS" or "From HALOS (halos.northharbor.dev)" keeps the source clear.
 - **Consistency** — Use the same voice and principles across platforms.
+- **Single CTA on LinkedIn** — Prefer one clear destination per LinkedIn post so engagement is not split.
 
 ## RSS
 
