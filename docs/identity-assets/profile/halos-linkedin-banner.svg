@@ -26,7 +26,7 @@
   <!-- Center-right: HALOS branding (safe from avatar overlap zone) -->
   <g transform="translate(520 220)">
     <text x="0" y="38" fill="#EDFDFE" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="48" font-weight="700" letter-spacing="-0.02em">HALOS</text>
-    <text x="0" y="90" fill="rgba(214, 250, 255, 0.85)" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="400" letter-spacing="0.02em">Human-Agent Living Operating System</text>
+    <text x="0" y="90" fill="rgba(214, 250, 255, 0.85)" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="18" font-weight="400" letter-spacing="0.01em">Human-Agent Lineage and Origin Standard</text>
     <text x="0" y="140" fill="rgba(165, 229, 255, 0.7)" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="15" font-weight="400">Principled human-AI collaboration | halos.northharbor.dev</text>
   </g>
 

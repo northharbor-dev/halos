@@ -27,7 +27,7 @@
   <g transform="translate(520 185)">
     <text x="0" y="52" fill="#EDFDFE" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="56" font-weight="700" letter-spacing="-0.02em">Bob Hong</text>
     <text x="0" y="118" fill="rgba(214, 250, 255, 0.9)" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="34" font-weight="500">Creator, NorthHarbor</text>
-    <text x="0" y="182" fill="rgba(165, 229, 255, 0.7)" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="24" font-weight="400">HALOS - Human-Agent Living Operating System</text>
+    <text x="0" y="182" fill="rgba(165, 229, 255, 0.7)" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="400">HALOS - Human-Agent Lineage and Origin Standard</text>
     <text x="0" y="228" fill="rgba(165, 229, 255, 0.65)" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="24" font-weight="400">halos.northharbor.dev</text>
   </g>
 
