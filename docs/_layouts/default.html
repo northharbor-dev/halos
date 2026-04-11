@@ -7,10 +7,14 @@
     {% endif %}
     {% assign meta_description = page.excerpt | default: page.deck | default: site.description | strip_html | normalize_whitespace %}
     {% assign social_image = page.image.path | default: page.image | default: site.default_social_image %}
+    {% assign image_version = page.image_version | default: site.image_version %}
     {% if social_image %}
     {% unless social_image contains "://" %}
       {% assign social_image = social_image | absolute_url %}
     {% endunless %}
+    {% if image_version %}
+      {% assign social_image = social_image | append: '?v=' | append: image_version %}
+    {% endif %}
     {% endif %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -121,8 +125,12 @@
             </div>
           </div>
           {% if page.image %}
+          {% assign post_banner_image = page.image | relative_url %}
+          {% if image_version %}
+            {% assign post_banner_image = post_banner_image | append: '?v=' | append: image_version %}
+          {% endif %}
           <figure class="post-banner">
-            <img class="post-banner__image" src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+            <img class="post-banner__image" src="{{ post_banner_image }}" alt="{{ page.title }}">
           </figure>
           {% endif %}
           {% else %}

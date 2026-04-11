@@ -16,10 +16,14 @@ permalink: /feed.xml
     {% assign post_title = post.title | smartify | strip_html | normalize_whitespace | xml_escape %}
     {% assign post_summary = post.description | default: post.excerpt %}
     {% assign post_feed_image = post.feed_image | default: post.image.path | default: post.image | default: site.default_feed_image %}
+    {% assign post_image_version = post.feed_image_version | default: post.image_version | default: site.image_version %}
     {% if post_feed_image %}
       {% unless post_feed_image contains "://" %}
       {% assign post_feed_image = post_feed_image | absolute_url %}
       {% endunless %}
+      {% if post_image_version %}
+        {% assign post_feed_image = post_feed_image | append: '?v=' | append: post_image_version %}
+      {% endif %}
     {% endif %}
     <entry{% if post.lang %} xml:lang="{{ post.lang }}"{% endif %}>
       <title type="html">{{ post_title }}</title>
